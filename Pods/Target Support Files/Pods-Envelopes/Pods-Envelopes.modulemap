@@ -1,0 +1,6 @@
+framework module Pods_Envelopes {
+  umbrella header "Pods-Envelopes-umbrella.h"
+
+  export *
+  module * { export * }
+}
