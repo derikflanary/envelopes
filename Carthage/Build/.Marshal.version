@@ -1,0 +1,27 @@
+{
+  "iOS" : [
+    {
+      "hash" : "d34692e89b538a23914140c0bc40423cc034223c6eb8fabb79c84ad446660c6f",
+      "name" : "Marshal"
+    }
+  ],
+  "commitish" : "1.2.4",
+  "watchOS" : [
+    {
+      "hash" : "2f22a7f63916444fb5ea5f94672206b2c9f98457880047fbfbd0805649f150b5",
+      "name" : "Marshal"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "1938f0f60dc94e84242549d631c82b2f3ce301d6198675d4ce5e2ed2acb79c14",
+      "name" : "Marshal"
+    }
+  ],
+  "Mac" : [
+    {
+      "hash" : "7664e159e482d981e24cf2204cfd1960710e09d20b299b895ca69c1a71584b7d",
+      "name" : "Marshal"
+    }
+  ]
+}

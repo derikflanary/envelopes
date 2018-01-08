@@ -13,7 +13,18 @@
 		EC28756E20014D3C0004B9CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC28756C20014D3C0004B9CC /* Main.storyboard */; };
 		EC28757020014D3C0004B9CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC28756F20014D3C0004B9CC /* Assets.xcassets */; };
 		EC28757320014D3C0004B9CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC28757120014D3C0004B9CC /* LaunchScreen.storyboard */; };
-		EC28757D20014E360004B9CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC28757C20014E360004B9CC /* GoogleService-Info.plist */; };
+		EC28757F200153340004B9CC /* Reactor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC28757E200153340004B9CC /* Reactor.framework */; };
+		EC287583200155360004B9CC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC287582200155360004B9CC /* AppState.swift */; };
+		EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC287585200155D80004B9CC /* FirebaseNetworkAccess.swift */; };
+		EC28758B200159430004B9CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC28758A200159430004B9CC /* GoogleService-Info.plist */; };
+		EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */; };
+		EC28759720015BA20004B9CC /* FirebaseReactorAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */; };
+		EC28759820015BA20004B9CC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC28759120015BA20004B9CC /* Info.plist */; };
+		EC28759920015BA20004B9CC /* GenericEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759220015BA20004B9CC /* GenericEvents.swift */; };
+		EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */; };
+		EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759420015BA20004B9CC /* Firebase+Random.swift */; };
+		EC28759D20015BBA0004B9CC /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759C20015BBA0004B9CC /* Keys.swift */; };
+		EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759F2001C7D50004B9CC /* UserCommands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +38,19 @@
 		EC28756F20014D3C0004B9CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC28757220014D3C0004B9CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC28757420014D3C0004B9CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC28757C20014E360004B9CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EC28757E200153340004B9CC /* Reactor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reactor.framework; path = Carthage/Build/iOS/Reactor.framework; sourceTree = "<group>"; };
+		EC287582200155360004B9CC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		EC287585200155D80004B9CC /* FirebaseNetworkAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNetworkAccess.swift; sourceTree = "<group>"; };
+		EC28758A200159430004B9CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReactorSubscribing.swift; path = Envelopes/FirebaseReactor/ReactorSubscribing.swift; sourceTree = SOURCE_ROOT; };
+		EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseReactorAccess.swift; path = Envelopes/FirebaseReactor/FirebaseReactorAccess.swift; sourceTree = SOURCE_ROOT; };
+		EC28759120015BA20004B9CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Envelopes/FirebaseReactor/Info.plist; sourceTree = SOURCE_ROOT; };
+		EC28759220015BA20004B9CC /* GenericEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericEvents.swift; path = Envelopes/FirebaseReactor/GenericEvents.swift; sourceTree = SOURCE_ROOT; };
+		EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseReactorAuthentication.swift; path = Envelopes/FirebaseReactor/FirebaseReactorAuthentication.swift; sourceTree = SOURCE_ROOT; };
+		EC28759420015BA20004B9CC /* Firebase+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Firebase+Random.swift"; path = "Envelopes/FirebaseReactor/Firebase+Random.swift"; sourceTree = SOURCE_ROOT; };
+		EC28759520015BA20004B9CC /* FirebaseReactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirebaseReactor.h; path = Envelopes/FirebaseReactor/FirebaseReactor.h; sourceTree = SOURCE_ROOT; };
+		EC28759C20015BBA0004B9CC /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		EC28759F2001C7D50004B9CC /* UserCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5057191BDF567FC526F3D3 /* Pods_Envelopes.framework in Frameworks */,
+				EC28757F200153340004B9CC /* Reactor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +69,7 @@
 		08BE6F3FB8D64BFA4573893A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC28757E200153340004B9CC /* Reactor.framework */,
 				26ECEF557B37861F46840382 /* Pods_Envelopes.framework */,
 			);
 			name = Frameworks;
@@ -83,12 +108,63 @@
 				EC28756820014D3C0004B9CC /* AppDelegate.swift */,
 				EC28756A20014D3C0004B9CC /* ViewController.swift */,
 				EC28756C20014D3C0004B9CC /* Main.storyboard */,
-				EC28756F20014D3C0004B9CC /* Assets.xcassets */,
 				EC28757120014D3C0004B9CC /* LaunchScreen.storyboard */,
-				EC28757420014D3C0004B9CC /* Info.plist */,
-				EC28757C20014E360004B9CC /* GoogleService-Info.plist */,
+				EC287581200155280004B9CC /* State */,
+				EC28759E2001C5B80004B9CC /* Commands */,
+				EC287584200155B40004B9CC /* Network */,
+				EC287589200158EE0004B9CC /* Resources */,
 			);
 			path = Envelopes;
+			sourceTree = "<group>";
+		};
+		EC287581200155280004B9CC /* State */ = {
+			isa = PBXGroup;
+			children = (
+				EC287582200155360004B9CC /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		EC287584200155B40004B9CC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EC287585200155D80004B9CC /* FirebaseNetworkAccess.swift */,
+				EC28758E20015B890004B9CC /* FirebaseReactor */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EC287589200158EE0004B9CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EC28756F20014D3C0004B9CC /* Assets.xcassets */,
+				EC28757420014D3C0004B9CC /* Info.plist */,
+				EC28758A200159430004B9CC /* GoogleService-Info.plist */,
+				EC28759C20015BBA0004B9CC /* Keys.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EC28758E20015B890004B9CC /* FirebaseReactor */ = {
+			isa = PBXGroup;
+			children = (
+				EC28759420015BA20004B9CC /* Firebase+Random.swift */,
+				EC28759520015BA20004B9CC /* FirebaseReactor.h */,
+				EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */,
+				EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */,
+				EC28759220015BA20004B9CC /* GenericEvents.swift */,
+				EC28759120015BA20004B9CC /* Info.plist */,
+				EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */,
+			);
+			path = FirebaseReactor;
+			sourceTree = "<group>";
+		};
+		EC28759E2001C5B80004B9CC /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				EC28759F2001C7D50004B9CC /* UserCommands.swift */,
+			);
+			path = Commands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +180,7 @@
 				EC28756320014D3C0004B9CC /* Resources */,
 				7F9A13E4332E0D21F79D987F /* [CP] Embed Pods Frameworks */,
 				C26D879745C436C7A0452528 /* [CP] Copy Pods Resources */,
+				EC287580200153410004B9CC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -154,9 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC28757320014D3C0004B9CC /* LaunchScreen.storyboard in Resources */,
-				EC28757D20014E360004B9CC /* GoogleService-Info.plist in Resources */,
 				EC28757020014D3C0004B9CC /* Assets.xcassets in Resources */,
 				EC28756E20014D3C0004B9CC /* Main.storyboard in Resources */,
+				EC28759820015BA20004B9CC /* Info.plist in Resources */,
+				EC28758B200159430004B9CC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +286,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Envelopes/Pods-Envelopes-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EC287580200153410004B9CC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Reactor.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -215,8 +307,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */,
+				EC287583200155360004B9CC /* AppState.swift in Sources */,
 				EC28756B20014D3C0004B9CC /* ViewController.swift in Sources */,
+				EC28759920015BA20004B9CC /* GenericEvents.swift in Sources */,
 				EC28756920014D3C0004B9CC /* AppDelegate.swift in Sources */,
+				EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */,
+				EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */,
+				EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */,
+				EC28759720015BA20004B9CC /* FirebaseReactorAccess.swift in Sources */,
+				EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */,
+				EC28759D20015BBA0004B9CC /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +457,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Envelopes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derikflanary.Envelopes;
@@ -372,6 +477,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Envelopes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derikflanary.Envelopes;
