@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoundedButton: UIButton {
+@IBDesignable open class RoundedButton: UIButton {
     
     enum RoundedEdgeType {
         case soft
@@ -22,7 +22,7 @@ class RoundedButton: UIButton {
         }
     }
     
-    var isShadowed: Bool = true {
+    @IBInspectable open var isShadowed: Bool = true {
         didSet {
             if isShadowed {
                 addShadow()
@@ -32,7 +32,7 @@ class RoundedButton: UIButton {
         }
     }
     
-    override var isEnabled: Bool {
+    override open var isEnabled: Bool {
         didSet {
             if isEnabled {
                 alpha = 1.0
@@ -42,7 +42,7 @@ class RoundedButton: UIButton {
         }
     }
 
-    override func didMoveToSuperview() {
+    override open func didMoveToSuperview() {
         super.didMoveToSuperview()
         updateEdges()
         addShadow()
@@ -51,7 +51,7 @@ class RoundedButton: UIButton {
     func updateEdges() {
         switch roundedEdgeType {
         case .soft:
-            layer.cornerRadius = 5
+            layer.cornerRadius = frame.height/4
         case .full:
             layer.cornerRadius = frame.height/2
         case .none:
@@ -60,7 +60,7 @@ class RoundedButton: UIButton {
         clipsToBounds = true
     }
     
-    override func setTitle(_ title: String?, for state: UIControlState) {
+    override open func setTitle(_ title: String?, for state: UIControlState) {
         let upTitle = title?.uppercased()
         super.setTitle(upTitle, for: state)
     }

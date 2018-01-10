@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DA5057191BDF567FC526F3D3 /* Pods_Envelopes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26ECEF557B37861F46840382 /* Pods_Envelopes.framework */; };
 		EC28756920014D3C0004B9CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28756820014D3C0004B9CC /* AppDelegate.swift */; };
-		EC28756B20014D3C0004B9CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28756A20014D3C0004B9CC /* ViewController.swift */; };
 		EC28756E20014D3C0004B9CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC28756C20014D3C0004B9CC /* Main.storyboard */; };
 		EC28757020014D3C0004B9CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC28756F20014D3C0004B9CC /* Assets.xcassets */; };
 		EC28757320014D3C0004B9CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC28757120014D3C0004B9CC /* LaunchScreen.storyboard */; };
@@ -49,6 +48,10 @@
 		EC2D14982006C1DD00EC0FE9 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14972006C1DD00EC0FE9 /* UITableView+Extensions.swift */; };
 		EC2D149A2006C1F600EC0FE9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14992006C1F600EC0FE9 /* UIColor+Extensions.swift */; };
 		EC2D149C2006C3D300EC0FE9 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D149B2006C3D300EC0FE9 /* Localized.swift */; };
+		EC2D149E2006D0ED00EC0FE9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D149D2006D0ED00EC0FE9 /* MainViewController.swift */; };
+		EC2D14A12006D16700EC0FE9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14A02006D16700EC0FE9 /* HomeViewController.swift */; };
+		EC2D14A32006D1AA00EC0FE9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2D14A22006D1AA00EC0FE9 /* Home.storyboard */; };
+		EC2D14A52006D55300EC0FE9 /* NewEnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -60,7 +63,6 @@
 		40CFCF9E9FC4B374CDDB39D9 /* Pods-Envelopes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Envelopes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Envelopes/Pods-Envelopes.release.xcconfig"; sourceTree = "<group>"; };
 		EC28756520014D3C0004B9CC /* Envelopes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Envelopes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC28756820014D3C0004B9CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC28756A20014D3C0004B9CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC28756D20014D3C0004B9CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC28756F20014D3C0004B9CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC28757220014D3C0004B9CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,10 @@
 		EC2D14972006C1DD00EC0FE9 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		EC2D14992006C1F600EC0FE9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		EC2D149B2006C3D300EC0FE9 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		EC2D149D2006D0ED00EC0FE9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EC2D14A02006D16700EC0FE9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EC2D14A22006D1AA00EC0FE9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEnvelopeViewController.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -229,9 +235,10 @@
 			children = (
 				EC28756C20014D3C0004B9CC /* Main.storyboard */,
 				EC28757120014D3C0004B9CC /* LaunchScreen.storyboard */,
-				EC28756A20014D3C0004B9CC /* ViewController.swift */,
+				EC2D149D2006D0ED00EC0FE9 /* MainViewController.swift */,
 				EC2D14882006BEBB00EC0FE9 /* Common */,
 				EC2D14872006BEB200EC0FE9 /* Login */,
+				EC2D149F2006D14300EC0FE9 /* Home */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -283,6 +290,16 @@
 				EC2D14892006BEE100EC0FE9 /* RoundedButton.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		EC2D149F2006D14300EC0FE9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EC2D14A22006D1AA00EC0FE9 /* Home.storyboard */,
+				EC2D14A02006D16700EC0FE9 /* HomeViewController.swift */,
+				EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		ECF4059F2006829E008AA999 /* Data */ = {
@@ -360,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC28757320014D3C0004B9CC /* LaunchScreen.storyboard in Resources */,
+				EC2D14A32006D1AA00EC0FE9 /* Home.storyboard in Resources */,
 				EC28757020014D3C0004B9CC /* Assets.xcassets in Resources */,
 				EC28756E20014D3C0004B9CC /* Main.storyboard in Resources */,
 				EC28758B200159430004B9CC /* GoogleService-Info.plist in Resources */,
@@ -438,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC2D148C2006C08900EC0FE9 /* GenericEvents.swift in Sources */,
+				EC2D14A52006D55300EC0FE9 /* NewEnvelopeViewController.swift in Sources */,
 				ECF405A5200686B6008AA999 /* Expense.swift in Sources */,
 				EC2D14952006C18F00EC0FE9 /* RegisteringUser.swift in Sources */,
 				EC2D14772006BD7A00EC0FE9 /* ForgotPasswordButtonCell.swift in Sources */,
@@ -447,7 +466,6 @@
 				EC287583200155360004B9CC /* AppState.swift in Sources */,
 				EC2D145F2006A76D00EC0FE9 /* LoginViewController.swift in Sources */,
 				EC2D148E2006C09200EC0FE9 /* LoginEvents.swift in Sources */,
-				EC28756B20014D3C0004B9CC /* ViewController.swift in Sources */,
 				EC2D14612006A86800EC0FE9 /* LoginState.swift in Sources */,
 				EC2D14922006C11000EC0FE9 /* Diff+Foundation.swift in Sources */,
 				EC2D14842006BE4A00EC0FE9 /* ReusableView.swift in Sources */,
@@ -465,6 +483,7 @@
 				EC2D147E2006BD7A00EC0FE9 /* EmailTextFieldCell.swift in Sources */,
 				EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */,
 				EC2D147C2006BD7A00EC0FE9 /* PasswordTextFieldCell.swift in Sources */,
+				EC2D149E2006D0ED00EC0FE9 /* MainViewController.swift in Sources */,
 				ECF405A1200682B4008AA999 /* Envelope.swift in Sources */,
 				ECF405A32006869B008AA999 /* Weekday.swift in Sources */,
 				EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */,
@@ -472,6 +491,7 @@
 				EC2D14652006BCF700EC0FE9 /* LoginTableViewDataSource.swift in Sources */,
 				EC2D147A2006BD7A00EC0FE9 /* SeperatorCell.swift in Sources */,
 				EC2D14862006BE9200EC0FE9 /* StoryboardInitializable.swift in Sources */,
+				EC2D14A12006D16700EC0FE9 /* HomeViewController.swift in Sources */,
 				EC2D14752006BD7A00EC0FE9 /* ActionButtonCell.swift in Sources */,
 				EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */,
 				EC2D149C2006C3D300EC0FE9 /* Localized.swift in Sources */,

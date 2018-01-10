@@ -88,9 +88,7 @@ enum AuthViewState {
 
     func actionButtonTitle() -> String {
         switch self {
-        case .main:
-            return "Email"
-        case .register:
+        case .main, .register:
             return "Sign Up"
         case .signIn:
             return "Log In"
