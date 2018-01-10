@@ -24,6 +24,9 @@
 		EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759420015BA20004B9CC /* Firebase+Random.swift */; };
 		EC28759D20015BBA0004B9CC /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759C20015BBA0004B9CC /* Keys.swift */; };
 		EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759F2001C7D50004B9CC /* UserCommands.swift */; };
+		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
+		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
+		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		EC28759520015BA20004B9CC /* FirebaseReactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirebaseReactor.h; path = Envelopes/FirebaseReactor/FirebaseReactor.h; sourceTree = SOURCE_ROOT; };
 		EC28759C20015BBA0004B9CC /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		EC28759F2001C7D50004B9CC /* UserCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommands.swift; sourceTree = "<group>"; };
+		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
+		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 				EC28757120014D3C0004B9CC /* LaunchScreen.storyboard */,
 				EC287581200155280004B9CC /* State */,
 				EC28759E2001C5B80004B9CC /* Commands */,
+				ECF4059F2006829E008AA999 /* Data */,
 				EC287584200155B40004B9CC /* Network */,
 				EC287589200158EE0004B9CC /* Resources */,
 			);
@@ -162,6 +169,16 @@
 				EC28759F2001C7D50004B9CC /* UserCommands.swift */,
 			);
 			path = Commands;
+			sourceTree = "<group>";
+		};
+		ECF4059F2006829E008AA999 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ECF405A0200682B4008AA999 /* Envelope.swift */,
+				ECF405A22006869B008AA999 /* Weekday.swift */,
+				ECF405A4200686B6008AA999 /* Expense.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF405A5200686B6008AA999 /* Expense.swift in Sources */,
 				EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */,
 				EC287583200155360004B9CC /* AppState.swift in Sources */,
 				EC28756B20014D3C0004B9CC /* ViewController.swift in Sources */,
@@ -312,6 +330,8 @@
 				EC28756920014D3C0004B9CC /* AppDelegate.swift in Sources */,
 				EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */,
 				EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */,
+				ECF405A1200682B4008AA999 /* Envelope.swift in Sources */,
+				ECF405A32006869B008AA999 /* Weekday.swift in Sources */,
 				EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */,
 				EC28759720015BA20004B9CC /* FirebaseReactorAccess.swift in Sources */,
 				EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */,
