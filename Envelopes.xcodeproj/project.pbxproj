@@ -19,11 +19,36 @@
 		EC28758B200159430004B9CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC28758A200159430004B9CC /* GoogleService-Info.plist */; };
 		EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */; };
 		EC28759720015BA20004B9CC /* FirebaseReactorAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */; };
-		EC28759920015BA20004B9CC /* GenericEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759220015BA20004B9CC /* GenericEvents.swift */; };
+		EC28759920015BA20004B9CC /* GenericFirebaseEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759220015BA20004B9CC /* GenericFirebaseEvents.swift */; };
 		EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */; };
 		EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759420015BA20004B9CC /* Firebase+Random.swift */; };
 		EC28759D20015BBA0004B9CC /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759C20015BBA0004B9CC /* Keys.swift */; };
 		EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759F2001C7D50004B9CC /* UserCommands.swift */; };
+		EC2D145F2006A76D00EC0FE9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D145E2006A76D00EC0FE9 /* LoginViewController.swift */; };
+		EC2D14612006A86800EC0FE9 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14602006A86800EC0FE9 /* LoginState.swift */; };
+		EC2D14652006BCF700EC0FE9 /* LoginTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14642006BCF700EC0FE9 /* LoginTableViewDataSource.swift */; };
+		EC2D14752006BD7A00EC0FE9 /* ActionButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14692006BD7900EC0FE9 /* ActionButtonCell.swift */; };
+		EC2D14762006BD7A00EC0FE9 /* FirstNameTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D146A2006BD7900EC0FE9 /* FirstNameTextFieldCell.swift */; };
+		EC2D14772006BD7A00EC0FE9 /* ForgotPasswordButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D146B2006BD7900EC0FE9 /* ForgotPasswordButtonCell.swift */; };
+		EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D146C2006BD7900EC0FE9 /* LastNameTextFieldCell.swift */; };
+		EC2D14792006BD7A00EC0FE9 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D146D2006BD7900EC0FE9 /* QuestionCell.swift */; };
+		EC2D147A2006BD7A00EC0FE9 /* SeperatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D146E2006BD7900EC0FE9 /* SeperatorCell.swift */; };
+		EC2D147B2006BD7A00EC0FE9 /* HeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D146F2006BD7900EC0FE9 /* HeadlineCell.swift */; };
+		EC2D147C2006BD7A00EC0FE9 /* PasswordTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14702006BD7900EC0FE9 /* PasswordTextFieldCell.swift */; };
+		EC2D147D2006BD7A00EC0FE9 /* SubHeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14712006BD7A00EC0FE9 /* SubHeadlineCell.swift */; };
+		EC2D147E2006BD7A00EC0FE9 /* EmailTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14722006BD7A00EC0FE9 /* EmailTextFieldCell.swift */; };
+		EC2D14802006BD7A00EC0FE9 /* DisclaimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14742006BD7A00EC0FE9 /* DisclaimerCell.swift */; };
+		EC2D14842006BE4A00EC0FE9 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14832006BE4A00EC0FE9 /* ReusableView.swift */; };
+		EC2D14862006BE9200EC0FE9 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14852006BE9200EC0FE9 /* StoryboardInitializable.swift */; };
+		EC2D148A2006BEE100EC0FE9 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14892006BEE100EC0FE9 /* RoundedButton.swift */; };
+		EC2D148C2006C08900EC0FE9 /* GenericEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D148B2006C08900EC0FE9 /* GenericEvents.swift */; };
+		EC2D148E2006C09200EC0FE9 /* LoginEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D148D2006C09200EC0FE9 /* LoginEvents.swift */; };
+		EC2D14902006C0EF00EC0FE9 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D148F2006C0EF00EC0FE9 /* Diff.swift */; };
+		EC2D14922006C11000EC0FE9 /* Diff+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14912006C11000EC0FE9 /* Diff+Foundation.swift */; };
+		EC2D14952006C18F00EC0FE9 /* RegisteringUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14932006C18F00EC0FE9 /* RegisteringUser.swift */; };
+		EC2D14982006C1DD00EC0FE9 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14972006C1DD00EC0FE9 /* UITableView+Extensions.swift */; };
+		EC2D149A2006C1F600EC0FE9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14992006C1F600EC0FE9 /* UIColor+Extensions.swift */; };
+		EC2D149C2006C3D300EC0FE9 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D149B2006C3D300EC0FE9 /* Localized.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -46,12 +71,37 @@
 		EC28758A200159430004B9CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReactorSubscribing.swift; path = Envelopes/FirebaseReactor/ReactorSubscribing.swift; sourceTree = SOURCE_ROOT; };
 		EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseReactorAccess.swift; path = Envelopes/FirebaseReactor/FirebaseReactorAccess.swift; sourceTree = SOURCE_ROOT; };
-		EC28759220015BA20004B9CC /* GenericEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericEvents.swift; path = Envelopes/FirebaseReactor/GenericEvents.swift; sourceTree = SOURCE_ROOT; };
+		EC28759220015BA20004B9CC /* GenericFirebaseEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericFirebaseEvents.swift; path = Envelopes/FirebaseReactor/GenericFirebaseEvents.swift; sourceTree = SOURCE_ROOT; };
 		EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseReactorAuthentication.swift; path = Envelopes/FirebaseReactor/FirebaseReactorAuthentication.swift; sourceTree = SOURCE_ROOT; };
 		EC28759420015BA20004B9CC /* Firebase+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Firebase+Random.swift"; path = "Envelopes/FirebaseReactor/Firebase+Random.swift"; sourceTree = SOURCE_ROOT; };
 		EC28759520015BA20004B9CC /* FirebaseReactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirebaseReactor.h; path = Envelopes/FirebaseReactor/FirebaseReactor.h; sourceTree = SOURCE_ROOT; };
 		EC28759C20015BBA0004B9CC /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		EC28759F2001C7D50004B9CC /* UserCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommands.swift; sourceTree = "<group>"; };
+		EC2D145E2006A76D00EC0FE9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EC2D14602006A86800EC0FE9 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
+		EC2D14642006BCF700EC0FE9 /* LoginTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewDataSource.swift; sourceTree = "<group>"; };
+		EC2D14692006BD7900EC0FE9 /* ActionButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonCell.swift; sourceTree = "<group>"; };
+		EC2D146A2006BD7900EC0FE9 /* FirstNameTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstNameTextFieldCell.swift; sourceTree = "<group>"; };
+		EC2D146B2006BD7900EC0FE9 /* ForgotPasswordButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordButtonCell.swift; sourceTree = "<group>"; };
+		EC2D146C2006BD7900EC0FE9 /* LastNameTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastNameTextFieldCell.swift; sourceTree = "<group>"; };
+		EC2D146D2006BD7900EC0FE9 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		EC2D146E2006BD7900EC0FE9 /* SeperatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeperatorCell.swift; sourceTree = "<group>"; };
+		EC2D146F2006BD7900EC0FE9 /* HeadlineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlineCell.swift; sourceTree = "<group>"; };
+		EC2D14702006BD7900EC0FE9 /* PasswordTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldCell.swift; sourceTree = "<group>"; };
+		EC2D14712006BD7A00EC0FE9 /* SubHeadlineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubHeadlineCell.swift; sourceTree = "<group>"; };
+		EC2D14722006BD7A00EC0FE9 /* EmailTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTextFieldCell.swift; sourceTree = "<group>"; };
+		EC2D14742006BD7A00EC0FE9 /* DisclaimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerCell.swift; sourceTree = "<group>"; };
+		EC2D14832006BE4A00EC0FE9 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		EC2D14852006BE9200EC0FE9 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
+		EC2D14892006BEE100EC0FE9 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		EC2D148B2006C08900EC0FE9 /* GenericEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericEvents.swift; sourceTree = "<group>"; };
+		EC2D148D2006C09200EC0FE9 /* LoginEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEvents.swift; sourceTree = "<group>"; };
+		EC2D148F2006C0EF00EC0FE9 /* Diff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
+		EC2D14912006C11000EC0FE9 /* Diff+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diff+Foundation.swift"; sourceTree = "<group>"; };
+		EC2D14932006C18F00EC0FE9 /* RegisteringUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteringUser.swift; sourceTree = "<group>"; };
+		EC2D14972006C1DD00EC0FE9 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		EC2D14992006C1F600EC0FE9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		EC2D149B2006C3D300EC0FE9 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -110,12 +160,11 @@
 			isa = PBXGroup;
 			children = (
 				EC28756820014D3C0004B9CC /* AppDelegate.swift */,
-				EC28756A20014D3C0004B9CC /* ViewController.swift */,
-				EC28756C20014D3C0004B9CC /* Main.storyboard */,
-				EC28757120014D3C0004B9CC /* LaunchScreen.storyboard */,
 				EC287581200155280004B9CC /* State */,
+				EC2D145D2006A75600EC0FE9 /* UI */,
 				EC28759E2001C5B80004B9CC /* Commands */,
 				ECF4059F2006829E008AA999 /* Data */,
+				EC2D14822006BE2A00EC0FE9 /* Infrastructure */,
 				EC287584200155B40004B9CC /* Network */,
 				EC287589200158EE0004B9CC /* Resources */,
 			);
@@ -126,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				EC287582200155360004B9CC /* AppState.swift */,
+				EC2D14602006A86800EC0FE9 /* LoginState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -146,6 +196,7 @@
 				EC28757420014D3C0004B9CC /* Info.plist */,
 				EC28758A200159430004B9CC /* GoogleService-Info.plist */,
 				EC28759C20015BBA0004B9CC /* Keys.swift */,
+				EC2D149B2006C3D300EC0FE9 /* Localized.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -157,7 +208,7 @@
 				EC28759520015BA20004B9CC /* FirebaseReactor.h */,
 				EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */,
 				EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */,
-				EC28759220015BA20004B9CC /* GenericEvents.swift */,
+				EC28759220015BA20004B9CC /* GenericFirebaseEvents.swift */,
 				EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */,
 			);
 			path = FirebaseReactor;
@@ -166,9 +217,72 @@
 		EC28759E2001C5B80004B9CC /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				EC2D148B2006C08900EC0FE9 /* GenericEvents.swift */,
+				EC2D148D2006C09200EC0FE9 /* LoginEvents.swift */,
 				EC28759F2001C7D50004B9CC /* UserCommands.swift */,
 			);
 			path = Commands;
+			sourceTree = "<group>";
+		};
+		EC2D145D2006A75600EC0FE9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EC28756C20014D3C0004B9CC /* Main.storyboard */,
+				EC28757120014D3C0004B9CC /* LaunchScreen.storyboard */,
+				EC28756A20014D3C0004B9CC /* ViewController.swift */,
+				EC2D14882006BEBB00EC0FE9 /* Common */,
+				EC2D14872006BEB200EC0FE9 /* Login */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EC2D14812006BD8000EC0FE9 /* Login Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC2D14692006BD7900EC0FE9 /* ActionButtonCell.swift */,
+				EC2D14742006BD7A00EC0FE9 /* DisclaimerCell.swift */,
+				EC2D14722006BD7A00EC0FE9 /* EmailTextFieldCell.swift */,
+				EC2D146A2006BD7900EC0FE9 /* FirstNameTextFieldCell.swift */,
+				EC2D146B2006BD7900EC0FE9 /* ForgotPasswordButtonCell.swift */,
+				EC2D146F2006BD7900EC0FE9 /* HeadlineCell.swift */,
+				EC2D146C2006BD7900EC0FE9 /* LastNameTextFieldCell.swift */,
+				EC2D14702006BD7900EC0FE9 /* PasswordTextFieldCell.swift */,
+				EC2D146D2006BD7900EC0FE9 /* QuestionCell.swift */,
+				EC2D146E2006BD7900EC0FE9 /* SeperatorCell.swift */,
+				EC2D14712006BD7A00EC0FE9 /* SubHeadlineCell.swift */,
+			);
+			path = "Login Cells";
+			sourceTree = "<group>";
+		};
+		EC2D14822006BE2A00EC0FE9 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				EC2D14832006BE4A00EC0FE9 /* ReusableView.swift */,
+				EC2D14852006BE9200EC0FE9 /* StoryboardInitializable.swift */,
+				EC2D148F2006C0EF00EC0FE9 /* Diff.swift */,
+				EC2D14912006C11000EC0FE9 /* Diff+Foundation.swift */,
+				EC2D14972006C1DD00EC0FE9 /* UITableView+Extensions.swift */,
+				EC2D14992006C1F600EC0FE9 /* UIColor+Extensions.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		EC2D14872006BEB200EC0FE9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EC2D145E2006A76D00EC0FE9 /* LoginViewController.swift */,
+				EC2D14642006BCF700EC0FE9 /* LoginTableViewDataSource.swift */,
+				EC2D14812006BD8000EC0FE9 /* Login Cells */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EC2D14882006BEBB00EC0FE9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EC2D14892006BEE100EC0FE9 /* RoundedButton.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		ECF4059F2006829E008AA999 /* Data */ = {
@@ -177,6 +291,7 @@
 				ECF405A0200682B4008AA999 /* Envelope.swift */,
 				ECF405A22006869B008AA999 /* Weekday.swift */,
 				ECF405A4200686B6008AA999 /* Expense.swift */,
+				EC2D14932006C18F00EC0FE9 /* RegisteringUser.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -322,19 +437,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2D148C2006C08900EC0FE9 /* GenericEvents.swift in Sources */,
 				ECF405A5200686B6008AA999 /* Expense.swift in Sources */,
+				EC2D14952006C18F00EC0FE9 /* RegisteringUser.swift in Sources */,
+				EC2D14772006BD7A00EC0FE9 /* ForgotPasswordButtonCell.swift in Sources */,
+				EC2D147D2006BD7A00EC0FE9 /* SubHeadlineCell.swift in Sources */,
+				EC2D148A2006BEE100EC0FE9 /* RoundedButton.swift in Sources */,
 				EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */,
 				EC287583200155360004B9CC /* AppState.swift in Sources */,
+				EC2D145F2006A76D00EC0FE9 /* LoginViewController.swift in Sources */,
+				EC2D148E2006C09200EC0FE9 /* LoginEvents.swift in Sources */,
 				EC28756B20014D3C0004B9CC /* ViewController.swift in Sources */,
-				EC28759920015BA20004B9CC /* GenericEvents.swift in Sources */,
+				EC2D14612006A86800EC0FE9 /* LoginState.swift in Sources */,
+				EC2D14922006C11000EC0FE9 /* Diff+Foundation.swift in Sources */,
+				EC2D14842006BE4A00EC0FE9 /* ReusableView.swift in Sources */,
+				EC2D147B2006BD7A00EC0FE9 /* HeadlineCell.swift in Sources */,
+				EC2D14982006C1DD00EC0FE9 /* UITableView+Extensions.swift in Sources */,
+				EC2D149A2006C1F600EC0FE9 /* UIColor+Extensions.swift in Sources */,
+				EC2D14792006BD7A00EC0FE9 /* QuestionCell.swift in Sources */,
+				EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */,
+				EC2D14762006BD7A00EC0FE9 /* FirstNameTextFieldCell.swift in Sources */,
+				EC2D14902006C0EF00EC0FE9 /* Diff.swift in Sources */,
+				EC28759920015BA20004B9CC /* GenericFirebaseEvents.swift in Sources */,
 				EC28756920014D3C0004B9CC /* AppDelegate.swift in Sources */,
+				EC2D14802006BD7A00EC0FE9 /* DisclaimerCell.swift in Sources */,
 				EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */,
+				EC2D147E2006BD7A00EC0FE9 /* EmailTextFieldCell.swift in Sources */,
 				EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */,
+				EC2D147C2006BD7A00EC0FE9 /* PasswordTextFieldCell.swift in Sources */,
 				ECF405A1200682B4008AA999 /* Envelope.swift in Sources */,
 				ECF405A32006869B008AA999 /* Weekday.swift in Sources */,
 				EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */,
 				EC28759720015BA20004B9CC /* FirebaseReactorAccess.swift in Sources */,
+				EC2D14652006BCF700EC0FE9 /* LoginTableViewDataSource.swift in Sources */,
+				EC2D147A2006BD7A00EC0FE9 /* SeperatorCell.swift in Sources */,
+				EC2D14862006BE9200EC0FE9 /* StoryboardInitializable.swift in Sources */,
+				EC2D14752006BD7A00EC0FE9 /* ActionButtonCell.swift in Sources */,
 				EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */,
+				EC2D149C2006C3D300EC0FE9 /* Localized.swift in Sources */,
 				EC28759D20015BBA0004B9CC /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

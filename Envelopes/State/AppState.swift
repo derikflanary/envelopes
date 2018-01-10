@@ -15,8 +15,10 @@ enum App {
 
 struct AppState: State {
 
+    var loginState = LoginState()
+
     mutating func react(to event: Event) {
-        
+        loginState.react(to: event)
     }
 
 }

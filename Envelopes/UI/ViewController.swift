@@ -15,9 +15,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        core.fire(command: CreateNewUser(userId: "89898", networkAccess: FirebaseNetworkAccess.sharedAccess, completion: {
-            print("success")
-        }))
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
