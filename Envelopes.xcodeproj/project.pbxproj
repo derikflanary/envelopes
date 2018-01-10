@@ -19,7 +19,6 @@
 		EC28758B200159430004B9CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC28758A200159430004B9CC /* GoogleService-Info.plist */; };
 		EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */; };
 		EC28759720015BA20004B9CC /* FirebaseReactorAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */; };
-		EC28759820015BA20004B9CC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC28759120015BA20004B9CC /* Info.plist */; };
 		EC28759920015BA20004B9CC /* GenericEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759220015BA20004B9CC /* GenericEvents.swift */; };
 		EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */; };
 		EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28759420015BA20004B9CC /* Firebase+Random.swift */; };
@@ -44,7 +43,6 @@
 		EC28758A200159430004B9CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReactorSubscribing.swift; path = Envelopes/FirebaseReactor/ReactorSubscribing.swift; sourceTree = SOURCE_ROOT; };
 		EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseReactorAccess.swift; path = Envelopes/FirebaseReactor/FirebaseReactorAccess.swift; sourceTree = SOURCE_ROOT; };
-		EC28759120015BA20004B9CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Envelopes/FirebaseReactor/Info.plist; sourceTree = SOURCE_ROOT; };
 		EC28759220015BA20004B9CC /* GenericEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericEvents.swift; path = Envelopes/FirebaseReactor/GenericEvents.swift; sourceTree = SOURCE_ROOT; };
 		EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseReactorAuthentication.swift; path = Envelopes/FirebaseReactor/FirebaseReactorAuthentication.swift; sourceTree = SOURCE_ROOT; };
 		EC28759420015BA20004B9CC /* Firebase+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Firebase+Random.swift"; path = "Envelopes/FirebaseReactor/Firebase+Random.swift"; sourceTree = SOURCE_ROOT; };
@@ -153,7 +151,6 @@
 				EC28759020015BA20004B9CC /* FirebaseReactorAccess.swift */,
 				EC28759320015BA20004B9CC /* FirebaseReactorAuthentication.swift */,
 				EC28759220015BA20004B9CC /* GenericEvents.swift */,
-				EC28759120015BA20004B9CC /* Info.plist */,
 				EC28758F20015BA20004B9CC /* ReactorSubscribing.swift */,
 			);
 			path = FirebaseReactor;
@@ -233,7 +230,6 @@
 				EC28757320014D3C0004B9CC /* LaunchScreen.storyboard in Resources */,
 				EC28757020014D3C0004B9CC /* Assets.xcassets in Resources */,
 				EC28756E20014D3C0004B9CC /* Main.storyboard in Resources */,
-				EC28759820015BA20004B9CC /* Info.plist in Resources */,
 				EC28758B200159430004B9CC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,17 +284,19 @@
 		};
 		EC287580200153410004B9CC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Reactor.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Marshal.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -461,7 +459,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Envelopes/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Envelopes/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derikflanary.Envelopes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -481,7 +479,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Envelopes/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Envelopes/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derikflanary.Envelopes;
 				PRODUCT_NAME = "$(TARGET_NAME)";

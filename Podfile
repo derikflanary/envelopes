@@ -8,7 +8,7 @@ target 'Envelopes' do
   # Pods for Envelopes
 
 pod 'Firebase/Core'
-pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'Firebase/Auth'
 
 end

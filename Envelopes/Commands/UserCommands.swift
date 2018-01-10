@@ -13,13 +13,10 @@ struct CreateNewUser: Command {
 
     let userId: String
     let networkAccess: FirebaseEnvelopesAccess
-    let completion: () -> Void
 
     func execute(state: AppState, core: Core<AppState>) {
         let usersRef = networkAccess.userIdRef(for: userId)
-        networkAccess.getObject(at: usersRef, core: core) { (<#JSONObject?#>) in
-            <#code#>
-        }
+        networkAccess.createObject(at: usersRef, createNewChildId: false, removeId: false, parameters: ["userId": userId], core: core)
     }
 
 }

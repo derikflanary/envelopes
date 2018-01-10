@@ -10,6 +10,6 @@ import Foundation
 
 struct Keys {
 
-    static let users = "users"
+    static let users = "authUsers"
     
 }
