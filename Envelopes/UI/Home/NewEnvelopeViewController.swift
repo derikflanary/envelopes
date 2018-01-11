@@ -49,8 +49,8 @@ class NewEnvelopeViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        popView.layer.cornerRadius = 10
-        popView.clipsToBounds = true
+        guard !popView.clipsToBounds else { return }
+        setupPopView()
     }
 
 
@@ -74,6 +74,16 @@ private extension NewEnvelopeViewController {
         }) { _ in
             self.dismiss(animated: true, completion: nil)
         }
+    }
+
+    func setupPopView() {
+        popView.layer.cornerRadius = 10
+        popView.clipsToBounds = true
+        popView.layer.shadowOpacity = 0.5
+        popView.layer.shadowRadius = 3.0
+        popView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        popView.layer.shadowColor = UIColor.black.cgColor
+        popView.layer.masksToBounds = false
     }
 
 }

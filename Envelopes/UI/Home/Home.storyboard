@@ -112,8 +112,8 @@
                                             <action selector="cancelButtonTapped" destination="ulS-mu-b0L" eventType="touchUpInside" id="1vF-zb-SgY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl2-bs-fGE">
-                                        <rect key="frame" x="0.0" y="515" width="319" height="52"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl2-bs-fGE" customClass="RoundedButton" customModule="Envelopes" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="507" width="303" height="52"/>
                                         <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="bHL-7X-WhR"/>
@@ -122,6 +122,9 @@
                                         <state key="normal" title="Save">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowed" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="saveButtonTapped" destination="ulS-mu-b0L" eventType="touchUpInside" id="NhB-cy-16g"/>
                                         </connections>
@@ -130,10 +133,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="npZ-bT-OgM" secondAttribute="trailing" constant="8" id="2js-PQ-ZBL"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hl2-bs-fGE" secondAttribute="bottom" id="6WT-mC-GpK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hl2-bs-fGE" secondAttribute="bottom" constant="8" id="6WT-mC-GpK"/>
                                     <constraint firstItem="npZ-bT-OgM" firstAttribute="top" secondItem="jIM-74-aVq" secondAttribute="top" constant="8" id="V4s-tk-IFY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hl2-bs-fGE" secondAttribute="trailing" id="iyr-Bv-LbN"/>
-                                    <constraint firstItem="Hl2-bs-fGE" firstAttribute="leading" secondItem="jIM-74-aVq" secondAttribute="leading" id="zxs-bX-bWu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hl2-bs-fGE" secondAttribute="trailing" constant="8" id="iyr-Bv-LbN"/>
+                                    <constraint firstItem="Hl2-bs-fGE" firstAttribute="leading" secondItem="jIM-74-aVq" secondAttribute="leading" constant="8" id="zxs-bX-bWu"/>
                                 </constraints>
                             </view>
                         </subviews>
