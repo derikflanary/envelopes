@@ -56,6 +56,7 @@
 		EC2D14A920070C7900EC0FE9 /* EnvelopesSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14A820070C7900EC0FE9 /* EnvelopesSectionController.swift */; };
 		EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */; };
 		EC2D14AD2007CC9400EC0FE9 /* EnvelopeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */; };
+		EC2D14AF2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -116,6 +117,7 @@
 		EC2D14A820070C7900EC0FE9 /* EnvelopesSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopesSectionController.swift; sourceTree = "<group>"; };
 		EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeCell.swift; sourceTree = "<group>"; };
 		EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnvelopeCell.xib; sourceTree = "<group>"; };
+		EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeDetailsViewController.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */,
 				EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */,
 				EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */,
+				EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				EC2D147B2006BD7A00EC0FE9 /* HeadlineCell.swift in Sources */,
 				EC2D14982006C1DD00EC0FE9 /* UITableView+Extensions.swift in Sources */,
 				EC2D149A2006C1F600EC0FE9 /* UIColor+Extensions.swift in Sources */,
+				EC2D14AF2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift in Sources */,
 				EC2D14792006BD7A00EC0FE9 /* QuestionCell.swift in Sources */,
 				EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */,
 				EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */,

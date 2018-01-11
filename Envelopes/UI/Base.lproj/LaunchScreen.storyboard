@@ -18,25 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDd-Lb-nvs">
-                                <rect key="frame" x="155" y="307.5" width="65" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENVELOPES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaL-MF-r6n">
-                                <rect key="frame" x="105" y="244.5" width="165" height="38.5"/>
+                                <rect key="frame" x="105" y="129" width="165" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelopeFull" translatesAutoresizingMaskIntoConstraints="NO" id="nNe-a0-jzn">
+                                <rect key="frame" x="69" y="215.5" width="236" height="256"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DaL-MF-r6n" firstAttribute="centerX" secondItem="aDd-Lb-nvs" secondAttribute="centerX" id="3dS-vg-7cd"/>
-                            <constraint firstItem="aDd-Lb-nvs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5x3-1V-WGi"/>
-                            <constraint firstItem="aDd-Lb-nvs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="PRL-OH-Un5"/>
-                            <constraint firstItem="aDd-Lb-nvs" firstAttribute="top" secondItem="DaL-MF-r6n" secondAttribute="bottom" constant="24.5" id="oJP-ft-gH8"/>
+                            <constraint firstItem="nNe-a0-jzn" firstAttribute="top" secondItem="DaL-MF-r6n" secondAttribute="bottom" constant="48" id="1sL-Hj-fjx"/>
+                            <constraint firstItem="DaL-MF-r6n" firstAttribute="centerX" secondItem="nNe-a0-jzn" secondAttribute="centerX" id="I8T-Ct-jmJ"/>
+                            <constraint firstItem="nNe-a0-jzn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fFX-kW-sa9"/>
+                            <constraint firstItem="nNe-a0-jzn" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yuK-tl-7Vk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -46,4 +43,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="envelopeFull" width="236" height="256"/>
+    </resources>
 </document>

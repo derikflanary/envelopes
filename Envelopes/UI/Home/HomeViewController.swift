@@ -57,6 +57,10 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
         core.remove(subscriber: self)
     }
 
+    func envelopeTapped() {
+        performSegue(withIdentifier: "showEnvelope", sender: self)
+    }
+
 }
 
 // MARK: - IGListkit functions
@@ -77,7 +81,11 @@ extension HomeViewController: ListAdapterDataSource {
     }
 
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return EnvelopesSectionController()
+        let sectionController = EnvelopesSectionController()
+        sectionController.sectionSelectionCompletion = {
+            self.envelopeTapped()
+        }
+        return sectionController
     }
 
     func emptyView(for listAdapter: ListAdapter) -> UIView? {

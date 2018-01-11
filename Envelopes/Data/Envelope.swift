@@ -26,6 +26,7 @@ struct Envelope {
     var periodicity: Periodicity = .monthly
     var recurringAmount: Double = 10
     var totalAmount: Double = 0
+    var goal: Double = 0
     var expenses = [Expense]()
 
     init(id: String) {
