@@ -13,6 +13,9 @@ class NewEnvelopeViewController: UIViewController {
 
     var core = App.sharedCore
 
+    override func viewDidLoad() {
+        navigationItem.largeTitleDisplayMode = .never
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

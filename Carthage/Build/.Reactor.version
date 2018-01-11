@@ -1,26 +1,26 @@
 {
   "iOS" : [
     {
-      "hash" : "ebdbe8dcec44f82a10b45159af98d62bc0c6672fb6e90aa47c1ed4af340168cf",
+      "hash" : "4e40f5947b02a6eb5f73045d6c198edb5fcd72659018cdab4c43c203fd6ce241",
       "name" : "Reactor"
     }
   ],
   "commitish" : "0.9",
   "watchOS" : [
     {
-      "hash" : "bcd51d5b20beb19c6ce2d806b4160651675fe33a6f5be9a114de8937803eafec",
+      "hash" : "3695dbe7ff0c59e16810063f137ea43e0df68847097737641f8ca0e61ea8654d",
       "name" : "Reactor"
     }
   ],
   "tvOS" : [
     {
-      "hash" : "57f719f4f172c3a85dad8237adf468bf01678c8397c06d09458354fcbd00c7db",
+      "hash" : "b976478a9eaa42941b761864ab3bb21b0e0579dd6bea4b03f094a238052a9172",
       "name" : "Reactor"
     }
   ],
   "Mac" : [
     {
-      "hash" : "32b2b9c196afece7049c82efe71edfa945e40e8961ed4209d22e5adf4be2f81a",
+      "hash" : "57b16788dfaec890a954b9291bf408b830453c755c99c532be6de9fb41c24ef9",
       "name" : "Reactor"
     }
   ]

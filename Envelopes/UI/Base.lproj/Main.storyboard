@@ -38,7 +38,7 @@
         <!--Login View Controller-->
         <scene sceneID="eFr-uq-bhT">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="aa0-us-Eup" customClass="LoginViewController" customModule="foos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="aa0-us-Eup" customClass="LoginViewController" customModule="Envelopes" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R56-6x-1d5"/>
                         <viewControllerLayoutGuide type="bottom" id="4gm-c3-QSn"/>
@@ -422,9 +422,6 @@
                             <outletCollection property="gestureRecognizers" destination="bSq-rK-0by" appends="YES" id="wfy-fW-70p"/>
                         </connections>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="loginTableView" destination="IUT-OS-Kqt" id="ok7-D9-WnJ"/>
                         <outlet property="loginTableViewDatasource" destination="dUN-pS-nDo" id="dDE-TD-sLm"/>

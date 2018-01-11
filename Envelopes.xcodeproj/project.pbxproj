@@ -52,6 +52,10 @@
 		EC2D14A12006D16700EC0FE9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14A02006D16700EC0FE9 /* HomeViewController.swift */; };
 		EC2D14A32006D1AA00EC0FE9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2D14A22006D1AA00EC0FE9 /* Home.storyboard */; };
 		EC2D14A52006D55300EC0FE9 /* NewEnvelopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */; };
+		EC2D14A72006DAE600EC0FE9 /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2D14A62006DAE600EC0FE9 /* IGListKit.framework */; };
+		EC2D14A920070C7900EC0FE9 /* EnvelopesSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14A820070C7900EC0FE9 /* EnvelopesSectionController.swift */; };
+		EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */; };
+		EC2D14AD2007CC9400EC0FE9 /* EnvelopeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -108,6 +112,10 @@
 		EC2D14A02006D16700EC0FE9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EC2D14A22006D1AA00EC0FE9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEnvelopeViewController.swift; sourceTree = "<group>"; };
+		EC2D14A62006DAE600EC0FE9 /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
+		EC2D14A820070C7900EC0FE9 /* EnvelopesSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopesSectionController.swift; sourceTree = "<group>"; };
+		EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeCell.swift; sourceTree = "<group>"; };
+		EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnvelopeCell.xib; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -120,6 +128,7 @@
 			files = (
 				DA5057191BDF567FC526F3D3 /* Pods_Envelopes.framework in Frameworks */,
 				EC28757F200153340004B9CC /* Reactor.framework in Frameworks */,
+				EC2D14A72006DAE600EC0FE9 /* IGListKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +138,7 @@
 		08BE6F3FB8D64BFA4573893A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC2D14A62006DAE600EC0FE9 /* IGListKit.framework */,
 				EC28757E200153340004B9CC /* Reactor.framework */,
 				26ECEF557B37861F46840382 /* Pods_Envelopes.framework */,
 			);
@@ -297,6 +307,9 @@
 			children = (
 				EC2D14A22006D1AA00EC0FE9 /* Home.storyboard */,
 				EC2D14A02006D16700EC0FE9 /* HomeViewController.swift */,
+				EC2D14A820070C7900EC0FE9 /* EnvelopesSectionController.swift */,
+				EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */,
+				EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */,
 				EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */,
 			);
 			path = Home;
@@ -381,6 +394,7 @@
 				EC28757020014D3C0004B9CC /* Assets.xcassets in Resources */,
 				EC28756E20014D3C0004B9CC /* Main.storyboard in Resources */,
 				EC28758B200159430004B9CC /* GoogleService-Info.plist in Resources */,
+				EC2D14AD2007CC9400EC0FE9 /* EnvelopeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +454,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Reactor.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Marshal.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IGListKit.framework",
 			);
 			outputPaths = (
 			);
@@ -474,9 +489,11 @@
 				EC2D149A2006C1F600EC0FE9 /* UIColor+Extensions.swift in Sources */,
 				EC2D14792006BD7A00EC0FE9 /* QuestionCell.swift in Sources */,
 				EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */,
+				EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */,
 				EC2D14762006BD7A00EC0FE9 /* FirstNameTextFieldCell.swift in Sources */,
 				EC2D14902006C0EF00EC0FE9 /* Diff.swift in Sources */,
 				EC28759920015BA20004B9CC /* GenericFirebaseEvents.swift in Sources */,
+				EC2D14A920070C7900EC0FE9 /* EnvelopesSectionController.swift in Sources */,
 				EC28756920014D3C0004B9CC /* AppDelegate.swift in Sources */,
 				EC2D14802006BD7A00EC0FE9 /* DisclaimerCell.swift in Sources */,
 				EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */,

@@ -17,22 +17,34 @@ enum Periodicity {
 
 struct Envelope {
 
+    var id: String
     var createdAt = Date()
     var modifiedAt = Date()
-    var isActive: Bool
-    var name: String
-    var ownerId: String
-    var periodicity: Periodicity
-    var recurringAmount: Double
-    var totalAmount: Double
-    var expences = [Expense]()
+    var isActive: Bool = true
+    var name: String = "Name"
+    var ownerId: String = "1"
+    var periodicity: Periodicity = .monthly
+    var recurringAmount: Double = 10
+    var totalAmount: Double = 0
+    var expenses = [Expense]()
 
+    init(id: String) {
+        self.id = id
+    }
 }
 
 extension Envelope: JSONMarshaling {
 
     func jsonObject() -> JSONObject {
         return [:]
+    }
+
+}
+
+extension Envelope: Equatable {
+
+    static func ==(lhs: Envelope, rhs: Envelope) -> Bool {
+        return lhs.id == rhs.id
     }
 
 }

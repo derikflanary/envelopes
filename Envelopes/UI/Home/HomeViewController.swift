@@ -8,6 +8,7 @@
 
 import UIKit
 import Reactor
+import IGListKit
 
 final class HomeViewController: UIViewController, StoryboardInitializable {
 
@@ -25,18 +26,29 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
 
     var core = App.sharedCore
 
+    lazy var adapter: ListAdapter = {
+        return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
+    }()
+
     @IBOutlet weak var newButton: RoundedButton!
+    @IBOutlet weak var collectionView: UICollectionView!
 
-
+    
     // MARK: View life cycle
 
     override func viewDidLoad() {
-        newButton.roundedEdgeType = .full
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.darkText,
+             NSAttributedStringKey.font: UIFont.systemFont(ofSize: 32, weight: .thin)]
+        adapter.collectionView = collectionView
+        adapter.dataSource = self
+        newButton.roundedEdgeType = .full
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        newButton.isShadowed = true
         core.add(subscriber: self)
     }
 
@@ -47,9 +59,36 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
 
 }
 
+// MARK: - IGListkit functions
+
+extension HomeViewController: ListAdapterDataSource {
+
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        var objects = [ListDiffable]()
+        let fillerCellIds = [Int](1...5)
+        var envelopes = [Envelope]()
+        for id in fillerCellIds {
+            envelopes.append(Envelope(id: String(id)))
+        }
+        objects = envelopes.flatMap { envelope in
+            return EnvelopeSection(envelope: envelope)
+        }
+        return objects
+    }
+
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return EnvelopesSectionController()
+    }
+
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
+    }
+
+}
+
 extension HomeViewController: Subscriber {
 
     func update(with state: AppState) {
-
+        adapter.performUpdates(animated: true, completion: nil)
     }
 }

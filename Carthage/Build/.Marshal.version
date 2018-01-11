@@ -1,26 +1,26 @@
 {
   "iOS" : [
     {
-      "hash" : "d34692e89b538a23914140c0bc40423cc034223c6eb8fabb79c84ad446660c6f",
+      "hash" : "49e61155305d6bfadc5e3148b194938545a4bc6fb56a54c34ef8d829a2e993fe",
       "name" : "Marshal"
     }
   ],
   "commitish" : "1.2.4",
   "watchOS" : [
     {
-      "hash" : "2f22a7f63916444fb5ea5f94672206b2c9f98457880047fbfbd0805649f150b5",
+      "hash" : "d31eaf399f4b3d9afa0133018ceb92242058a6ae60417c67564f89aa4a221e48",
       "name" : "Marshal"
     }
   ],
   "tvOS" : [
     {
-      "hash" : "1938f0f60dc94e84242549d631c82b2f3ce301d6198675d4ce5e2ed2acb79c14",
+      "hash" : "0f4f5aea02e6064d4efbc754845f17e06fa3a0487f0969de14c23af83fcb43c6",
       "name" : "Marshal"
     }
   ],
   "Mac" : [
     {
-      "hash" : "7664e159e482d981e24cf2204cfd1960710e09d20b299b895ca69c1a71584b7d",
+      "hash" : "4feb07010eb9e5634c6cd3f45803be69d2e08a4595485dc833e571581955c68e",
       "name" : "Marshal"
     }
   ]

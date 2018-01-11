@@ -48,7 +48,7 @@ import UIKit
         addShadow()
     }
     
-    func updateEdges() {
+    private func updateEdges() {
         switch roundedEdgeType {
         case .soft:
             layer.cornerRadius = frame.height/4
@@ -65,15 +65,15 @@ import UIKit
         super.setTitle(upTitle, for: state)
     }
         
-    func addShadow() {
-        layer.shadowOpacity = 0.1
-        layer.shadowRadius = 1.0
+    private func addShadow() {
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 2.0
         layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowColor = UIColor.black.cgColor
         layer.masksToBounds = false
     }
     
-    func removeShadow() {
+    private func removeShadow() {
         layer.shadowOpacity = 0.0
         layer.shadowRadius = 0.0
         layer.masksToBounds = true
