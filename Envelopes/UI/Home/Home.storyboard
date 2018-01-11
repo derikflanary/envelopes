@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,19 +28,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vlr-Sb-tkf">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXj-1a-UEc" customClass="RoundedButton" customModule="Envelopes" customModuleProvider="target">
-                                <rect key="frame" x="299" y="591" width="60" height="60"/>
+                                <rect key="frame" x="303" y="595" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="IJE-iG-GEu"/>
@@ -58,11 +50,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EJU-Ih-YWm" firstAttribute="bottom" secondItem="eXj-1a-UEc" secondAttribute="bottom" constant="16" id="NVX-Kf-lBm"/>
+                            <constraint firstItem="EJU-Ih-YWm" firstAttribute="bottom" secondItem="eXj-1a-UEc" secondAttribute="bottom" constant="12" id="NVX-Kf-lBm"/>
                             <constraint firstItem="ftF-RV-Bnp" firstAttribute="trailing" secondItem="EJU-Ih-YWm" secondAttribute="trailing" id="bhl-Pw-Eit"/>
                             <constraint firstItem="ftF-RV-Bnp" firstAttribute="leading" secondItem="EJU-Ih-YWm" secondAttribute="leading" id="pjo-aD-Phm"/>
                             <constraint firstItem="ftF-RV-Bnp" firstAttribute="top" secondItem="EJU-Ih-YWm" secondAttribute="top" id="rT4-hl-KEb"/>
-                            <constraint firstItem="EJU-Ih-YWm" firstAttribute="trailing" secondItem="eXj-1a-UEc" secondAttribute="trailing" constant="16" id="tt9-r6-Quk"/>
+                            <constraint firstItem="EJU-Ih-YWm" firstAttribute="trailing" secondItem="eXj-1a-UEc" secondAttribute="trailing" constant="12" id="tt9-r6-Quk"/>
                             <constraint firstItem="ftF-RV-Bnp" firstAttribute="bottom" secondItem="EJU-Ih-YWm" secondAttribute="bottom" id="xuS-tY-ASc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EJU-Ih-YWm"/>
@@ -72,11 +64,63 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="ftF-RV-Bnp" id="Pt1-NS-qal"/>
+                        <outlet property="emptyStateView" destination="f2g-qt-wM8" id="RTG-li-lA1"/>
                         <outlet property="newButton" destination="eXj-1a-UEc" id="B0C-Ir-y7P"/>
                         <segue destination="IwK-Nj-Ps6" kind="show" identifier="showEnvelope" id="U47-1e-GGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thx-aM-Igl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" id="f2g-qt-wM8">
+                    <rect key="frame" x="0.0" y="0.0" width="371" height="586"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No envelopes? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFW-XB-NBo">
+                            <rect key="frame" x="127" y="324" width="117" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well, let's get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7r-o6-pCA">
+                            <rect key="frame" x="102" y="353" width="167" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7W-PF-yt5" customClass="RoundedButton" customModule="Envelopes" customModuleProvider="target">
+                            <rect key="frame" x="37" y="390" width="297" height="52"/>
+                            <color key="backgroundColor" red="0.0" green="0.47058823529411764" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="SOh-eD-jLB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                            <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                            <state key="normal" title="Create an new Envelope">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowed" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <segue destination="ulS-mu-b0L" kind="presentation" modalPresentationStyle="overFullScreen" id="ga1-Jl-IVm"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelopeBlur" translatesAutoresizingMaskIntoConstraints="NO" id="gFk-Sm-dOE">
+                            <rect key="frame" x="60" y="134" width="250" height="174"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="h7W-PF-yt5" firstAttribute="top" secondItem="u7r-o6-pCA" secondAttribute="bottom" constant="16" id="5f9-2X-0ag"/>
+                        <constraint firstItem="u7r-o6-pCA" firstAttribute="centerX" secondItem="BdF-Qg-47R" secondAttribute="centerX" id="7ga-SX-Fr7"/>
+                        <constraint firstItem="u7r-o6-pCA" firstAttribute="top" secondItem="KFW-XB-NBo" secondAttribute="bottom" constant="8" id="BCQ-Ae-DSH"/>
+                        <constraint firstItem="gFk-Sm-dOE" firstAttribute="centerX" secondItem="BdF-Qg-47R" secondAttribute="centerX" id="Fd6-bQ-WgG"/>
+                        <constraint firstItem="u7r-o6-pCA" firstAttribute="centerY" secondItem="BdF-Qg-47R" secondAttribute="centerY" multiplier="1.2" id="Z3n-hT-TaF"/>
+                        <constraint firstItem="h7W-PF-yt5" firstAttribute="centerX" secondItem="BdF-Qg-47R" secondAttribute="centerX" id="Z57-jh-XAI"/>
+                        <constraint firstItem="KFW-XB-NBo" firstAttribute="top" secondItem="gFk-Sm-dOE" secondAttribute="bottom" constant="16" id="beP-jO-0fJ"/>
+                        <constraint firstItem="KFW-XB-NBo" firstAttribute="centerX" secondItem="BdF-Qg-47R" secondAttribute="centerX" id="hId-el-0fG"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="BdF-Qg-47R"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="700" y="-45.42728635682159"/>
         </scene>
@@ -210,8 +254,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="envelopeBlur" width="250" height="174"/>
         <image name="envelopeFull" width="236" height="256"/>
         <image name="plus" width="40" height="42"/>
         <image name="x" width="20" height="19"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ga1-Jl-IVm"/>
+    </inferredMetricsTieBreakers>
 </document>

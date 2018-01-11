@@ -29,6 +29,10 @@ struct Added<T>: Event {
     var item: T
 }
 
+struct Deleted<T>: Event {
+    var item: T
+}
+
 struct Reset<T>: Reactor.Event {
     var customReset: ((T) -> T)?
 }

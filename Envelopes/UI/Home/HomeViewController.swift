@@ -32,6 +32,7 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
 
     @IBOutlet weak var newButton: RoundedButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var emptyStateView: UIView!
 
     
     // MARK: View life cycle
@@ -69,6 +70,7 @@ extension HomeViewController: ListAdapterDataSource {
 
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var objects = [ListDiffable]()
+        return objects
         let fillerCellIds = [Int](1...5)
         var envelopes = [Envelope]()
         for id in fillerCellIds {
@@ -77,7 +79,6 @@ extension HomeViewController: ListAdapterDataSource {
         objects = envelopes.flatMap { envelope in
             return EnvelopeSection(envelope: envelope)
         }
-        return objects
     }
 
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
@@ -89,7 +90,7 @@ extension HomeViewController: ListAdapterDataSource {
     }
 
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        return nil
+        return emptyStateView
     }
 
 }
