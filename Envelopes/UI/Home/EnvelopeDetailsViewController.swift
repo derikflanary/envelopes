@@ -15,6 +15,10 @@ class EnvelopeDetailsViewController: UIViewController {
     var titleTextField = UITextField(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
     var tapGestureRecognizer = UITapGestureRecognizer()
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var envelopeDetailsDataSource: EnvelopeDetailsDataSource!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.font = UIFont.systemFont(ofSize: 21, weight: .light)
@@ -25,6 +29,9 @@ class EnvelopeDetailsViewController: UIViewController {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
+        envelopeDetailsDataSource.envelope = core.state.envelopeState.selectedEnvelope
+        tableView.reloadData()
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -51,6 +58,7 @@ extension EnvelopeDetailsViewController: UITextFieldDelegate {
         envelope.name = text
         core.fire(event: Updated(item: envelope))
     }
+
 }
 
 extension EnvelopeDetailsViewController: Subscriber {
@@ -58,6 +66,8 @@ extension EnvelopeDetailsViewController: Subscriber {
     func update(with state: AppState) {
         guard let envelope = state.envelopeState.selectedEnvelope else { return }
         titleTextField.text = envelope.name
+        envelopeDetailsDataSource.envelope = envelope
+        tableView.reloadData()
     }
 
 }

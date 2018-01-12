@@ -12,32 +12,57 @@ import UIKit
 class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
 
     enum Row {
-        case details
-        case amount
+        case total
+        case recurring
         case frequency
         case goal
         case expenses
 
         static var allValues: [Row] {
-            return [.details, .amount, .frequency, .goal, .expenses]
+            return [.total, .recurring, .frequency, .goal, .expenses]
         }
 
     }
 
-    var newEnvelope: NewEnvelope?
+    var envelope: Envelope?
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if envelope == nil {
+            return 0
+        } else {
+            return Row.allValues.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
+        switch Row.allValues[indexPath.row] {
+        case .total:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as TotalCell
+            cell.configure(with: envelope)
             return cell
-        } else {
+            
+        case .recurring:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
+            cell.configure(with: envelope, detailType: .recurring)
+            return cell
+
+        case .frequency:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
+            cell.configure(with: envelope, detailType: .frequency)
+            return cell
+
+        case .goal:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
+            cell.configure(with: envelope, detailType: .goal)
+            return cell
+
+        case .expenses:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ExpensesCell
+            cell.configure(with: envelope)
             return cell
         }
+
     }
 
 }

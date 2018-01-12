@@ -1,5 +1,5 @@
 //
-//  ExpensesCell.swift
+//  TotalCell.swift
 //  Envelopes
 //
 //  Created by Derik Flanary on 1/12/18.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ExpensesCell: UITableViewCell, ReusableView {
+class TotalCell: UITableViewCell, ReusableView {
 
-    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var label: UILabel!
 
     func configure(with envelope: Envelope?) {
         guard let envelope = envelope else { return }
-        countLabel.text = String(envelope.expenses.count)
+        label.text = String(envelope.totalAmount).dollarAmount()
     }
 
 }

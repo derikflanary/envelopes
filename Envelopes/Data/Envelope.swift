@@ -40,6 +40,7 @@ struct Envelope {
     var goal: Int = 0
     var expenses = [Expense]()
 
+
     init(newEnvelope: NewEnvelope) {
         ownerId = "user"
         name = newEnvelope.name!
@@ -65,4 +66,14 @@ extension Envelope: Equatable {
         return lhs.id == rhs.id
     }
 
+}
+
+extension String {
+
+    func dollarAmount() -> String {
+        var dollarString = self
+        dollarString.insert("$", at: self.startIndex)
+        return dollarString
+    }
+    
 }

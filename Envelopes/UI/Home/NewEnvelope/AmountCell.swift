@@ -16,8 +16,7 @@ class AmountCell: UITableViewCell, ReusableView {
 
     func configue(with newEnvelope: NewEnvelope?) {
         guard let newEnvelope = newEnvelope else { return }
-        var amountText = String(newEnvelope.recurringAmount)
-        amountText.insert("$", at: amountText.startIndex)
+        let amountText = String(newEnvelope.recurringAmount).dollarAmount()
         textField.text = amountText
     }
 
@@ -26,10 +25,9 @@ class AmountCell: UITableViewCell, ReusableView {
     }
     
     @IBAction func textFieldEditingDidEnd(_ sender: Any) {
-        guard var text = textField.text else { return }
+        guard let text = textField.text else { return }
+        textField.text = text.dollarAmount()
         let amount = Int(text)
-        text.insert("$", at: text.startIndex)
-        textField.text = text
         var newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
         if let amount = amount {
             newEnvelope.recurringAmount = amount
