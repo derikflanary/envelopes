@@ -25,6 +25,9 @@ class EnvelopeSection: NSObject, ListDiffable {
     public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
         guard let other = object as? EnvelopeSection else { return false }
         return envelope.id == other.envelope.id &&
+        envelope.totalAmount == other.envelope.totalAmount &&
+        envelope.name == other.envelope.name &&
+        envelope.goal == other.envelope.goal &&
         envelope.totalAmount == other.envelope.totalAmount
     }
 

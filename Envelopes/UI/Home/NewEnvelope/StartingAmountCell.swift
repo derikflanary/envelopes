@@ -1,48 +1,30 @@
 //
-//  GoalCell.swift
+//  StartingAmountCell.swift
 //  Envelopes
 //
-//  Created by Derik Flanary on 1/11/18.
+//  Created by Derik Flanary on 1/12/18.
 //  Copyright © 2018 Dezvolta. All rights reserved.
 //
 
 import UIKit
 
-class GoalCell: UITableViewCell, ReusableView {
+class StartingAmountCell: UITableViewCell, ReusableView {
 
     var core = App.sharedCore
-
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var switcher: UISwitch!
 
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        disableTextField()
+    func configue(with newEnvelope: NewEnvelope?) {
+        guard let newEnvelope = newEnvelope else { return }
+        var amountText = String(newEnvelope.startingAmount)
+        amountText.insert("$", at: amountText.startIndex)
+        textField.text = amountText
     }
 
-    func disableTextField() {
-        textField.isEnabled = false
-        textField.alpha = 0.1
-    }
-
-    func enableTextField() {
-        textField.isEnabled = true
-        textField.alpha = 1.0
-    }
-
-    @IBAction func switcherDidChange(_ sender: Any) {
-        if switcher.isOn {
-            enableTextField()
-        } else {
-            disableTextField()
-        }
-    }
-    
     @IBAction func textFieldDidBeginEditing(_ sender: Any) {
         textField.text = nil
     }
-    
+
     @IBAction func textFieldDidEndEditing(_ sender: Any) {
         guard var text = textField.text else { return }
         let amount = Int(text)
@@ -50,7 +32,7 @@ class GoalCell: UITableViewCell, ReusableView {
         textField.text = text
         var newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
         if let amount = amount {
-            newEnvelope.goal = amount
+            newEnvelope.startingAmount = amount
             core.fire(event: Updated(item: newEnvelope))
         }
     }

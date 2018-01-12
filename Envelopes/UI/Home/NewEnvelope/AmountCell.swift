@@ -14,6 +14,13 @@ class AmountCell: UITableViewCell, ReusableView {
     @IBOutlet weak var textField: UITextField!
 
 
+    func configue(with newEnvelope: NewEnvelope?) {
+        guard let newEnvelope = newEnvelope else { return }
+        var amountText = String(newEnvelope.recurringAmount)
+        amountText.insert("$", at: amountText.startIndex)
+        textField.text = amountText
+    }
+
     @IBAction func textFieldEditingDidBegin(_ sender: Any) {
         textField.text = nil
     }
@@ -29,4 +36,5 @@ class AmountCell: UITableViewCell, ReusableView {
             core.fire(event: Updated(item: newEnvelope))
         }
     }
+    
 }

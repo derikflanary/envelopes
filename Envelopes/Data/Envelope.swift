@@ -13,6 +13,17 @@ enum Periodicity {
     case daily
     case weekly(Weekday)
     case monthly
+
+    var displayName: String {
+        switch self {
+        case .daily:
+            return "Daily"
+        case .weekly(_):
+            return "Weekly"
+        case .monthly:
+            return "Monthly"
+        }
+    }
 }
 
 struct Envelope {
@@ -35,6 +46,7 @@ struct Envelope {
         periodicity = newEnvelope.periodicity
         recurringAmount = newEnvelope.recurringAmount
         goal = newEnvelope.goal
+        totalAmount = newEnvelope.startingAmount
     }
     
 }

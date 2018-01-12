@@ -30,6 +30,9 @@ struct EnvelopeState: State {
             if let index = envelopes.index(of: event.item) {
                 envelopes[index] = event.item
             }
+            if selectedEnvelope != nil {
+                selectedEnvelope = event.item
+            }
         case let event as Deleted<Envelope>:
             if let index = envelopes.index(of: event.item) {
                 envelopes.remove(at: index)

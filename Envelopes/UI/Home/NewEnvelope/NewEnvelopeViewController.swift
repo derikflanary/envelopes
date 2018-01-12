@@ -118,7 +118,58 @@ private extension NewEnvelopeViewController {
         }
     }
 
+    func showFrequencySelectionView() {
+        let alertController = UIAlertController(title: "Frequency", message: "Select how often you want to recurringly add funds to your envelope.", preferredStyle: .actionSheet)
+        let monthly = UIAlertAction(title: "Monthly", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.monthly))
+        })
+        let weekly = UIAlertAction(title: "Weekly", style: .default, handler: { action in
+            self.showWeekdaySelectionView()
+        })
+        let daily = UIAlertAction(title: "Daily", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.daily))
+        })
+        alertController.addAction(monthly)
+        alertController.addAction(weekly)
+        alertController.addAction(daily)
+        show(alertController, sender: self)
+    }
+
+    func showWeekdaySelectionView() {
+        let alertController = UIAlertController(title: "Frequency", message: "Select how often you want to recurringly add funds to your envelope.", preferredStyle: .actionSheet)
+        let sunday = UIAlertAction(title: "Sunday", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.weekly(.sunday)))
+        })
+        let monday = UIAlertAction(title: "Monday", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.weekly(.monday)))
+        })
+        let tuesday = UIAlertAction(title: "Tuesday", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.weekly(.tuesday)))
+        })
+        let wednesday = UIAlertAction(title: "Wednesday", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.weekly(.wednesday)))
+        })
+        let thursday = UIAlertAction(title: "Thursday", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.weekly(.thursday)))
+        })
+        let friday = UIAlertAction(title: "Friday", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.weekly(.friday)))
+        })
+        let saturday = UIAlertAction(title: "Saturday", style: .default, handler: { action in
+            self.core.fire(event: Selected(item: Periodicity.weekly(.saturday)))
+        })
+        alertController.addAction(sunday)
+        alertController.addAction(monday)
+        alertController.addAction(tuesday)
+        alertController.addAction(wednesday)
+        alertController.addAction(thursday)
+        alertController.addAction(friday)
+        alertController.addAction(saturday)
+        show(alertController, sender: self)
+    }
+
 }
+
 
 extension NewEnvelopeViewController: UITableViewDelegate {
 
@@ -126,31 +177,22 @@ extension NewEnvelopeViewController: UITableViewDelegate {
         let row = NewEnvelopeDataSource.Row.allValues[indexPath.row]
         switch row {
         case .frequency:
-            let alertController = UIAlertController(title: "Frequency", message: "Select how often you want to recurringly add funds to your envelope.", preferredStyle: .actionSheet)
-            let monthly = UIAlertAction(title: "Monthly", style: .default, handler: { action in
-                self.core.fire(event: Selected(item: Periodicity.monthly))
-            })
-            let weekly = UIAlertAction(title: "Weekly", style: .default, handler: { action in
-                self.core.fire(event: Selected(item: Periodicity.weekly(.sunday)))
-            })
-            let daily = UIAlertAction(title: "Daily", style: .default, handler: { action in
-                self.core.fire(event: Selected(item: Periodicity.daily))
-            })
-            alertController.addAction(monthly)
-            alertController.addAction(weekly)
-            alertController.addAction(daily)
-            show(alertController, sender: self)
+            showFrequencySelectionView()
         default:
             break
         }
     }
+
 }
 
 extension NewEnvelopeViewController: Subscriber {
 
     func update(with state: AppState) {
+        let newEnvelope = state.envelopeState.newEnvelopeState.newEnvelope
+        newEnvelopeDataSource.newEnvelope = newEnvelope
         tableView.reloadData()
-        if state.envelopeState.newEnvelopeState.newEnvelope.isReady {
+
+        if newEnvelope.isReady {
             enableSaveButton()
         } else {
             disableSaveButton()

@@ -67,6 +67,10 @@
 		EC2D14BF20085A5400EC0FE9 /* NewEnvelopeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14BE20085A5400EC0FE9 /* NewEnvelopeState.swift */; };
 		EC2D14C120085AB100EC0FE9 /* NewEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14C020085AB100EC0FE9 /* NewEnvelope.swift */; };
 		EC2D14C32008608900EC0FE9 /* EnvelopeCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14C22008608900EC0FE9 /* EnvelopeCommands.swift */; };
+		EC2D14C62009614500EC0FE9 /* ExpensesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14C52009614500EC0FE9 /* ExpensesCell.swift */; };
+		EC2D14C82009616200EC0FE9 /* EnvelopeDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14C72009616200EC0FE9 /* EnvelopeDetailsDataSource.swift */; };
+		EC2D14CA2009632A00EC0FE9 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */; };
+		EC2D14CC2009682C00EC0FE9 /* StartingAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14CB2009682C00EC0FE9 /* StartingAmountCell.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -138,6 +142,10 @@
 		EC2D14BE20085A5400EC0FE9 /* NewEnvelopeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEnvelopeState.swift; sourceTree = "<group>"; };
 		EC2D14C020085AB100EC0FE9 /* NewEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEnvelope.swift; sourceTree = "<group>"; };
 		EC2D14C22008608900EC0FE9 /* EnvelopeCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeCommands.swift; sourceTree = "<group>"; };
+		EC2D14C52009614500EC0FE9 /* ExpensesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCell.swift; sourceTree = "<group>"; };
+		EC2D14C72009616200EC0FE9 /* EnvelopeDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeDetailsDataSource.swift; sourceTree = "<group>"; };
+		EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		EC2D14CB2009682C00EC0FE9 /* StartingAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingAmountCell.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -336,15 +344,27 @@
 				EC2D14A820070C7900EC0FE9 /* EnvelopesSectionController.swift */,
 				EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */,
 				EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */,
+				EC2D14C420092D1700EC0FE9 /* NewEnvelope */,
+				EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */,
+				EC2D14C72009616200EC0FE9 /* EnvelopeDetailsDataSource.swift */,
+				EC2D14C52009614500EC0FE9 /* ExpensesCell.swift */,
+				EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EC2D14C420092D1700EC0FE9 /* NewEnvelope */ = {
+			isa = PBXGroup;
+			children = (
 				EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */,
 				EC2D14B420083B0A00EC0FE9 /* NewEnvelopeDataSource.swift */,
 				EC2D14B620083B5400EC0FE9 /* EnvelopeNameCell.swift */,
 				EC2D14B82008411400EC0FE9 /* AmountCell.swift */,
+				EC2D14CB2009682C00EC0FE9 /* StartingAmountCell.swift */,
 				EC2D14BA20084F9600EC0FE9 /* FrequencyCell.swift */,
 				EC2D14BC200856C500EC0FE9 /* GoalCell.swift */,
-				EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */,
 			);
-			path = Home;
+			path = NewEnvelope;
 			sourceTree = "<group>";
 		};
 		ECF4059F2006829E008AA999 /* Data */ = {
@@ -510,6 +530,7 @@
 				EC2D14952006C18F00EC0FE9 /* RegisteringUser.swift in Sources */,
 				EC2D14772006BD7A00EC0FE9 /* ForgotPasswordButtonCell.swift in Sources */,
 				EC2D147D2006BD7A00EC0FE9 /* SubHeadlineCell.swift in Sources */,
+				EC2D14C62009614500EC0FE9 /* ExpensesCell.swift in Sources */,
 				EC2D148A2006BEE100EC0FE9 /* RoundedButton.swift in Sources */,
 				EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */,
 				EC287583200155360004B9CC /* AppState.swift in Sources */,
@@ -519,6 +540,7 @@
 				EC2D14922006C11000EC0FE9 /* Diff+Foundation.swift in Sources */,
 				EC2D14842006BE4A00EC0FE9 /* ReusableView.swift in Sources */,
 				EC2D14C120085AB100EC0FE9 /* NewEnvelope.swift in Sources */,
+				EC2D14CA2009632A00EC0FE9 /* DetailsCell.swift in Sources */,
 				EC2D147B2006BD7A00EC0FE9 /* HeadlineCell.swift in Sources */,
 				EC2D14982006C1DD00EC0FE9 /* UITableView+Extensions.swift in Sources */,
 				EC2D149A2006C1F600EC0FE9 /* UIColor+Extensions.swift in Sources */,
@@ -526,7 +548,9 @@
 				EC2D14792006BD7A00EC0FE9 /* QuestionCell.swift in Sources */,
 				EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */,
 				EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */,
+				EC2D14CC2009682C00EC0FE9 /* StartingAmountCell.swift in Sources */,
 				EC2D14BF20085A5400EC0FE9 /* NewEnvelopeState.swift in Sources */,
+				EC2D14C82009616200EC0FE9 /* EnvelopeDetailsDataSource.swift in Sources */,
 				EC2D14B3200809D200EC0FE9 /* DateHelper.swift in Sources */,
 				EC2D14B12007FEFB00EC0FE9 /* EnvelopeState.swift in Sources */,
 				EC2D14762006BD7A00EC0FE9 /* FirstNameTextFieldCell.swift in Sources */,

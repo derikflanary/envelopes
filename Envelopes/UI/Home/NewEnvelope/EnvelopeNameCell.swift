@@ -13,6 +13,11 @@ class EnvelopeNameCell: UITableViewCell, ReusableView {
     var core = App.sharedCore
     @IBOutlet weak var textField: UITextField!
 
+    func configure(with newEnvelope: NewEnvelope?) {
+        guard let newEnvelope = newEnvelope else { return }
+        textField.text = newEnvelope.name
+    }
+
     @IBAction func textFieldEditingDidEnd(_ sender: Any) {
         guard textField.text != nil else { return }
         var newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope

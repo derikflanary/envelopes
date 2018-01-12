@@ -23,21 +23,21 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="1ny-b3-Z9Z">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="230"/>
                     </imageView>
-                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOJ-jv-PBL">
-                        <rect key="frame" x="147.5" y="188.5" width="206" height="31.5"/>
+                    <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOJ-jv-PBL">
+                        <rect key="frame" x="132.5" y="172" width="236" height="38"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envelope Nice Name!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byu-XK-psP">
-                        <rect key="frame" x="164" y="194" width="172" height="21"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="frame" x="152" y="178.5" width="197" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                        <color key="textColor" red="0.25040288103951347" green="0.2443264921506246" blue="0.25656065013673568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="1ny-b3-Z9Z" secondAttribute="bottom" id="AHH-Iv-DBG"/>
-                <constraint firstAttribute="bottom" secondItem="wOJ-jv-PBL" secondAttribute="bottom" constant="10" id="FYr-lu-KPa"/>
+                <constraint firstItem="wOJ-jv-PBL" firstAttribute="centerY" secondItem="1ny-b3-Z9Z" secondAttribute="centerY" multiplier="1.66" id="Dv9-pS-pes"/>
                 <constraint firstItem="byu-XK-psP" firstAttribute="centerY" secondItem="wOJ-jv-PBL" secondAttribute="centerY" id="G9x-OT-pM3"/>
                 <constraint firstItem="wOJ-jv-PBL" firstAttribute="centerX" secondItem="1ny-b3-Z9Z" secondAttribute="centerX" id="H1l-s8-KKK"/>
                 <constraint firstItem="byu-XK-psP" firstAttribute="centerX" secondItem="1ny-b3-Z9Z" secondAttribute="centerX" id="R2h-lV-agZ"/>
