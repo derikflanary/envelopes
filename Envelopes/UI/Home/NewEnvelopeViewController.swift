@@ -21,6 +21,8 @@ class NewEnvelopeViewController: UIViewController {
     @IBOutlet weak var cancelButton: RoundedButton!
     @IBOutlet weak var popView: UIView!
     @IBOutlet weak var saveButton: RoundedButton!
+    @IBOutlet var newEnvelopeDataSource: NewEnvelopeDataSource!
+    @IBOutlet weak var tableView: UITableView!
     
 
     // MARK: - View life cycle
@@ -30,6 +32,7 @@ class NewEnvelopeViewController: UIViewController {
         cancelButton.isShadowed = true
         cancelButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
     }
 
@@ -117,9 +120,36 @@ private extension NewEnvelopeViewController {
 
 }
 
+extension NewEnvelopeViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = NewEnvelopeDataSource.Row.allValues[indexPath.row]
+        switch row {
+        case .frequency:
+            let alertController = UIAlertController(title: "Frequency", message: "Select how often you want to recurringly add funds to your envelope.", preferredStyle: .actionSheet)
+            let monthly = UIAlertAction(title: "Monthly", style: .default, handler: { action in
+                self.core.fire(event: Selected(item: Periodicity.monthly))
+            })
+            let weekly = UIAlertAction(title: "Weekly", style: .default, handler: { action in
+                self.core.fire(event: Selected(item: Periodicity.weekly(.sunday)))
+            })
+            let daily = UIAlertAction(title: "Daily", style: .default, handler: { action in
+                self.core.fire(event: Selected(item: Periodicity.daily))
+            })
+            alertController.addAction(monthly)
+            alertController.addAction(weekly)
+            alertController.addAction(daily)
+            show(alertController, sender: self)
+        default:
+            break
+        }
+    }
+}
+
 extension NewEnvelopeViewController: Subscriber {
 
     func update(with state: AppState) {
+        tableView.reloadData()
         if state.envelopeState.newEnvelopeState.newEnvelope.isReady {
             enableSaveButton()
         } else {

@@ -16,13 +16,13 @@ class PasswordTextFieldCell: UITableViewCell, ReusableView {
     
     @IBAction func textFieldEditingEnded() {
         guard let text = passwordTextField.text else { return }
-        guard text.characters.count > 5 else { return }
+        guard text.count > 5 else { return }
         core.fire(event: PasswordUpdated(password: text))
     }
     
     @IBAction func editingChanged(_ sender: Any) {
         guard let text = passwordTextField.text else { return }
-        guard text.characters.count > 5 else { return }
+        guard text.count > 5 else { return }
         core.fire(event: PasswordUpdated(password: text))
     }
 }
