@@ -14,6 +14,7 @@ class EnvelopeCell: UICollectionViewCell, ReusableView {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var transparentView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +22,10 @@ class EnvelopeCell: UICollectionViewCell, ReusableView {
         imageView.clipsToBounds = true
         transparentView.layer.cornerRadius = 6
         transparentView.clipsToBounds = true
+    }
+
+    func configure(with envelope: Envelope) {
+        nameLabel.text = envelope.name
     }
 
 }

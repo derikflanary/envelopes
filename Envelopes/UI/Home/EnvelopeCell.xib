@@ -51,6 +51,7 @@
             <size key="customSize" width="500" height="230"/>
             <connections>
                 <outlet property="imageView" destination="1ny-b3-Z9Z" id="rbV-of-9tY"/>
+                <outlet property="nameLabel" destination="byu-XK-psP" id="DGU-Tl-ttf"/>
                 <outlet property="transparentView" destination="wOJ-jv-PBL" id="oBW-mr-iLY"/>
             </connections>
             <point key="canvasLocation" x="-7" y="144"/>

@@ -58,6 +58,15 @@
 		EC2D14AD2007CC9400EC0FE9 /* EnvelopeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */; };
 		EC2D14AF2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */; };
 		EC2D14B12007FEFB00EC0FE9 /* EnvelopeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14B02007FEFB00EC0FE9 /* EnvelopeState.swift */; };
+		EC2D14B3200809D200EC0FE9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14B2200809D200EC0FE9 /* DateHelper.swift */; };
+		EC2D14B520083B0A00EC0FE9 /* NewEnvelopeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14B420083B0A00EC0FE9 /* NewEnvelopeDataSource.swift */; };
+		EC2D14B720083B5400EC0FE9 /* EnvelopeNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14B620083B5400EC0FE9 /* EnvelopeNameCell.swift */; };
+		EC2D14B92008411400EC0FE9 /* AmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14B82008411400EC0FE9 /* AmountCell.swift */; };
+		EC2D14BB20084F9600EC0FE9 /* FrequencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14BA20084F9600EC0FE9 /* FrequencyCell.swift */; };
+		EC2D14BD200856C500EC0FE9 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14BC200856C500EC0FE9 /* GoalCell.swift */; };
+		EC2D14BF20085A5400EC0FE9 /* NewEnvelopeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14BE20085A5400EC0FE9 /* NewEnvelopeState.swift */; };
+		EC2D14C120085AB100EC0FE9 /* NewEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14C020085AB100EC0FE9 /* NewEnvelope.swift */; };
+		EC2D14C32008608900EC0FE9 /* EnvelopeCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14C22008608900EC0FE9 /* EnvelopeCommands.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -120,6 +129,15 @@
 		EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnvelopeCell.xib; sourceTree = "<group>"; };
 		EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeDetailsViewController.swift; sourceTree = "<group>"; };
 		EC2D14B02007FEFB00EC0FE9 /* EnvelopeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeState.swift; sourceTree = "<group>"; };
+		EC2D14B2200809D200EC0FE9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		EC2D14B420083B0A00EC0FE9 /* NewEnvelopeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEnvelopeDataSource.swift; sourceTree = "<group>"; };
+		EC2D14B620083B5400EC0FE9 /* EnvelopeNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeNameCell.swift; sourceTree = "<group>"; };
+		EC2D14B82008411400EC0FE9 /* AmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountCell.swift; sourceTree = "<group>"; };
+		EC2D14BA20084F9600EC0FE9 /* FrequencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCell.swift; sourceTree = "<group>"; };
+		EC2D14BC200856C500EC0FE9 /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
+		EC2D14BE20085A5400EC0FE9 /* NewEnvelopeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEnvelopeState.swift; sourceTree = "<group>"; };
+		EC2D14C020085AB100EC0FE9 /* NewEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEnvelope.swift; sourceTree = "<group>"; };
+		EC2D14C22008608900EC0FE9 /* EnvelopeCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeCommands.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -196,6 +214,7 @@
 			children = (
 				EC287582200155360004B9CC /* AppState.swift */,
 				EC2D14B02007FEFB00EC0FE9 /* EnvelopeState.swift */,
+				EC2D14BE20085A5400EC0FE9 /* NewEnvelopeState.swift */,
 				EC2D14602006A86800EC0FE9 /* LoginState.swift */,
 			);
 			path = State;
@@ -241,6 +260,7 @@
 				EC2D148B2006C08900EC0FE9 /* GenericEvents.swift */,
 				EC2D148D2006C09200EC0FE9 /* LoginEvents.swift */,
 				EC28759F2001C7D50004B9CC /* UserCommands.swift */,
+				EC2D14C22008608900EC0FE9 /* EnvelopeCommands.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -281,6 +301,7 @@
 			children = (
 				EC2D14832006BE4A00EC0FE9 /* ReusableView.swift */,
 				EC2D14852006BE9200EC0FE9 /* StoryboardInitializable.swift */,
+				EC2D14B2200809D200EC0FE9 /* DateHelper.swift */,
 				EC2D148F2006C0EF00EC0FE9 /* Diff.swift */,
 				EC2D14912006C11000EC0FE9 /* Diff+Foundation.swift */,
 				EC2D14972006C1DD00EC0FE9 /* UITableView+Extensions.swift */,
@@ -316,6 +337,11 @@
 				EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */,
 				EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */,
 				EC2D14A42006D55300EC0FE9 /* NewEnvelopeViewController.swift */,
+				EC2D14B420083B0A00EC0FE9 /* NewEnvelopeDataSource.swift */,
+				EC2D14B620083B5400EC0FE9 /* EnvelopeNameCell.swift */,
+				EC2D14B82008411400EC0FE9 /* AmountCell.swift */,
+				EC2D14BA20084F9600EC0FE9 /* FrequencyCell.swift */,
+				EC2D14BC200856C500EC0FE9 /* GoalCell.swift */,
 				EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */,
 			);
 			path = Home;
@@ -325,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				ECF405A0200682B4008AA999 /* Envelope.swift */,
+				EC2D14C020085AB100EC0FE9 /* NewEnvelope.swift */,
 				ECF405A22006869B008AA999 /* Weekday.swift */,
 				ECF405A4200686B6008AA999 /* Expense.swift */,
 				EC2D14932006C18F00EC0FE9 /* RegisteringUser.swift */,
@@ -476,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2D14B720083B5400EC0FE9 /* EnvelopeNameCell.swift in Sources */,
 				EC2D148C2006C08900EC0FE9 /* GenericEvents.swift in Sources */,
 				EC2D14A52006D55300EC0FE9 /* NewEnvelopeViewController.swift in Sources */,
 				ECF405A5200686B6008AA999 /* Expense.swift in Sources */,
@@ -490,6 +518,7 @@
 				EC2D14612006A86800EC0FE9 /* LoginState.swift in Sources */,
 				EC2D14922006C11000EC0FE9 /* Diff+Foundation.swift in Sources */,
 				EC2D14842006BE4A00EC0FE9 /* ReusableView.swift in Sources */,
+				EC2D14C120085AB100EC0FE9 /* NewEnvelope.swift in Sources */,
 				EC2D147B2006BD7A00EC0FE9 /* HeadlineCell.swift in Sources */,
 				EC2D14982006C1DD00EC0FE9 /* UITableView+Extensions.swift in Sources */,
 				EC2D149A2006C1F600EC0FE9 /* UIColor+Extensions.swift in Sources */,
@@ -497,9 +526,13 @@
 				EC2D14792006BD7A00EC0FE9 /* QuestionCell.swift in Sources */,
 				EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */,
 				EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */,
+				EC2D14BF20085A5400EC0FE9 /* NewEnvelopeState.swift in Sources */,
+				EC2D14B3200809D200EC0FE9 /* DateHelper.swift in Sources */,
 				EC2D14B12007FEFB00EC0FE9 /* EnvelopeState.swift in Sources */,
 				EC2D14762006BD7A00EC0FE9 /* FirstNameTextFieldCell.swift in Sources */,
 				EC2D14902006C0EF00EC0FE9 /* Diff.swift in Sources */,
+				EC2D14BD200856C500EC0FE9 /* GoalCell.swift in Sources */,
+				EC2D14B520083B0A00EC0FE9 /* NewEnvelopeDataSource.swift in Sources */,
 				EC28759920015BA20004B9CC /* GenericFirebaseEvents.swift in Sources */,
 				EC2D14A920070C7900EC0FE9 /* EnvelopesSectionController.swift in Sources */,
 				EC28756920014D3C0004B9CC /* AppDelegate.swift in Sources */,
@@ -507,6 +540,7 @@
 				EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */,
 				EC2D147E2006BD7A00EC0FE9 /* EmailTextFieldCell.swift in Sources */,
 				EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */,
+				EC2D14C32008608900EC0FE9 /* EnvelopeCommands.swift in Sources */,
 				EC2D147C2006BD7A00EC0FE9 /* PasswordTextFieldCell.swift in Sources */,
 				EC2D149E2006D0ED00EC0FE9 /* MainViewController.swift in Sources */,
 				ECF405A1200682B4008AA999 /* Envelope.swift in Sources */,
@@ -517,7 +551,9 @@
 				EC2D147A2006BD7A00EC0FE9 /* SeperatorCell.swift in Sources */,
 				EC2D14862006BE9200EC0FE9 /* StoryboardInitializable.swift in Sources */,
 				EC2D14A12006D16700EC0FE9 /* HomeViewController.swift in Sources */,
+				EC2D14B92008411400EC0FE9 /* AmountCell.swift in Sources */,
 				EC2D14752006BD7A00EC0FE9 /* ActionButtonCell.swift in Sources */,
+				EC2D14BB20084F9600EC0FE9 /* FrequencyCell.swift in Sources */,
 				EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */,
 				EC2D149C2006C3D300EC0FE9 /* Localized.swift in Sources */,
 				EC28759D20015BBA0004B9CC /* Keys.swift in Sources */,

@@ -45,6 +45,7 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
         adapter.collectionView = collectionView
         adapter.dataSource = self
         newButton.roundedEdgeType = .full
+        collectionView.alwaysBounceVertical = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -70,15 +71,11 @@ extension HomeViewController: ListAdapterDataSource {
 
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var objects = [ListDiffable]()
-        return objects
-        let fillerCellIds = [Int](1...5)
-        var envelopes = [Envelope]()
-        for id in fillerCellIds {
-            envelopes.append(Envelope(id: String(id)))
-        }
+        let envelopes = core.state.envelopeState.envelopes
         objects = envelopes.flatMap { envelope in
             return EnvelopeSection(envelope: envelope)
         }
+        return objects
     }
 
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {

@@ -60,6 +60,7 @@ extension EnvelopesSectionController {
 
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         let cell = collectionContext!.dequeueReusableCell(withNibName: EnvelopeCell.reuseIdentifier, bundle: nil, for: self, at: index) as! EnvelopeCell
+        cell.configure(with: envelopeSection.envelope)
         return cell
     }
 

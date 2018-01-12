@@ -15,6 +15,7 @@ struct EnvelopeState: State {
 
     var envelopes = [Envelope]()
     var selectedEnvelope: Envelope?
+    var newEnvelopeState = NewEnvelopeState()
     
 
     // MARK: - React function
@@ -38,6 +39,8 @@ struct EnvelopeState: State {
         default:
             break
         }
+
+        newEnvelopeState.react(to: event)
     }
 
 }

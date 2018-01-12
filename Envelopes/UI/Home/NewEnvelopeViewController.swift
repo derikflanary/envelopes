@@ -15,11 +15,13 @@ class NewEnvelopeViewController: UIViewController {
 
     var core = App.sharedCore
     private var cancelButtonAnimator = UIViewPropertyAnimator()
+    var tapGestureRecognizer = UITapGestureRecognizer()
 
     @IBOutlet weak var transparentView: UIView!
     @IBOutlet weak var cancelButton: RoundedButton!
     @IBOutlet weak var popView: UIView!
-
+    @IBOutlet weak var saveButton: RoundedButton!
+    
 
     // MARK: - View life cycle
 
@@ -27,6 +29,8 @@ class NewEnvelopeViewController: UIViewController {
         cancelButton.roundedEdgeType = .full
         cancelButton.isShadowed = true
         cancelButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -61,7 +65,17 @@ class NewEnvelopeViewController: UIViewController {
     }
 
     @IBAction func saveButtonTapped() {
-        dismiss()
+        let newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
+        if newEnvelope.isReady {
+            core.fire(command: CreateEnvelope())
+            dismiss()
+        } else {
+            disableSaveButton()
+        }
+    }
+
+    @objc func viewTapped() {
+        view.endEditing(true)
     }
 
 }
@@ -86,12 +100,31 @@ private extension NewEnvelopeViewController {
         popView.layer.masksToBounds = false
     }
 
+    func disableSaveButton() {
+        guard saveButton.alpha != 0.5 else { return }
+        saveButton.isEnabled = false
+        UIView.animate(withDuration: 0.5) {
+            self.saveButton.alpha = 0.5
+        }
+    }
+
+    func enableSaveButton() {
+        saveButton.isEnabled = true
+        UIView.animate(withDuration: 0.5) {
+            self.saveButton.alpha = 1.0
+        }
+    }
+
 }
 
 extension NewEnvelopeViewController: Subscriber {
 
     func update(with state: AppState) {
-
+        if state.envelopeState.newEnvelopeState.newEnvelope.isReady {
+            enableSaveButton()
+        } else {
+            disableSaveButton()
+        }
     }
 
 }
