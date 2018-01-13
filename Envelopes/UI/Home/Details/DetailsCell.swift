@@ -41,10 +41,10 @@ class DetailsCell: UITableViewCell, ReusableView {
         titleLabel.text = detailType.displayName
         switch detailType {
         case .recurring:
-            detailLabel.text = String(envelope.recurringAmount).dollarAmount()
+            detailLabel.text = envelope.recurringAmount.currency()
             subLabel.isHidden = true
         case .goal:
-            detailLabel.text = String(envelope.goal).dollarAmount()
+            detailLabel.text = envelope.goal.currency()
             subLabel.isHidden = true
         case .frequency:
             detailLabel.text = envelope.periodicity.displayName

@@ -16,7 +16,7 @@ class StartingAmountCell: UITableViewCell, ReusableView {
     
     func configue(with newEnvelope: NewEnvelope?) {
         guard let newEnvelope = newEnvelope else { return }
-        let amountText = String(newEnvelope.startingAmount).dollarAmount()
+        let amountText = newEnvelope.startingAmount.currency()
         textField.text = amountText
     }
 
@@ -25,11 +25,10 @@ class StartingAmountCell: UITableViewCell, ReusableView {
     }
 
     @IBAction func textFieldDidEndEditing(_ sender: Any) {
-        guard var text = textField.text else { return }
-        let amount = Int(text)
-        textField.text = text.dollarAmount()
+        guard let text = textField.text else { return }
+        textField.text = text.currency()
         var newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
-        if let amount = amount {
+        if let amount = Double(text) {
             newEnvelope.startingAmount = amount
             core.fire(event: Updated(item: newEnvelope))
         }

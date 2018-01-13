@@ -14,7 +14,7 @@ class TotalCell: UITableViewCell, ReusableView {
 
     func configure(with envelope: Envelope?) {
         guard let envelope = envelope else { return }
-        label.text = String(envelope.totalAmount).dollarAmount()
+        label.text = envelope.totalAmount.currency()
     }
 
 }

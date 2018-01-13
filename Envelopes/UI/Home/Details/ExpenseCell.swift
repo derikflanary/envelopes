@@ -15,7 +15,7 @@ class ExpenseCell: UITableViewCell, ReusableView {
 
     func configure(with expense: Expense) {
         nameLabel.text = expense.name
-        expenseLabel.text = String(expense.amount).dollarAmount()
+        expenseLabel.text = expense.amount.currency()
     }
 
 }

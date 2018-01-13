@@ -35,10 +35,15 @@ struct Envelope {
     var ownerId: String
     var name: String
     var periodicity: Periodicity = .monthly
-    var recurringAmount: Int
-    var totalAmount: Int = 0
-    var goal: Int = 0
+    var recurringAmount: Double
+    var startingAmount: Double
+    var goal: Double = 0
     var expenses = [Expense]()
+    var totalAmount: Double {
+
+        let totalExpenses = expenses.reduce(0, { $0 + $1.amount } )
+        return startingAmount - totalExpenses
+    }
 
 
     init(newEnvelope: NewEnvelope) {
@@ -47,7 +52,7 @@ struct Envelope {
         periodicity = newEnvelope.periodicity
         recurringAmount = newEnvelope.recurringAmount
         goal = newEnvelope.goal
-        totalAmount = newEnvelope.startingAmount
+        startingAmount = newEnvelope.startingAmount
     }
     
 }
@@ -68,12 +73,27 @@ extension Envelope: Equatable {
 
 }
 
-extension String {
+extension Double {
 
-    func dollarAmount() -> String {
-        var dollarString = self
-        dollarString.insert("$", at: self.startIndex)
-        return dollarString
+    func currency() -> String? {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+        return formatter.string(from: NSNumber(value: self))
     }
     
 }
+
+extension String {
+
+    func currency() -> String? {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+        guard let double = Double(self) else { return nil }
+        return formatter.string(from: NSNumber(value: double))
+    }
+
+}
+
+
