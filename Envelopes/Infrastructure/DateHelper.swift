@@ -51,6 +51,25 @@ private struct DateHelper {
         return formatter
     }()
 
+    static let weeksAgoFormatter: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.maximumUnitCount = 1
+        formatter.includesApproximationPhrase = false
+        formatter.allowsFractionalUnits = false
+        formatter.allowedUnits = [.weekOfYear]
+        return formatter
+    }()
+
+    static let monthsAgoFormatter: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.maximumUnitCount = 1
+        formatter.includesApproximationPhrase = false
+        formatter.allowsFractionalUnits = false
+        formatter.allowedUnits = [.month]
+        return formatter
+    }()
+
     static let dateThisYearFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("MMMMd")
@@ -117,6 +136,20 @@ extension Date {
         return durationString
     }
 
+    func timeAgo(periodicity: Periodicity) -> String {
+        let timeRemainingInterval = abs(self.timeIntervalSinceNow)
+        let durationString: String
+        switch periodicity {
+        case .daily:
+            durationString = DateHelper.daysAgoFormatter.string(from: timeRemainingInterval)!
+        case .weekly(_):
+            durationString = DateHelper.weeksAgoFormatter.string(from: timeRemainingInterval)!
+        case .monthly:
+            durationString = DateHelper.monthsAgoFormatter.string(from: timeRemainingInterval)!
+        }
+        return durationString
+    }
+
     var iso8601String: String {
         return Date.ISO8601SecondFormatter.string(from: self)
     }
@@ -132,6 +165,26 @@ private var minutesPerHour = 60
 private var secondsPerMinute = 60
 
 extension BinaryInteger {
+
+    var month: DateComponents {
+        return months
+    }
+
+    var months: DateComponents {
+        var components = DateComponents()
+        components.month = Int(self.description)
+        return components
+    }
+
+    var week: DateComponents {
+        return weeks
+    }
+
+    var weeks: DateComponents {
+        var components = DateComponents()
+        components.weekOfYear = Int(self.description)
+        return components
+    }
 
     var day: DateComponents {
         return days

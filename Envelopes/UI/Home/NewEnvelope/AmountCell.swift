@@ -18,14 +18,23 @@ class AmountCell: UITableViewCell, ReusableView {
     func configue(with newEnvelope: NewEnvelope?) {
         guard let newEnvelope = newEnvelope else { return }
         let amountText = newEnvelope.recurringAmount.currency()
-        textField.text = amountText
         creationType = .envelope
+        if newEnvelope.recurringAmount <= 0 {
+            textField.placeholder = amountText
+        } else {
+            textField.text = amountText
+        }
     }
 
     func configure(with newExpense: NewExpense?) {
         guard let newExpense = newExpense else { return }
+        
         if let amount = newExpense.amount {
-            textField.text = amount.currency()
+            if amount <= 0 {
+                textField.placeholder = amount.currency()
+            } else {
+                textField.text = amount.currency()
+            }
         }
         creationType = .expense
     }

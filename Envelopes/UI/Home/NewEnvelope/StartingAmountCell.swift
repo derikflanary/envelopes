@@ -17,7 +17,11 @@ class StartingAmountCell: UITableViewCell, ReusableView {
     func configue(with newEnvelope: NewEnvelope?) {
         guard let newEnvelope = newEnvelope else { return }
         let amountText = newEnvelope.startingAmount.currency()
-        textField.text = amountText
+        if newEnvelope.startingAmount <= 0 {
+            textField.placeholder = amountText
+        } else {
+            textField.text = amountText
+        }
     }
 
     @IBAction func textFieldDidBeginEditing(_ sender: Any) {

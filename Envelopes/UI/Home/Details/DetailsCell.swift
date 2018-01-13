@@ -12,6 +12,7 @@ enum DetailCellType {
     case recurring
     case goal
     case frequency
+    case accumulated
 
     var displayName: String {
         switch self {
@@ -21,6 +22,8 @@ enum DetailCellType {
             return "Savings Goal"
         case .frequency:
             return "Frequency"
+        case .accumulated:
+            return "Amount Accumulated"
         }
     }
 }
@@ -55,6 +58,9 @@ class DetailsCell: UITableViewCell, ReusableView {
             default:
                 subLabel.isHidden = true
             }
+        case .accumulated:
+            detailLabel.text = envelope.accumulatedAmount.currency()
+            subLabel.isHidden = true
         }
     }
 

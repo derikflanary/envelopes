@@ -29,7 +29,10 @@ enum Periodicity {
 struct Envelope {
 
     var id: String = Date().iso8601String
-    var createdAt = Date()
+    var createdAt: Date {
+        return Calendar.current.date(byAdding: .month, value: -3, to: Date())!
+    }
+
     var modifiedAt = Date()
     var isActive: Bool = true
     var ownerId: String
@@ -39,10 +42,24 @@ struct Envelope {
     var startingAmount: Double
     var goal: Double = 0
     var expenses = [Expense]()
-    var totalAmount: Double {
 
+    var accumulatedAmount: Double {
+        let timePassedString = createdAt.timeAgo(periodicity: periodicity)
+        var numberOnlyString: String = ""
+        for (_, character) in timePassedString.enumerated() {
+            if Double(String(character)) != nil {
+                numberOnlyString.append(character)
+            }
+        }
+        if let timePassed = Double(String(numberOnlyString)) {
+            return timePassed * recurringAmount
+        }
+        return 0
+    }
+
+    var totalAmount: Double {
         let totalExpenses = expenses.reduce(0, { $0 + $1.amount } )
-        return startingAmount - totalExpenses
+        return startingAmount - totalExpenses + accumulatedAmount
     }
 
 

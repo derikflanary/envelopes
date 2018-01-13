@@ -34,6 +34,9 @@ class NewEnvelopeViewController: UIViewController {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
+        let newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
+        newEnvelopeDataSource.newEnvelope = newEnvelope
+        tableView.reloadData()
     }
 
     override func viewDidAppear(_ animated: Bool) {

@@ -14,12 +14,13 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
     enum Row {
         case total
         case recurring
+        case accumulated
         case frequency
         case goal
         case expenses
 
         static var allValues: [Row] {
-            return [.total, .recurring, .frequency, .goal, .expenses]
+            return [.total, .recurring, .frequency, .accumulated, .goal, .expenses]
         }
 
     }
@@ -50,6 +51,11 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
         case .frequency:
             let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
             cell.configure(with: envelope, detailType: .frequency)
+            return cell
+
+        case .accumulated:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
+            cell.configure(with: envelope, detailType: .accumulated)
             return cell
 
         case .goal:
