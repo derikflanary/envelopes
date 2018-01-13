@@ -61,6 +61,14 @@ extension EnvelopeDetailsViewController: UITextFieldDelegate {
 
 }
 
+extension EnvelopeDetailsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+}
+
 extension EnvelopeDetailsViewController: Subscriber {
 
     func update(with state: AppState) {

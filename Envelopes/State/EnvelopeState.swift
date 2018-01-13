@@ -16,6 +16,7 @@ struct EnvelopeState: State {
     var envelopes = [Envelope]()
     var selectedEnvelope: Envelope?
     var newEnvelopeState = NewEnvelopeState()
+    var newExpenseState = NewExpenseState()
     
 
     // MARK: - React function
@@ -33,6 +34,14 @@ struct EnvelopeState: State {
             if selectedEnvelope != nil {
                 selectedEnvelope = event.item
             }
+        case let event as Created<Expense>:
+            if var selectedEnvelope = selectedEnvelope {
+                selectedEnvelope.expenses.append(event.item)
+                self.selectedEnvelope = selectedEnvelope
+                if let index = envelopes.index(of: selectedEnvelope) {
+                    envelopes[index] = selectedEnvelope
+                }
+            }
         case let event as Deleted<Envelope>:
             if let index = envelopes.index(of: event.item) {
                 envelopes.remove(at: index)
@@ -44,6 +53,7 @@ struct EnvelopeState: State {
         }
 
         newEnvelopeState.react(to: event)
+        newExpenseState.react(to: event)
     }
 
 }

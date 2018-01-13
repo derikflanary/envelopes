@@ -18,3 +18,13 @@ struct CreateEnvelope: Command {
     }
 
 }
+
+struct CreateExpense: Command {
+
+    func execute(state: AppState, core: Core<AppState>) {
+        let newExpense = core.state.envelopeState.newExpenseState.newExpense
+        let expense = Expense(newExpense)
+        core.fire(event: Created(item: expense))
+    }
+
+}

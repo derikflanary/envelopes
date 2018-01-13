@@ -72,6 +72,12 @@
 		EC2D14CA2009632A00EC0FE9 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */; };
 		EC2D14CC2009682C00EC0FE9 /* StartingAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14CB2009682C00EC0FE9 /* StartingAmountCell.swift */; };
 		EC2D14CE20097AEB00EC0FE9 /* TotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */; };
+		EC2D14D12009C5D300EC0FE9 /* NewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D02009C5D300EC0FE9 /* NewExpenseViewController.swift */; };
+		EC2D14D32009C71900EC0FE9 /* NewExpenseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D22009C71900EC0FE9 /* NewExpenseDataSource.swift */; };
+		EC2D14D52009C7B800EC0FE9 /* NewExpenseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D42009C7B800EC0FE9 /* NewExpenseState.swift */; };
+		EC2D14D72009CBCE00EC0FE9 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */; };
+		EC2D14D92009CC9600EC0FE9 /* ExpensesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */; };
+		EC2D14DB2009D2F900EC0FE9 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -148,6 +154,12 @@
 		EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		EC2D14CB2009682C00EC0FE9 /* StartingAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingAmountCell.swift; sourceTree = "<group>"; };
 		EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCell.swift; sourceTree = "<group>"; };
+		EC2D14D02009C5D300EC0FE9 /* NewExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseViewController.swift; sourceTree = "<group>"; };
+		EC2D14D22009C71900EC0FE9 /* NewExpenseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseDataSource.swift; sourceTree = "<group>"; };
+		EC2D14D42009C7B800EC0FE9 /* NewExpenseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseState.swift; sourceTree = "<group>"; };
+		EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesDataSource.swift; sourceTree = "<group>"; };
+		EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -225,6 +237,7 @@
 				EC287582200155360004B9CC /* AppState.swift */,
 				EC2D14B02007FEFB00EC0FE9 /* EnvelopeState.swift */,
 				EC2D14BE20085A5400EC0FE9 /* NewEnvelopeState.swift */,
+				EC2D14D42009C7B800EC0FE9 /* NewExpenseState.swift */,
 				EC2D14602006A86800EC0FE9 /* LoginState.swift */,
 			);
 			path = State;
@@ -347,11 +360,7 @@
 				EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */,
 				EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */,
 				EC2D14C420092D1700EC0FE9 /* NewEnvelope */,
-				EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */,
-				EC2D14C72009616200EC0FE9 /* EnvelopeDetailsDataSource.swift */,
-				EC2D14C52009614500EC0FE9 /* ExpensesCell.swift */,
-				EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */,
-				EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */,
+				EC2D14CF2009C5B600EC0FE9 /* Details */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -368,6 +377,23 @@
 				EC2D14BC200856C500EC0FE9 /* GoalCell.swift */,
 			);
 			path = NewEnvelope;
+			sourceTree = "<group>";
+		};
+		EC2D14CF2009C5B600EC0FE9 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				EC2D14AE2007E91700EC0FE9 /* EnvelopeDetailsViewController.swift */,
+				EC2D14C72009616200EC0FE9 /* EnvelopeDetailsDataSource.swift */,
+				EC2D14C52009614500EC0FE9 /* ExpensesCell.swift */,
+				EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */,
+				EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */,
+				EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */,
+				EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */,
+				EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */,
+				EC2D14D02009C5D300EC0FE9 /* NewExpenseViewController.swift */,
+				EC2D14D22009C71900EC0FE9 /* NewExpenseDataSource.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		ECF4059F2006829E008AA999 /* Data */ = {
@@ -534,6 +560,7 @@
 				EC2D14772006BD7A00EC0FE9 /* ForgotPasswordButtonCell.swift in Sources */,
 				EC2D147D2006BD7A00EC0FE9 /* SubHeadlineCell.swift in Sources */,
 				EC2D14C62009614500EC0FE9 /* ExpensesCell.swift in Sources */,
+				EC2D14D72009CBCE00EC0FE9 /* ExpensesViewController.swift in Sources */,
 				EC2D148A2006BEE100EC0FE9 /* RoundedButton.swift in Sources */,
 				EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */,
 				EC287583200155360004B9CC /* AppState.swift in Sources */,
@@ -542,6 +569,7 @@
 				EC2D14612006A86800EC0FE9 /* LoginState.swift in Sources */,
 				EC2D14922006C11000EC0FE9 /* Diff+Foundation.swift in Sources */,
 				EC2D14842006BE4A00EC0FE9 /* ReusableView.swift in Sources */,
+				EC2D14DB2009D2F900EC0FE9 /* ExpenseCell.swift in Sources */,
 				EC2D14C120085AB100EC0FE9 /* NewEnvelope.swift in Sources */,
 				EC2D14CA2009632A00EC0FE9 /* DetailsCell.swift in Sources */,
 				EC2D147B2006BD7A00EC0FE9 /* HeadlineCell.swift in Sources */,
@@ -551,6 +579,7 @@
 				EC2D14792006BD7A00EC0FE9 /* QuestionCell.swift in Sources */,
 				EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */,
 				EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */,
+				EC2D14D52009C7B800EC0FE9 /* NewExpenseState.swift in Sources */,
 				EC2D14CC2009682C00EC0FE9 /* StartingAmountCell.swift in Sources */,
 				EC2D14BF20085A5400EC0FE9 /* NewEnvelopeState.swift in Sources */,
 				EC2D14C82009616200EC0FE9 /* EnvelopeDetailsDataSource.swift in Sources */,
@@ -561,9 +590,12 @@
 				EC2D14BD200856C500EC0FE9 /* GoalCell.swift in Sources */,
 				EC2D14B520083B0A00EC0FE9 /* NewEnvelopeDataSource.swift in Sources */,
 				EC28759920015BA20004B9CC /* GenericFirebaseEvents.swift in Sources */,
+				EC2D14D32009C71900EC0FE9 /* NewExpenseDataSource.swift in Sources */,
 				EC2D14A920070C7900EC0FE9 /* EnvelopesSectionController.swift in Sources */,
 				EC28756920014D3C0004B9CC /* AppDelegate.swift in Sources */,
 				EC2D14802006BD7A00EC0FE9 /* DisclaimerCell.swift in Sources */,
+				EC2D14D92009CC9600EC0FE9 /* ExpensesDataSource.swift in Sources */,
+				EC2D14D12009C5D300EC0FE9 /* NewExpenseViewController.swift in Sources */,
 				EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */,
 				EC2D147E2006BD7A00EC0FE9 /* EmailTextFieldCell.swift in Sources */,
 				EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */,

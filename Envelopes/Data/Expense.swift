@@ -16,6 +16,10 @@ struct Expense {
     var amount: Double
     var name: String
 
+    init(_ newExpense: NewExpense) {
+        amount = newExpense.amount!
+        name = newExpense.name!
+    }
 }
 
 extension Expense: JSONMarshaling {
@@ -24,6 +28,17 @@ extension Expense: JSONMarshaling {
         return [:]
     }
 
+}
+
+struct NewExpense {
+
+    var amount: Double?
+    var name: String?
+
+    var isReady: Bool {
+        return amount != nil && name != nil
+    }
+    
 }
 
 // MARK: - Endpoint naming

@@ -11,6 +11,7 @@ import UIKit
 class AmountCell: UITableViewCell, ReusableView {
 
     var core = App.sharedCore
+    var creationType = CreationType.envelope
     @IBOutlet weak var textField: UITextField!
 
 
@@ -18,6 +19,15 @@ class AmountCell: UITableViewCell, ReusableView {
         guard let newEnvelope = newEnvelope else { return }
         let amountText = String(newEnvelope.recurringAmount).dollarAmount()
         textField.text = amountText
+        creationType = .envelope
+    }
+
+    func configure(with newExpense: NewExpense?) {
+        guard let newExpense = newExpense else { return }
+        if let amount = newExpense.amount {
+            textField.text = String(describing: amount).dollarAmount()
+        }
+        creationType = .expense
     }
 
     @IBAction func textFieldEditingDidBegin(_ sender: Any) {
@@ -27,11 +37,19 @@ class AmountCell: UITableViewCell, ReusableView {
     @IBAction func textFieldEditingDidEnd(_ sender: Any) {
         guard let text = textField.text else { return }
         textField.text = text.dollarAmount()
-        let amount = Int(text)
-        var newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
-        if let amount = amount {
-            newEnvelope.recurringAmount = amount
-            core.fire(event: Updated(item: newEnvelope))
+        switch creationType {
+        case .envelope:
+            let amount = Int(text)
+            var newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
+            if let amount = amount {
+                newEnvelope.recurringAmount = amount
+                core.fire(event: Updated(item: newEnvelope))
+            }
+        case .expense:
+            let amount = Double(text)
+            var newExpense = core.state.envelopeState.newExpenseState.newExpense
+            newExpense.amount = amount
+            core.fire(event: Updated(item: newExpense))
         }
     }
     

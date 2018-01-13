@@ -56,7 +56,7 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
             cell.configure(with: envelope, detailType: .goal)
             return cell
-
+            
         case .expenses:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ExpensesCell
             cell.configure(with: envelope)
