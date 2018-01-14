@@ -8,25 +8,6 @@
 
 import UIKit
 
-enum DetailCellType {
-    case recurring
-    case goal
-    case frequency
-    case accumulated
-
-    var displayName: String {
-        switch self {
-        case .recurring:
-            return "Recurring Amount"
-        case .goal:
-            return "Savings Goal"
-        case .frequency:
-            return "Frequency"
-        case .accumulated:
-            return "Amount Accumulated"
-        }
-    }
-}
 
 class DetailsCell: UITableViewCell, ReusableView {
 
@@ -39,9 +20,10 @@ class DetailsCell: UITableViewCell, ReusableView {
         subLabel.isHidden = true
     }
 
-    func configure(with envelope: Envelope?, detailType: DetailCellType) {
+    func configure(with envelope: Envelope?, detailType: EnvelopeDetailsDataSource.Row) {
         guard let envelope = envelope else { return }
         titleLabel.text = detailType.displayName
+        accessoryType = .none
         switch detailType {
         case .recurring:
             detailLabel.text = envelope.recurringAmount.currency()
@@ -61,6 +43,13 @@ class DetailsCell: UITableViewCell, ReusableView {
         case .accumulated:
             detailLabel.text = envelope.accumulatedAmount.currency()
             subLabel.isHidden = true
+        case .expenses:
+            detailLabel.text = envelope.totalExpenses.currency()
+            subLabel.isHidden = false
+            subLabel.text = String(envelope.expenses.count)
+            accessoryType = .disclosureIndicator
+        default:
+            break
         }
     }
 

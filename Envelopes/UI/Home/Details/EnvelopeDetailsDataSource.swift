@@ -20,7 +20,24 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
         case expenses
 
         static var allValues: [Row] {
-            return [.total, .recurring, .frequency, .accumulated, .goal, .expenses]
+            return [.recurring, .frequency, .accumulated, .expenses, .total, .goal]
+        }
+
+        var displayName: String {
+            switch self {
+            case .recurring:
+                return "Recurring Amount"
+            case .goal:
+                return "Savings Goal"
+            case .frequency:
+                return "Frequency"
+            case .accumulated:
+                return "Amount Accumulated"
+            case .total:
+                return "Total"
+            case .expenses:
+                return "Expenses"
+            }
         }
 
     }
@@ -29,44 +46,30 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if envelope == nil {
-            return 0
+        if let envelope = envelope {
+            if envelope.goal > 0 {
+                return Row.allValues.count
+            } else {
+                return Row.allValues.count - 1
+            }
         } else {
-            return Row.allValues.count
+            return 0
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch Row.allValues[indexPath.row] {
+        let row = Row.allValues[indexPath.row]
+        switch row {
         case .total:
             let cell = tableView.dequeueReusableCell(for: indexPath) as TotalCell
             cell.configure(with: envelope)
             return cell
             
-        case .recurring:
+        case .recurring, .frequency, .accumulated, .goal, .expenses:
             let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
-            cell.configure(with: envelope, detailType: .recurring)
+            cell.configure(with: envelope, detailType: row)
             return cell
 
-        case .frequency:
-            let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
-            cell.configure(with: envelope, detailType: .frequency)
-            return cell
-
-        case .accumulated:
-            let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
-            cell.configure(with: envelope, detailType: .accumulated)
-            return cell
-
-        case .goal:
-            let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
-            cell.configure(with: envelope, detailType: .goal)
-            return cell
-            
-        case .expenses:
-            let cell = tableView.dequeueReusableCell(for: indexPath) as ExpensesCell
-            cell.configure(with: envelope)
-            return cell
         }
 
     }

@@ -88,6 +88,10 @@ private struct DateHelper {
 
 extension Date {
 
+    func dayNumberOfWeek() -> Int {
+        return Calendar.current.dateComponents([.weekday], from: self).weekday! - 1
+    }
+
     static fileprivate let ISO8601SecondFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -143,7 +147,7 @@ extension Date {
         case .daily:
             durationString = DateHelper.daysAgoFormatter.string(from: timeRemainingInterval)!
         case .weekly(_):
-            durationString = DateHelper.weeksAgoFormatter.string(from: timeRemainingInterval)!
+            durationString = DateHelper.daysAgoFormatter.string(from: timeRemainingInterval)!
         case .monthly:
             durationString = DateHelper.monthsAgoFormatter.string(from: timeRemainingInterval)!
         }

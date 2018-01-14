@@ -16,6 +16,7 @@ class ExpensesViewController: UIViewController {
     @IBOutlet var expensesDataSource: ExpensesDataSource!
     @IBOutlet weak var newExpenseButton: RoundedButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var emptyStateView: UIView!
 
 
     override func viewDidLoad() {
@@ -39,6 +40,11 @@ extension ExpensesViewController: Subscriber {
     func update(with state: AppState) {
         guard let envelope = state.envelopeState.selectedEnvelope else { return }
         expensesDataSource.expenses = envelope.expenses
+        if envelope.expenses.isEmpty {
+            tableView.backgroundView = emptyStateView
+        } else {
+            tableView.backgroundView = nil
+        }
         tableView.reloadData()
     }
 

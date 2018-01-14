@@ -43,6 +43,10 @@ struct Envelope {
     var goal: Double = 0
     var expenses = [Expense]()
 
+    var totalExpenses: Double {
+        return expenses.reduce(0, { $0 + $1.amount } )
+    }
+
     var accumulatedAmount: Double {
         let timePassedString = createdAt.timeAgo(periodicity: periodicity)
         var numberOnlyString: String = ""
@@ -52,13 +56,18 @@ struct Envelope {
             }
         }
         if let timePassed = Double(String(numberOnlyString)) {
-            return timePassed * recurringAmount
+            if case let .weekly(weekday) = periodicity {
+                let createdAtWeekday = createdAt.dayNumberOfWeek()
+                let weeksPassed =  (Int(timePassed) - (abs(weekday.rawValue - createdAtWeekday))) / 7
+                return Double(weeksPassed) * recurringAmount
+            } else {
+                return timePassed * recurringAmount
+            }
         }
         return 0
     }
 
     var totalAmount: Double {
-        let totalExpenses = expenses.reduce(0, { $0 + $1.amount } )
         return startingAmount - totalExpenses + accumulatedAmount
     }
 

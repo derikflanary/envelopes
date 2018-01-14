@@ -65,6 +65,12 @@ extension EnvelopeDetailsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch EnvelopeDetailsDataSource.Row.allValues[indexPath.row] {
+        case .expenses:
+            performSegue(withIdentifier: "showExpenses", sender: self)
+        default:
+            break
+        }
     }
 
 }
