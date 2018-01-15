@@ -25,6 +25,7 @@ class ExpensesViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        newExpenseButton.isShadowed = true
         core.add(subscriber: self)
     }
 

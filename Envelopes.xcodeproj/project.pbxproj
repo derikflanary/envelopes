@@ -78,6 +78,8 @@
 		EC2D14D72009CBCE00EC0FE9 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */; };
 		EC2D14D92009CC9600EC0FE9 /* ExpensesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */; };
 		EC2D14DB2009D2F900EC0FE9 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */; };
+		EC2D14DD200C425800EC0FE9 /* CashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14DC200C425800EC0FE9 /* CashCell.swift */; };
+		EC2D14DF200C879600EC0FE9 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14DE200C879600EC0FE9 /* Quote.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -160,6 +162,8 @@
 		EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesDataSource.swift; sourceTree = "<group>"; };
 		EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
+		EC2D14DC200C425800EC0FE9 /* CashCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCell.swift; sourceTree = "<group>"; };
+		EC2D14DE200C879600EC0FE9 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -387,6 +391,7 @@
 				EC2D14C52009614500EC0FE9 /* ExpensesCell.swift */,
 				EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */,
 				EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */,
+				EC2D14DC200C425800EC0FE9 /* CashCell.swift */,
 				EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */,
 				EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */,
 				EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */,
@@ -404,6 +409,7 @@
 				ECF405A22006869B008AA999 /* Weekday.swift */,
 				ECF405A4200686B6008AA999 /* Expense.swift */,
 				EC2D14932006C18F00EC0FE9 /* RegisteringUser.swift */,
+				EC2D14DE200C879600EC0FE9 /* Quote.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */,
 				EC2D14CE20097AEB00EC0FE9 /* TotalCell.swift in Sources */,
 				EC2D14C32008608900EC0FE9 /* EnvelopeCommands.swift in Sources */,
+				EC2D14DF200C879600EC0FE9 /* Quote.swift in Sources */,
 				EC2D147C2006BD7A00EC0FE9 /* PasswordTextFieldCell.swift in Sources */,
 				EC2D149E2006D0ED00EC0FE9 /* MainViewController.swift in Sources */,
 				ECF405A1200682B4008AA999 /* Envelope.swift in Sources */,
@@ -608,6 +615,7 @@
 				EC28759B20015BA20004B9CC /* Firebase+Random.swift in Sources */,
 				EC28759720015BA20004B9CC /* FirebaseReactorAccess.swift in Sources */,
 				EC2D14652006BCF700EC0FE9 /* LoginTableViewDataSource.swift in Sources */,
+				EC2D14DD200C425800EC0FE9 /* CashCell.swift in Sources */,
 				EC2D147A2006BD7A00EC0FE9 /* SeperatorCell.swift in Sources */,
 				EC2D14862006BE9200EC0FE9 /* StoryboardInitializable.swift in Sources */,
 				EC2D14A12006D16700EC0FE9 /* HomeViewController.swift in Sources */,

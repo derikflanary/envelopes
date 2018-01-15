@@ -61,7 +61,7 @@ struct Envelope {
 
     var accumulatedAmount: Double {
         var date = createdAt
-        if case let .monthly(firstDay) = periodicity {
+        if case .monthly(_) = periodicity {
             date = createdAt.startOfMonth()
         }
         let timePassedString = date.timeAgo(periodicity: periodicity)
@@ -89,6 +89,9 @@ struct Envelope {
         return startingAmount - totalExpenses + accumulatedAmount
     }
 
+    var hasGoal: Bool {
+        return goal > 0
+    }
 
     init(newEnvelope: NewEnvelope) {
         ownerId = "user"

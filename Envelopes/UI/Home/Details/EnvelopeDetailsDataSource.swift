@@ -18,10 +18,17 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
         case frequency
         case goal
         case expenses
+        case date
+        case image
 
         static var allValues: [Row] {
-            return [.recurring, .frequency, .accumulated, .expenses, .total, .goal]
+            return [.recurring, .frequency, .accumulated, .expenses, .total, .goal, .date, .image]
         }
+
+        static var allValuesNoGoal: [Row] {
+            return [.recurring, .frequency, .accumulated, .expenses, .total, .date, .image]
+        }
+
 
         var displayName: String {
             switch self {
@@ -37,6 +44,10 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
                 return "Total"
             case .expenses:
                 return "Expenses"
+            case .date:
+                return "Started On"
+            case .image:
+                return ""
             }
         }
 
@@ -47,10 +58,10 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let envelope = envelope {
-            if envelope.goal > 0 {
+            if envelope.hasGoal {
                 return Row.allValues.count
             } else {
-                return Row.allValues.count - 1
+                return Row.allValuesNoGoal.count
             }
         } else {
             return 0
@@ -58,18 +69,27 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = Row.allValues[indexPath.row]
+        var row: Row
+        if envelope!.hasGoal {
+            row = Row.allValues[indexPath.row]
+        } else {
+            row = Row.allValuesNoGoal[indexPath.row]
+        }
         switch row {
         case .total:
             let cell = tableView.dequeueReusableCell(for: indexPath) as TotalCell
             cell.configure(with: envelope)
             return cell
             
-        case .recurring, .frequency, .accumulated, .goal, .expenses:
+        case .recurring, .frequency, .accumulated, .goal, .expenses, .date:
             let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
             cell.configure(with: envelope, detailType: row)
             return cell
 
+        case .image:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as CashCell
+            cell.configure(with: envelope)
+            return cell
         }
 
     }

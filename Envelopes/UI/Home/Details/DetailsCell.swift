@@ -30,7 +30,17 @@ class DetailsCell: UITableViewCell, ReusableView {
             subLabel.isHidden = true
         case .goal:
             detailLabel.text = envelope.goal.currency()
-            subLabel.isHidden = true
+            let amountToGoal = envelope.goal - envelope.totalAmount
+            if let amountToGoalString = amountToGoal.currency() {
+                subLabel.isHidden = false
+                if amountToGoal > 0 {
+                    subLabel.text = "Only \(amountToGoalString) to go"
+                } else {
+                    subLabel.text = "You've reached your goal!"
+                }
+            } else {
+                subLabel.isHidden = true
+            }
         case .frequency:
             detailLabel.text = envelope.periodicity.displayName
             switch envelope.periodicity {
@@ -48,6 +58,9 @@ class DetailsCell: UITableViewCell, ReusableView {
             subLabel.isHidden = false
             subLabel.text = String(envelope.expenses.count)
             accessoryType = .disclosureIndicator
+        case .date:
+            detailLabel.text = envelope.createdAt.dayMonthYearString
+            subLabel.isHidden = true
         default:
             break
         }
