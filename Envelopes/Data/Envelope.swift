@@ -12,7 +12,7 @@ import Marshal
 enum Periodicity {
     case daily
     case weekly(Weekday)
-    case monthly
+    case monthly(Date)
 
     var displayName: String {
         switch self {
@@ -20,24 +20,36 @@ enum Periodicity {
             return "Daily"
         case .weekly(_):
             return "Weekly"
-        case .monthly:
-            return "Monthly"
+        case .monthly(_):
+            return "First of Each Month"
         }
     }
+
+    var description: String {
+        switch self {
+        case .daily:
+            return "Daily"
+        case .weekly(let weekday):
+            return "Each week on \(weekday.displayName)"
+        case .monthly(_):
+            return "First day of each month."
+        }
+    }
+
 }
 
 struct Envelope {
 
     var id: String = Date().iso8601String
     var createdAt: Date {
-        return Calendar.current.date(byAdding: .month, value: -3, to: Date())!
+        return Calendar.current.date(byAdding: .day, value: -16, to: Date())!
     }
 
     var modifiedAt = Date()
     var isActive: Bool = true
     var ownerId: String
     var name: String
-    var periodicity: Periodicity = .monthly
+    var periodicity: Periodicity = .monthly(Date().startOfMonth())
     var recurringAmount: Double
     var startingAmount: Double
     var goal: Double = 0
@@ -48,7 +60,11 @@ struct Envelope {
     }
 
     var accumulatedAmount: Double {
-        let timePassedString = createdAt.timeAgo(periodicity: periodicity)
+        var date = createdAt
+        if case let .monthly(firstDay) = periodicity {
+            date = createdAt.startOfMonth()
+        }
+        let timePassedString = date.timeAgo(periodicity: periodicity)
         var numberOnlyString: String = ""
         for (_, character) in timePassedString.enumerated() {
             if Double(String(character)) != nil {
@@ -56,12 +72,14 @@ struct Envelope {
             }
         }
         if let timePassed = Double(String(numberOnlyString)) {
-            if case let .weekly(weekday) = periodicity {
-                let createdAtWeekday = createdAt.dayNumberOfWeek()
-                let weeksPassed =  (Int(timePassed) - (abs(weekday.rawValue - createdAtWeekday))) / 7
-                return Double(weeksPassed) * recurringAmount
-            } else {
+            switch periodicity {
+            case .monthly(_), .daily:
                 return timePassed * recurringAmount
+            case .weekly(let weekday):
+                let createdAtWeekday = createdAt.dayNumberOfWeek()
+                let daysToDeposit = 7 - (createdAtWeekday - weekday.rawValue)
+                let weeksPassed = 1 + ((timePassed - Double(daysToDeposit)) / 7)
+                return Double(weeksPassed) * recurringAmount
             }
         }
         return 0

@@ -11,17 +11,12 @@ import Foundation
 enum Weekday: Int {
     case sunday
     case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
-    case saturday
 
     var displayName: String {
         return Weekday.dateFormatter.weekdaySymbols[rawValue]
     }
 
-    static let allWeekdays: [Weekday] = [.sunday, .monday, .tuesday, .wednesday, .thursday, .friday, .saturday]
+    static let allWeekdays: [Weekday] = [.sunday, .monday]
 
 
     // MARK: - Private properties

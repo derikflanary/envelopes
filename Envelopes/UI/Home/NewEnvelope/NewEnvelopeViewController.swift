@@ -124,7 +124,7 @@ private extension NewEnvelopeViewController {
     func showFrequencySelectionView() {
         let alertController = UIAlertController(title: "Frequency", message: "Select how often you want to recurringly add funds to your envelope.", preferredStyle: .actionSheet)
         let monthly = UIAlertAction(title: "Monthly", style: .default, handler: { action in
-            self.core.fire(event: Selected(item: Periodicity.monthly))
+            self.core.fire(event: Selected(item: Periodicity.monthly(Date())))
         })
         let weekly = UIAlertAction(title: "Weekly", style: .default, handler: { action in
             self.showWeekdaySelectionView()
@@ -132,9 +132,11 @@ private extension NewEnvelopeViewController {
         let daily = UIAlertAction(title: "Daily", style: .default, handler: { action in
             self.core.fire(event: Selected(item: Periodicity.daily))
         })
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(monthly)
         alertController.addAction(weekly)
         alertController.addAction(daily)
+        alertController.addAction(cancel)
         show(alertController, sender: self)
     }
 
@@ -146,28 +148,9 @@ private extension NewEnvelopeViewController {
         let monday = UIAlertAction(title: "Monday", style: .default, handler: { action in
             self.core.fire(event: Selected(item: Periodicity.weekly(.monday)))
         })
-        let tuesday = UIAlertAction(title: "Tuesday", style: .default, handler: { action in
-            self.core.fire(event: Selected(item: Periodicity.weekly(.tuesday)))
-        })
-        let wednesday = UIAlertAction(title: "Wednesday", style: .default, handler: { action in
-            self.core.fire(event: Selected(item: Periodicity.weekly(.wednesday)))
-        })
-        let thursday = UIAlertAction(title: "Thursday", style: .default, handler: { action in
-            self.core.fire(event: Selected(item: Periodicity.weekly(.thursday)))
-        })
-        let friday = UIAlertAction(title: "Friday", style: .default, handler: { action in
-            self.core.fire(event: Selected(item: Periodicity.weekly(.friday)))
-        })
-        let saturday = UIAlertAction(title: "Saturday", style: .default, handler: { action in
-            self.core.fire(event: Selected(item: Periodicity.weekly(.saturday)))
-        })
+
         alertController.addAction(sunday)
         alertController.addAction(monday)
-        alertController.addAction(tuesday)
-        alertController.addAction(wednesday)
-        alertController.addAction(thursday)
-        alertController.addAction(friday)
-        alertController.addAction(saturday)
         show(alertController, sender: self)
     }
 

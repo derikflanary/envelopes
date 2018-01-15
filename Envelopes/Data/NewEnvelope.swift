@@ -13,7 +13,7 @@ struct NewEnvelope {
     var name: String?
     var recurringAmount: Double = 0
     var startingAmount: Double = 0
-    var periodicity: Periodicity = .monthly
+    var periodicity: Periodicity = .daily
     var goal: Double = 0
 
     var isReady: Bool {
