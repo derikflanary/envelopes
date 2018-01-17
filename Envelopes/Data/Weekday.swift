@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Marshal
 
-enum Weekday: Int {
+enum Weekday: Int, JSONMarshaling {
     case sunday
     case monday
 
@@ -18,6 +19,9 @@ enum Weekday: Int {
 
     static let allWeekdays: [Weekday] = [.sunday, .monday]
 
+    func jsonObject() -> JSONObject {
+        return [Keys.weekday: self.rawValue]
+    }
 
     // MARK: - Private properties
 

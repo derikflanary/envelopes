@@ -9,7 +9,7 @@
 import Foundation
 import Marshal
 
-enum Periodicity {
+enum Periodicity: JSONMarshaling {
     case daily
     case weekly(Weekday)
     case monthly(Date)
@@ -36,15 +36,35 @@ enum Periodicity {
         }
     }
 
-}
-
-struct Envelope {
-
-    var id: String = Date().iso8601String
-    var createdAt: Date {
-        return Calendar.current.date(byAdding: .day, value: -16, to: Date())!
+    var key: String {
+        switch self {
+        case .daily:
+            return "daily"
+        case .weekly(_):
+            return "weekly"
+        case .monthly(_):
+            return "monthly."
+        }
     }
 
+    func jsonObject() -> JSONObject {
+
+        switch self {
+        case .daily:
+            return [key: true]
+        case .weekly(let weekday):
+            return [key: weekday.jsonObject]
+        case .monthly(let startDate):
+            return [key: startDate.millisecondsSince1970]
+        }
+    }
+
+}
+
+struct Envelope: Unmarshaling {
+
+    var id: String = Date().iso8601String
+    var createdAt = Date()
     var modifiedAt = Date()
     var isActive: Bool = true
     var ownerId: String
@@ -93,6 +113,25 @@ struct Envelope {
         return goal > 0
     }
 
+    init(object: MarshaledObject) throws {
+        id = try object.value(for: Keys.id)
+        let createdAtInt: Int = try object.value(for: Keys.createdAt)
+        let createdAt: Date = Date(timeIntervalSince1970: Double(createdAtInt))
+        self.createdAt = createdAt
+
+        let modifiedAtInt: Int = try object.value(for: Keys.modifiedAt)
+        let modifiedAt: Date = Date(timeIntervalSince1970: Double(modifiedAtInt))
+        self.modifiedAt = modifiedAt
+
+        name = try object.value(for: Keys.name)
+        recurringAmount = try object.value(for: Keys.recurringAmount)
+        startingAmount = try object.value(for: Keys.startingAmount)
+        ownerId = try object.value(for: Keys.ownerId)
+        goal = try object.value(for: Keys.goal)
+        isActive = try object.value(for: Keys.isActive)
+        expenses = try object.value(for: Keys.expenses)
+    }
+
     init(newEnvelope: NewEnvelope) {
         ownerId = "user"
         name = newEnvelope.name!
@@ -107,7 +146,18 @@ struct Envelope {
 extension Envelope: JSONMarshaling {
 
     func jsonObject() -> JSONObject {
-        return [:]
+        var envelopeJsonObject: JSONObject = [Keys.createdAt: createdAt.millisecondsSince1970,
+                          Keys.modifiedAt: modifiedAt.millisecondsSince1970,
+                          Keys.ownerId: ownerId,
+                          Keys.name: name,
+                          Keys.periodicity: periodicity.jsonObject(),
+                          Keys.recurringAmount: recurringAmount,
+                          Keys.startingAmount: startingAmount,
+                          Keys.goal: goal,
+                          Keys.isActive: isActive]
+        let expensesJson = expenses.map { $0.jsonObject() }
+        envelopeJsonObject[Keys.expenses] = expensesJson
+        return [id: envelopeJsonObject]
     }
 
 }

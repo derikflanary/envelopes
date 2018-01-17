@@ -12,7 +12,7 @@ import Reactor
 struct CreateNewUser: Command {
 
     let userId: String
-    let networkAccess: FirebaseEnvelopesAccess
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
 
     func execute(state: AppState, core: Core<AppState>) {
         let usersRef = networkAccess.userIdRef(for: userId)
