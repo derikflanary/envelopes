@@ -115,7 +115,11 @@ extension Envelope: JSONMarshaling {
 extension Envelope: Equatable {
 
     static func ==(lhs: Envelope, rhs: Envelope) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.id == rhs.id &&
+            lhs.totalAmount == rhs.totalAmount &&
+            lhs.name == rhs.name &&
+            lhs.goal == rhs.goal &&
+            lhs.totalAmount == rhs.totalAmount
     }
 
 }

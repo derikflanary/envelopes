@@ -17,7 +17,15 @@ class EnvelopeNameCell: UITableViewCell, ReusableView {
 
     var core = App.sharedCore
     var creationType = CreationType.envelope
+    private var textCountLimit = 20
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var countLabel: UILabel!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        countLabel.text = String(textCountLimit)
+        countLabel.isHidden = true
+    }
 
     func configure(with newEnvelope: NewEnvelope?) {
         guard let newEnvelope = newEnvelope else { return }
@@ -32,6 +40,7 @@ class EnvelopeNameCell: UITableViewCell, ReusableView {
     }
 
     @IBAction func textFieldEditingDidEnd(_ sender: Any) {
+        countLabel.isHidden = true
         guard textField.text != nil else { return }
         switch creationType {
         case .envelope:
@@ -44,5 +53,16 @@ class EnvelopeNameCell: UITableViewCell, ReusableView {
             core.fire(event: Updated(item: newExpense))
         }
     }
+    @IBAction func textFieldEditingDidBegin(_ sender: Any) {
+        countLabel.isHidden = false
+    }
 
+    @IBAction func textFieldEditingChanged(_ sender: Any) {
+        guard var text = textField.text else { return }
+        if text.count > textCountLimit {
+            text = String(text.dropLast())
+            textField.text = text
+        }
+        countLabel.text = String(textCountLimit - text.count)
+    }
 }

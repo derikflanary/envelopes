@@ -12,23 +12,21 @@ import UIKit
 
 class EnvelopeSection: NSObject, ListDiffable {
 
-    var envelope: Envelope
+    var envelopes: [Envelope]
+    var id: Int
 
-    init(envelope: Envelope) {
-        self.envelope = envelope
+    init(id: Int, envelopes: [Envelope]) {
+        self.id = id
+        self.envelopes = envelopes
     }
 
     public func diffIdentifier() -> NSObjectProtocol {
-        return envelope.id as NSString
+        return NSNumber(integerLiteral: id)
     }
 
     public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
         guard let other = object as? EnvelopeSection else { return false }
-        return envelope.id == other.envelope.id &&
-        envelope.totalAmount == other.envelope.totalAmount &&
-        envelope.name == other.envelope.name &&
-        envelope.goal == other.envelope.goal &&
-        envelope.totalAmount == other.envelope.totalAmount
+        return envelopes == other.envelopes
     }
 
 }
@@ -51,19 +49,20 @@ class EnvelopesSectionController: ListSectionController {
 extension EnvelopesSectionController {
 
     override func numberOfItems() -> Int {
-        return 1
+        return envelopeSection.envelopes.count
     }
 
     override func sizeForItem(at index: Int) -> CGSize {
         guard let collectionContext = collectionContext else { return .zero }
-        let height: CGFloat = EnvelopeCell.height
-        let width = collectionContext.containerSize.width - 32
+        let width = floor(collectionContext.containerSize.width/2) - 16
+        let height: CGFloat = width * 1.0
         return CGSize(width: width, height: height)
     }
 
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         let cell = collectionContext!.dequeueReusableCell(withNibName: EnvelopeCell.reuseIdentifier, bundle: nil, for: self, at: index) as! EnvelopeCell
-        cell.configure(with: envelopeSection.envelope)
+        let envelope = envelopeSection.envelopes[index]
+        cell.configure(with: envelope)
         return cell
     }
 
@@ -75,7 +74,7 @@ extension EnvelopesSectionController {
 
     override func didSelectItem(at index: Int) {
         sectionSelectionCompletion?()
-        core.fire(event: Selected(item: envelopeSection.envelope))
+        core.fire(event: Selected(item: envelopeSection.envelopes[index]))
     }
 
 }

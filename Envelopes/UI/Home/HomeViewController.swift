@@ -72,9 +72,7 @@ extension HomeViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var objects = [ListDiffable]()
         let envelopes = core.state.envelopeState.envelopes
-        objects = envelopes.flatMap { envelope in
-            return EnvelopeSection(envelope: envelope)
-        }
+        objects.append(EnvelopeSection(id: 1, envelopes: envelopes))
         return objects
     }
 

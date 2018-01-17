@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,47 +13,50 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EnvelopeCell" id="gTV-IL-0wX" customClass="EnvelopeCell" customModule="Envelopes" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="500" height="230"/>
+            <rect key="frame" x="0.0" y="0.0" width="405" height="304"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="500" height="230"/>
+                <rect key="frame" x="0.0" y="0.0" width="405" height="304"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="1ny-b3-Z9Z">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="230"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="1ny-b3-Z9Z">
+                        <rect key="frame" x="0.0" y="40" width="405" height="264"/>
                     </imageView>
-                    <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOJ-jv-PBL">
-                        <rect key="frame" x="132.5" y="172" width="236" height="38"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOJ-jv-PBL">
+                        <rect key="frame" x="12" y="6" width="381" height="26"/>
+                        <color key="backgroundColor" red="0.57647058823529407" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envelope Nice Name!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byu-XK-psP">
-                        <rect key="frame" x="152" y="178.5" width="197" height="25.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                        <color key="textColor" red="0.25040288103951347" green="0.2443264921506246" blue="0.25656065013673568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envelope Nice Name!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="byu-XK-psP">
+                        <rect key="frame" x="115.5" y="8" width="175" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="1ny-b3-Z9Z" secondAttribute="bottom" id="AHH-Iv-DBG"/>
-                <constraint firstItem="wOJ-jv-PBL" firstAttribute="centerY" secondItem="1ny-b3-Z9Z" secondAttribute="centerY" multiplier="1.66" id="Dv9-pS-pes"/>
-                <constraint firstItem="byu-XK-psP" firstAttribute="centerY" secondItem="wOJ-jv-PBL" secondAttribute="centerY" id="G9x-OT-pM3"/>
+                <constraint firstAttribute="bottom" secondItem="1ny-b3-Z9Z" secondAttribute="bottom" id="4yB-EW-Pll"/>
+                <constraint firstItem="byu-XK-psP" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="8" id="7qi-i6-7y2"/>
                 <constraint firstItem="wOJ-jv-PBL" firstAttribute="centerX" secondItem="1ny-b3-Z9Z" secondAttribute="centerX" id="H1l-s8-KKK"/>
+                <constraint firstItem="wOJ-jv-PBL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="I5T-QP-oXh"/>
+                <constraint firstItem="wOJ-jv-PBL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="L7a-Ik-gm5"/>
                 <constraint firstItem="byu-XK-psP" firstAttribute="centerX" secondItem="1ny-b3-Z9Z" secondAttribute="centerX" id="R2h-lV-agZ"/>
-                <constraint firstItem="1ny-b3-Z9Z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="S06-Th-hv4"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="byu-XK-psP" secondAttribute="trailing" constant="16" id="X07-Jd-MeF"/>
                 <constraint firstAttribute="trailing" secondItem="1ny-b3-Z9Z" secondAttribute="trailing" id="Xgn-KR-QPZ"/>
-                <constraint firstItem="wOJ-jv-PBL" firstAttribute="width" secondItem="byu-XK-psP" secondAttribute="width" multiplier="1.2" id="ZGi-j7-ECO"/>
+                <constraint firstItem="wOJ-jv-PBL" firstAttribute="centerY" secondItem="byu-XK-psP" secondAttribute="centerY" id="cf3-wi-qbI"/>
                 <constraint firstItem="1ny-b3-Z9Z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eSG-Hb-FVP"/>
-                <constraint firstItem="wOJ-jv-PBL" firstAttribute="height" secondItem="byu-XK-psP" secondAttribute="height" multiplier="1.5" id="mSF-hX-ZEx"/>
+                <constraint firstItem="1ny-b3-Z9Z" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="40" id="i1e-B3-YeX"/>
+                <constraint firstItem="byu-XK-psP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="o09-5z-egB"/>
+                <constraint firstAttribute="trailing" secondItem="wOJ-jv-PBL" secondAttribute="trailing" constant="12" id="wgZ-jb-rRz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="500" height="230"/>
+            <size key="customSize" width="405" height="304"/>
             <connections>
                 <outlet property="imageView" destination="1ny-b3-Z9Z" id="rbV-of-9tY"/>
                 <outlet property="nameLabel" destination="byu-XK-psP" id="DGU-Tl-ttf"/>
                 <outlet property="transparentView" destination="wOJ-jv-PBL" id="oBW-mr-iLY"/>
             </connections>
-            <point key="canvasLocation" x="-7" y="144"/>
+            <point key="canvasLocation" x="13.5" y="170"/>
         </collectionViewCell>
     </objects>
     <resources>

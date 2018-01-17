@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,7 +82,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7W-PF-yt5" customClass="RoundedButton" customModule="Envelopes" customModuleProvider="target">
-                            <rect key="frame" x="63" y="366.33333333333331" width="245" height="52"/>
+                            <rect key="frame" x="82.666666666666686" y="366.33333333333331" width="206" height="52"/>
                             <color key="backgroundColor" red="0.0" green="0.47058823529411764" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="52" id="SOh-eD-jLB"/>
@@ -182,9 +183,17 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                                             <connections>
+                                                                <action selector="textFieldEditingChanged:" destination="3J0-Qh-BxE" eventType="editingChanged" id="uRy-mm-kE1"/>
+                                                                <action selector="textFieldEditingDidBegin:" destination="3J0-Qh-BxE" eventType="editingDidBegin" id="6eZ-0g-0VL"/>
                                                                 <action selector="textFieldEditingDidEnd:" destination="3J0-Qh-BxE" eventType="editingDidEnd" id="cQe-Xc-uAe"/>
                                                             </connections>
                                                         </textField>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5M6-J0-s7z">
+                                                            <rect key="frame" x="295" y="44" width="7" height="12"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <color key="textColor" red="0.57647058819999997" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="ydN-r1-qgI" firstAttribute="leading" secondItem="eiK-J9-rfA" secondAttribute="leading" constant="12" id="4jt-Tj-ddV"/>
@@ -193,9 +202,12 @@
                                                         <constraint firstAttribute="trailing" secondItem="ydN-r1-qgI" secondAttribute="trailing" constant="12" id="QEX-n2-glV"/>
                                                         <constraint firstItem="Pry-dK-Poj" firstAttribute="top" secondItem="eiK-J9-rfA" secondAttribute="top" constant="8" id="TLf-hg-oUe"/>
                                                         <constraint firstAttribute="bottom" secondItem="ydN-r1-qgI" secondAttribute="bottom" constant="8" id="ooY-ZS-Msz"/>
+                                                        <constraint firstItem="5M6-J0-s7z" firstAttribute="trailing" secondItem="eiK-J9-rfA" secondAttribute="trailingMargin" constant="-2" id="pnb-WY-dJn"/>
+                                                        <constraint firstItem="5M6-J0-s7z" firstAttribute="centerY" secondItem="ydN-r1-qgI" secondAttribute="centerY" id="seT-Ly-BUU"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="countLabel" destination="5M6-J0-s7z" id="W6N-e7-aYP"/>
                                                     <outlet property="textField" destination="ydN-r1-qgI" id="cKX-O0-RDN"/>
                                                 </connections>
                                             </tableViewCell>
