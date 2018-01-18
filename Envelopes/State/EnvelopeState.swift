@@ -50,6 +50,9 @@ struct EnvelopeState: State {
             }
         case _ as Reset<Envelope>:
             selectedEnvelope = nil
+        case _ as Reset<NewEnvelope>:
+            newExpenseState = NewExpenseState()
+
         default:
             break
         }

@@ -46,7 +46,7 @@ struct Envelope: Unmarshaling {
             case .weekly(let weekday):
                 let createdAtWeekday = createdAt.dayNumberOfWeek()
                 let daysToDeposit = 7 - (createdAtWeekday - weekday.rawValue)
-                let weeksPassed = 1 + ((timePassed - Double(daysToDeposit)) / 7)
+                let weeksPassed = 1 + ((Int(timePassed) - daysToDeposit) / 7)
                 return Double(weeksPassed) * recurringAmount
             }
         }
@@ -77,7 +77,7 @@ struct Envelope: Unmarshaling {
         ownerId = try object.value(for: Keys.ownerId)
         goal = try object.value(for: Keys.goal)
         isActive = try object.value(for: Keys.isActive)
-//        expenses = try object.value(for: Keys.expenses)
+        
         let jsonObject: JSONObject = try object.value(for: Keys.periodicity)
         periodicity = try Periodicity(object: jsonObject)
         print(periodicity)

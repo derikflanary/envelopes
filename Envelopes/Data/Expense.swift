@@ -16,6 +16,8 @@ struct Expense: Unmarshaling {
     var modifiedAt = Date()
     var amount: Double
     var name: String
+    var envelopeId: String
+
 
     init(object: MarshaledObject) throws {
         let createdAtInt: Int = try object.value(for: Keys.createdAt)
@@ -27,11 +29,14 @@ struct Expense: Unmarshaling {
         self.modifiedAt = modifiedAt
         amount = try object.value(for: Keys.amount)
         name = try object.value(for: Keys.name)
+        id = try object.value(for: Keys.id)
+        envelopeId = try object.value(for: Keys.envelopeId)
     }
 
-    init(_ newExpense: NewExpense) {
+    init(_ newExpense: NewExpense, envelopeId: String) {
         amount = newExpense.amount!
         name = newExpense.name!
+        self.envelopeId = envelopeId
     }
 }
 
@@ -41,7 +46,8 @@ extension Expense: JSONMarshaling {
         return [Keys.createdAt: createdAt.millisecondsSince1970,
                 Keys.modifiedAt: modifiedAt.millisecondsSince1970,
                 Keys.amount: amount,
-                Keys.name: name]
+                Keys.name: name,
+                Keys.envelopeId: envelopeId]
     }
 
 }

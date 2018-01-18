@@ -70,7 +70,7 @@ class NewExpenseViewController: UIViewController {
     @IBAction func saveButtonTapped() {
         let newExpense = core.state.envelopeState.newExpenseState.newExpense
         if newExpense.isReady {
-            core.fire(command: CreateExpense())
+            core.fire(command: AddExpense())
             dismiss()
         } else {
             disableSaveButton()

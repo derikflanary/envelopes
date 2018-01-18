@@ -55,6 +55,7 @@ class NewEnvelopeViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         core.remove(subscriber: self)
+        core.fire(event: Reset<NewEnvelope>())
     }
 
     override func viewDidLayoutSubviews() {
@@ -73,7 +74,7 @@ class NewEnvelopeViewController: UIViewController {
     @IBAction func saveButtonTapped() {
         let newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
         if newEnvelope.isReady {
-            core.fire(command: CreateEnvelope())
+            core.fire(command: AddEnvelope())
             dismiss()
         } else {
             disableSaveButton()

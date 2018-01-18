@@ -29,8 +29,11 @@ class EnvelopeDetailsViewController: UIViewController {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
-        envelopeDetailsDataSource.envelope = core.state.envelopeState.selectedEnvelope
-        tableView.reloadData()
+        if let selectedEnvelope = core.state.envelopeState.selectedEnvelope {
+            envelopeDetailsDataSource.envelope = selectedEnvelope
+            tableView.reloadData()
+            core.fire(command: LoadExpenses(for: selectedEnvelope))
+        }
 
     }
 
