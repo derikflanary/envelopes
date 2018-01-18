@@ -23,6 +23,8 @@ struct EnvelopeState: State {
 
     mutating func react(to event: Event) {
         switch event {
+        case let event as Loaded<Envelope>:
+            self.envelopes = event.items
         case let event as Selected<Envelope>:
             selectedEnvelope = event.item
         case let event as Created<Envelope>:

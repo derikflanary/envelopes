@@ -19,11 +19,11 @@ struct Expense: Unmarshaling {
 
     init(object: MarshaledObject) throws {
         let createdAtInt: Int = try object.value(for: Keys.createdAt)
-        let createdAt: Date = Date(timeIntervalSince1970: Double(createdAtInt))
+        let createdAt: Date = Date(timeIntervalSince1970: Double(createdAtInt) / 1000)
         self.createdAt = createdAt
 
         let modifiedAtInt: Int = try object.value(for: Keys.modifiedAt)
-        let modifiedAt: Date = Date(timeIntervalSince1970: Double(modifiedAtInt))
+        let modifiedAt: Date = Date(timeIntervalSince1970: Double(modifiedAtInt) / 1000)
         self.modifiedAt = modifiedAt
         amount = try object.value(for: Keys.amount)
         name = try object.value(for: Keys.name)

@@ -54,7 +54,7 @@ extension FirebaseEnvelopesAccess {
         return ref.child(Keys.Endpoint.users).child(userId)
     }
 
-    func envelopeIdRef(for id: String) -> DatabaseReference {
+    func envelopeIdRef() -> DatabaseReference {
         return ref.child(Keys.Endpoint.envelopes)
     }
 

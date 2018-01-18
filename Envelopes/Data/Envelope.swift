@@ -9,58 +9,6 @@
 import Foundation
 import Marshal
 
-enum Periodicity: JSONMarshaling {
-    case daily
-    case weekly(Weekday)
-    case monthly(Date)
-
-    var displayName: String {
-        switch self {
-        case .daily:
-            return "Daily"
-        case .weekly(_):
-            return "Weekly"
-        case .monthly(_):
-            return "First of Each Month"
-        }
-    }
-
-    var description: String {
-        switch self {
-        case .daily:
-            return "Daily"
-        case .weekly(let weekday):
-            return "Each week on \(weekday.displayName)"
-        case .monthly(_):
-            return "First day of each month."
-        }
-    }
-
-    var key: String {
-        switch self {
-        case .daily:
-            return "daily"
-        case .weekly(_):
-            return "weekly"
-        case .monthly(_):
-            return "monthly."
-        }
-    }
-
-    func jsonObject() -> JSONObject {
-
-        switch self {
-        case .daily:
-            return [key: true]
-        case .weekly(let weekday):
-            return [key: weekday.jsonObject]
-        case .monthly(let startDate):
-            return [key: startDate.millisecondsSince1970]
-        }
-    }
-
-}
-
 struct Envelope: Unmarshaling {
 
     var id: String = Date().iso8601String
@@ -116,11 +64,11 @@ struct Envelope: Unmarshaling {
     init(object: MarshaledObject) throws {
         id = try object.value(for: Keys.id)
         let createdAtInt: Int = try object.value(for: Keys.createdAt)
-        let createdAt: Date = Date(timeIntervalSince1970: Double(createdAtInt))
+        let createdAt: Date = Date(timeIntervalSince1970: Double(createdAtInt) / 1000)
         self.createdAt = createdAt
 
         let modifiedAtInt: Int = try object.value(for: Keys.modifiedAt)
-        let modifiedAt: Date = Date(timeIntervalSince1970: Double(modifiedAtInt))
+        let modifiedAt: Date = Date(timeIntervalSince1970: Double(modifiedAtInt) / 1000)
         self.modifiedAt = modifiedAt
 
         name = try object.value(for: Keys.name)
@@ -129,11 +77,14 @@ struct Envelope: Unmarshaling {
         ownerId = try object.value(for: Keys.ownerId)
         goal = try object.value(for: Keys.goal)
         isActive = try object.value(for: Keys.isActive)
-        expenses = try object.value(for: Keys.expenses)
+//        expenses = try object.value(for: Keys.expenses)
+        let jsonObject: JSONObject = try object.value(for: Keys.periodicity)
+        periodicity = try Periodicity(object: jsonObject)
+        print(periodicity)
     }
 
     init(newEnvelope: NewEnvelope) {
-        ownerId = "user"
+        ownerId = "guy"
         name = newEnvelope.name!
         periodicity = newEnvelope.periodicity
         recurringAmount = newEnvelope.recurringAmount
