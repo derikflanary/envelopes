@@ -37,7 +37,6 @@ extension MainViewController: StoryboardInitializable {
 extension MainViewController: Subscriber {
 
     func update(with state: AppState) {
-
         DispatchQueue.main.async {
             if !state.loginState.isLoggedIn {
                 self.showLoginScreen()
@@ -67,7 +66,6 @@ extension MainViewController {
             controller.removeFromParentViewController()
             controller.view.removeFromSuperview()
         }
-
         addChildViewController(viewController)
         view.addSubview(viewController.view)
 

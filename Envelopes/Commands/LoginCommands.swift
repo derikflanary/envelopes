@@ -17,7 +17,10 @@ struct SignUpNewUser: Command {
         let registeringUser = core.state.loginState.registeringUser
         guard let email = registeringUser.email, let password = registeringUser.password else { return }
         networkAccess.signUpUser(with: email, and: password, core: core) { userId in
-            print(userId)
+            guard let userId = userId, let firstName = registeringUser.firstName, let lastName = registeringUser.lastName else { return }
+            let user = AuthUser(id: userId, email: email, firstName: firstName, lastName: lastName)
+            core.fire(command: CreateNewUser(user: user))
+            core.fire(event: LoggedIn(user: user))
         }
     }
 

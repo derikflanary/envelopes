@@ -24,3 +24,7 @@ struct LastNameUpdated: Event {
 struct PasswordUpdated: Event {
     let password: String
 }
+
+struct LoggedIn: Event {
+    let user: AuthUser
+}

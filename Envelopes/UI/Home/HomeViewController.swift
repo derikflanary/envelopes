@@ -48,6 +48,8 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
         newButton.roundedEdgeType = .full
         collectionView.alwaysBounceVertical = true
         core.fire(command: LoadEnvelopes())
+        guard let user = core.state.loginState.user else { return }
+        core.fire(command: LoadUser(userId: user.id))
     }
 
     override func viewDidAppear(_ animated: Bool) {

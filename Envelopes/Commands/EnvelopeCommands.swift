@@ -16,9 +16,10 @@ struct AddEnvelope: Command {
     let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
 
     func execute(state: AppState, core: Core<AppState>) {
+        guard let user = state.loginState.user else { return }
         let newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
         var envelope = Envelope(newEnvelope: newEnvelope)
-        envelope.ownerId = state.loginState.uid!
+        envelope.ownerId = user.id
         let envelopeRef = networkAccess.envelopeRef()
         networkAccess.updateObject(at: envelopeRef, parameters: envelope.jsonObject(), core: core)
         core.fire(event: Created(item: envelope))
@@ -44,10 +45,12 @@ struct LoadEnvelopes: Command {
     let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
 
     func execute(state: AppState, core: Core<AppState>) {
-        let query = networkAccess.envelopeRef().queryOrdered(byChild: Keys.ownerId).queryEqual(toValue: state.loginState.uid!)
+        guard let user = state.loginState.user else { return }
+        let query = networkAccess.envelopeRef().queryOrdered(byChild: Keys.ownerId).queryEqual(toValue: user.id)
         networkAccess.getObject(at: query, core: core) { json in
+            var envelopes = [Envelope]()
             if let json = json {
-                let envelopes: [Envelope] = json.flatMap {
+                envelopes = json.flatMap {
                     guard var object = $0.value as? JSONObject else { return nil }
                     object[Keys.id] = $0.key
                     do {
@@ -57,8 +60,8 @@ struct LoadEnvelopes: Command {
                         return nil
                     }
                 }
-                core.fire(event: Loaded(items: envelopes))
             }
+            core.fire(event: Loaded(items: envelopes))
         }
     }
 
@@ -95,8 +98,9 @@ struct LoadExpenses: Command {
 
         let query = networkAccess.expensesRef(envelopeId: envelope.id).queryOrdered(byChild: Keys.envelopeId).queryEqual(toValue: envelope.id)
         networkAccess.getObject(at: query, core: core) { json in
+            var expenses = [Expense]()
             if let json = json {
-                let expenses: [Expense] = json.flatMap {
+                expenses = json.flatMap {
                     guard var object = $0.value as? JSONObject else { return nil }
                     object[Keys.id] = $0.key
                     do {
@@ -109,11 +113,9 @@ struct LoadExpenses: Command {
                 var envelopeUpdated = self.envelope
                 envelopeUpdated.expenses = expenses
                 core.fire(event: Updated(item: envelopeUpdated))
-                core.fire(event: Loaded(items: expenses))
-            } else {
-                core.fire(event: Loaded(items: [Expense]()))
-            }
 
+            }
+            core.fire(event: Loaded(items: [Expense]()))
         }
     }
 

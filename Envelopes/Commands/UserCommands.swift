@@ -11,12 +11,32 @@ import Reactor
 
 struct CreateNewUser: Command {
 
+    let user: AuthUser
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+
+    func execute(state: AppState, core: Core<AppState>) {
+        let usersRef = networkAccess.userIdRef(for: user.id)
+        networkAccess.createObject(at: usersRef, createNewChildId: false, removeId: false, parameters: user.jsonObject(), core: core)
+    }
+
+}
+
+struct LoadUser: Command {
+
     let userId: String
     let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
 
     func execute(state: AppState, core: Core<AppState>) {
         let usersRef = networkAccess.userIdRef(for: userId)
-        networkAccess.createObject(at: usersRef, createNewChildId: false, removeId: false, parameters: ["userId": userId], core: core)
+        networkAccess.getObject(at: usersRef, core: core) { json in
+            if let json = json {
+                do {
+                    let user =  try AuthUser(object: json)
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
 
 }
