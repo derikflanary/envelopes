@@ -17,8 +17,8 @@ class EnvelopeDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var envelopeDetailsDataSource: EnvelopeDetailsDataSource!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.font = UIFont.systemFont(ofSize: 21, weight: .light)
@@ -29,11 +29,8 @@ class EnvelopeDetailsViewController: UIViewController {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
-        if let selectedEnvelope = core.state.envelopeState.selectedEnvelope {
-            envelopeDetailsDataSource.envelope = selectedEnvelope
-            tableView.reloadData()
-            core.fire(command: LoadExpenses(for: selectedEnvelope))
-        }
+        envelopeDetailsDataSource.envelope = core.state.envelopeState.selectedEnvelope
+        tableView.reloadData()
 
     }
 
@@ -81,9 +78,13 @@ extension EnvelopeDetailsViewController: UITableViewDelegate {
 extension EnvelopeDetailsViewController: Subscriber {
 
     func update(with state: AppState) {
+        if state.envelopeState.expensesLoaded {
+            activityIndicator.stopAnimating()
+        }
         guard let envelope = state.envelopeState.selectedEnvelope else { return }
         titleTextField.text = envelope.name
         envelopeDetailsDataSource.envelope = envelope
+        envelopeDetailsDataSource.isLoading = !state.envelopeState.expensesLoaded
         tableView.reloadData()
     }
 

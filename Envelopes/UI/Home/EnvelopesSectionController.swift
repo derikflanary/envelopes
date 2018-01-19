@@ -74,7 +74,9 @@ extension EnvelopesSectionController {
 
     override func didSelectItem(at index: Int) {
         sectionSelectionCompletion?()
-        core.fire(event: Selected(item: envelopeSection.envelopes[index]))
+        let envelope = envelopeSection.envelopes[index]
+        core.fire(event: Selected(item: envelope))
+        core.fire(command: LoadExpenses(for: envelope))
     }
 
 }

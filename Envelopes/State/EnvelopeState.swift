@@ -17,6 +17,8 @@ struct EnvelopeState: State {
     var selectedEnvelope: Envelope?
     var newEnvelopeState = NewEnvelopeState()
     var newExpenseState = NewExpenseState()
+    var envelopesLoaded = false
+    var expensesLoaded = false
     
 
     // MARK: - React function
@@ -25,8 +27,12 @@ struct EnvelopeState: State {
         switch event {
         case let event as Loaded<Envelope>:
             self.envelopes = event.items
+            envelopesLoaded = true
         case let event as Selected<Envelope>:
             selectedEnvelope = event.item
+            if let envelope = selectedEnvelope, envelope.expenses.count > 0 {
+                envelopesLoaded = true
+            }
         case let event as Created<Envelope>:
             envelopes.append(event.item)
         case let event as Updated<Envelope>:
@@ -36,6 +42,8 @@ struct EnvelopeState: State {
             if selectedEnvelope != nil {
                 selectedEnvelope = event.item
             }
+        case _ as Loaded<Expense>:
+            expensesLoaded = true
         case let event as Created<Expense>:
             if var selectedEnvelope = selectedEnvelope {
                 selectedEnvelope.expenses.append(event.item)
@@ -50,6 +58,7 @@ struct EnvelopeState: State {
             }
         case _ as Reset<Envelope>:
             selectedEnvelope = nil
+            expensesLoaded = false
         case _ as Reset<NewEnvelope>:
             newExpenseState = NewExpenseState()
 

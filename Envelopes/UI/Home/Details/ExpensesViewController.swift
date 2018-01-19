@@ -21,6 +21,9 @@ class ExpensesViewController: UIViewController {
 
     override func viewDidLoad() {
         newExpenseButton.roundedEdgeType = .full
+        guard let envelope = core.state.envelopeState.selectedEnvelope else { return }
+        expensesDataSource.expenses = envelope.expenses
+        tableView.reloadData()
     }
 
     override func viewDidAppear(_ animated: Bool) {

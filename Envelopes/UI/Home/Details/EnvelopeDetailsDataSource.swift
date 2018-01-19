@@ -54,9 +54,13 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
     }
 
     var envelope: Envelope?
+    var isLoading: Bool = true
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isLoading {
+            return 0
+        }
         if let envelope = envelope {
             if envelope.hasGoal {
                 return Row.allValues.count

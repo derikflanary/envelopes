@@ -33,7 +33,8 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
     @IBOutlet weak var newButton: RoundedButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var emptyStateView: UIView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     // MARK: View life cycle
 
@@ -86,7 +87,11 @@ extension HomeViewController: ListAdapterDataSource {
     }
 
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        return emptyStateView
+        if core.state.envelopeState.envelopesLoaded {
+            return emptyStateView
+        } else {
+            return nil
+        }
     }
 
 }
@@ -94,6 +99,11 @@ extension HomeViewController: ListAdapterDataSource {
 extension HomeViewController: Subscriber {
 
     func update(with state: AppState) {
-        adapter.performUpdates(animated: true, completion: nil)
+        if state.envelopeState.envelopesLoaded {
+            activityIndicator.stopAnimating()
+        }
+        if core.state.envelopeState.envelopesLoaded {
+            adapter.performUpdates(animated: true, completion: nil)
+        }
     }
 }

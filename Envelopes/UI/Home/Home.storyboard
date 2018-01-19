@@ -31,6 +31,10 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Qi2-87-Pn8">
+                                <rect key="frame" x="169" y="414.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47058823529999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXj-1a-UEc" customClass="RoundedButton" customModule="Envelopes" customModuleProvider="target">
                                 <rect key="frame" x="303" y="706" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,10 +55,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Qi2-87-Pn8" firstAttribute="centerX" secondItem="EJU-Ih-YWm" secondAttribute="centerX" id="JsR-9J-5nm"/>
                             <constraint firstItem="EJU-Ih-YWm" firstAttribute="bottom" secondItem="eXj-1a-UEc" secondAttribute="bottom" constant="12" id="NVX-Kf-lBm"/>
                             <constraint firstItem="ftF-RV-Bnp" firstAttribute="trailing" secondItem="EJU-Ih-YWm" secondAttribute="trailing" id="bhl-Pw-Eit"/>
                             <constraint firstItem="ftF-RV-Bnp" firstAttribute="leading" secondItem="EJU-Ih-YWm" secondAttribute="leading" id="pjo-aD-Phm"/>
                             <constraint firstItem="ftF-RV-Bnp" firstAttribute="top" secondItem="EJU-Ih-YWm" secondAttribute="top" id="rT4-hl-KEb"/>
+                            <constraint firstItem="Qi2-87-Pn8" firstAttribute="centerY" secondItem="EJU-Ih-YWm" secondAttribute="centerY" id="t4j-61-FE5"/>
                             <constraint firstItem="EJU-Ih-YWm" firstAttribute="trailing" secondItem="eXj-1a-UEc" secondAttribute="trailing" constant="12" id="tt9-r6-Quk"/>
                             <constraint firstItem="ftF-RV-Bnp" firstAttribute="bottom" secondItem="EJU-Ih-YWm" secondAttribute="bottom" id="xuS-tY-ASc"/>
                         </constraints>
@@ -64,6 +70,7 @@
                         <barButtonItem key="backBarButtonItem" title="✉️" id="UUA-PM-Mhu"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Qi2-87-Pn8" id="ChG-ep-SpR"/>
                         <outlet property="collectionView" destination="ftF-RV-Bnp" id="Pt1-NS-qal"/>
                         <outlet property="emptyStateView" destination="f2g-qt-wM8" id="RTG-li-lA1"/>
                         <outlet property="newButton" destination="eXj-1a-UEc" id="B0C-Ir-y7P"/>
@@ -620,21 +627,27 @@
                                     <outlet property="delegate" destination="IwK-Nj-Ps6" id="wvv-12-eAE"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rdj-HH-Qp8">
+                                <rect key="frame" x="169" y="414.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47058823529999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XIx-d4-KJR" firstAttribute="bottom" secondItem="vCq-4t-En1" secondAttribute="bottom" id="2bs-83-NIm"/>
+                            <constraint firstItem="Rdj-HH-Qp8" firstAttribute="centerY" secondItem="vCq-4t-En1" secondAttribute="centerY" id="CIV-YA-7e7"/>
                             <constraint firstItem="XIx-d4-KJR" firstAttribute="leading" secondItem="vCq-4t-En1" secondAttribute="leading" id="QgJ-J9-zeM"/>
                             <constraint firstItem="XIx-d4-KJR" firstAttribute="trailing" secondItem="vCq-4t-En1" secondAttribute="trailing" id="b6A-Xo-n5S"/>
+                            <constraint firstItem="Rdj-HH-Qp8" firstAttribute="centerX" secondItem="vCq-4t-En1" secondAttribute="centerX" id="rKv-Uj-oEW"/>
                             <constraint firstItem="XIx-d4-KJR" firstAttribute="top" secondItem="vCq-4t-En1" secondAttribute="top" id="sl2-Or-fhV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vCq-4t-En1"/>
                     </view>
                     <navigationItem key="navigationItem" id="adj-9X-jeY">
                         <barButtonItem key="backBarButtonItem" title=" " id="RPO-LI-H2Y"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="edit" id="vlf-xA-Zmr"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Rdj-HH-Qp8" id="sb7-tp-Pwz"/>
                         <outlet property="envelopeDetailsDataSource" destination="rz5-IV-GF0" id="UX3-io-ZVN"/>
                         <outlet property="tableView" destination="XIx-d4-KJR" id="daG-CA-FLA"/>
                         <segue destination="GPr-PY-GBo" kind="show" identifier="showExpenses" id="ygk-X2-lR9"/>
@@ -657,41 +670,50 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="H4q-wI-fwk">
-                                    <rect key="frame" x="0.0" y="88" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="115" width="375" height="1"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExpenseCell" rowHeight="60" id="5gg-BF-LnE" customClass="ExpenseCell" customModule="Envelopes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExpenseCell" rowHeight="87" id="5gg-BF-LnE" customClass="ExpenseCell" customModule="Envelopes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5gg-BF-LnE" id="oFd-zV-X3R">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kq-He-eKm">
-                                                    <rect key="frame" x="15" y="15.666666666666664" width="63" height="29"/>
+                                                    <rect key="frame" x="15" y="15.666666666666666" width="63" height="28.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmQ-xJ-KuC">
-                                                    <rect key="frame" x="330" y="15.666666666666664" width="30" height="29"/>
+                                                    <rect key="frame" x="330" y="29" width="30" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2u-af-6mv">
+                                                    <rect key="frame" x="15" y="52" width="32.333333333333336" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.57647058819999997" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zmQ-xJ-KuC" firstAttribute="centerY" secondItem="oFd-zV-X3R" secondAttribute="centerY" id="5dF-pg-SWY"/>
-                                                <constraint firstItem="9kq-He-eKm" firstAttribute="centerY" secondItem="oFd-zV-X3R" secondAttribute="centerY" id="5uG-iS-AhW"/>
                                                 <constraint firstItem="9kq-He-eKm" firstAttribute="leading" secondItem="oFd-zV-X3R" secondAttribute="leading" constant="15" id="Mdo-8j-zRB"/>
+                                                <constraint firstItem="h2u-af-6mv" firstAttribute="top" secondItem="9kq-He-eKm" secondAttribute="bottom" constant="7.6666666666666643" id="PB4-fm-G1h"/>
                                                 <constraint firstAttribute="trailing" secondItem="zmQ-xJ-KuC" secondAttribute="trailing" constant="15" id="Sxu-dc-02Z"/>
                                                 <constraint firstItem="9kq-He-eKm" firstAttribute="top" secondItem="oFd-zV-X3R" secondAttribute="top" constant="15.5" id="fpF-3m-JRl"/>
+                                                <constraint firstAttribute="bottom" secondItem="h2u-af-6mv" secondAttribute="bottom" constant="16.666666666666671" id="hCD-a1-4rV"/>
+                                                <constraint firstItem="h2u-af-6mv" firstAttribute="leading" secondItem="9kq-He-eKm" secondAttribute="leading" id="hx3-f5-A1h"/>
                                                 <constraint firstItem="zmQ-xJ-KuC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9kq-He-eKm" secondAttribute="trailing" constant="8" id="zk7-n1-AsC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="h2u-af-6mv" id="n80-ry-pkE"/>
                                             <outlet property="expenseLabel" destination="zmQ-xJ-KuC" id="ybe-44-Pjs"/>
                                             <outlet property="nameLabel" destination="9kq-He-eKm" id="eOr-aI-iAv"/>
                                         </connections>
@@ -764,7 +786,7 @@
                 </view>
                 <customObject id="rT1-J7-LD7" customClass="ExpensesDataSource" customModule="Envelopes" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="-45"/>
+            <point key="canvasLocation" x="2288.8000000000002" y="-45.073891625615765"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nbq-et-gZg">

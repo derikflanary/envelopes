@@ -15,6 +15,11 @@ class TotalCell: UITableViewCell, ReusableView {
     func configure(with envelope: Envelope?) {
         guard let envelope = envelope else { return }
         label.text = envelope.totalAmount.currency()
+        if envelope.totalAmount < 0 {
+            label.textColor = UIColor.destructiveRed
+        } else {
+            label.textColor = UIColor.grayTwo
+        }
     }
 
 }

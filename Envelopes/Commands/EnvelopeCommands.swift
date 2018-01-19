@@ -107,6 +107,7 @@ struct LoadExpenses: Command {
                 var envelopeUpdated = self.envelope
                 envelopeUpdated.expenses = expenses
                 core.fire(event: Updated(item: envelopeUpdated))
+                core.fire(event: Loaded(items: expenses))
             }
         }
     }
