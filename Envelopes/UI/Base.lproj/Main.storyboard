@@ -6,8 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IUT-OS-Kqt">
-                                <rect key="frame" x="0.0" y="167" width="375" height="500"/>
+                                <rect key="frame" x="0.0" y="222" width="375" height="445"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Rwe-lV-ddn">
                                     <rect key="frame" x="0.0" y="684" width="375" height="0.0"/>
@@ -63,8 +63,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9q-0x-bkZ">
-                                                    <rect key="frame" x="134" y="15" width="108" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up Below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9q-0x-bkZ">
+                                                    <rect key="frame" x="94" y="15" width="187" height="50"/>
                                                     <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="28"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -85,9 +85,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up and create or join a league to start measuring your Foosball stats." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-qT-DMz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the power of envelopes to help you empower your budget." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-qT-DMz">
                                                     <rect key="frame" x="15" y="11" width="345" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -96,7 +96,6 @@
                                                 <constraint firstItem="fUI-qT-DMz" firstAttribute="top" secondItem="ejy-x6-KPm" secondAttribute="topMargin" id="94Z-J5-RtZ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fUI-qT-DMz" secondAttribute="trailing" id="Nbm-cO-Vwd"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fUI-qT-DMz" secondAttribute="bottom" constant="32" id="PyA-FQ-G0N"/>
-                                                <constraint firstItem="fUI-qT-DMz" firstAttribute="centerX" secondItem="ejy-x6-KPm" secondAttribute="centerX" id="ao0-T9-ZAG"/>
                                                 <constraint firstItem="fUI-qT-DMz" firstAttribute="leading" secondItem="ejy-x6-KPm" secondAttribute="leadingMargin" id="hlT-XY-QWf"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -114,7 +113,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imu-dE-gNQ" customClass="RoundedButton" customModule="foos" customModuleProvider="target">
                                                     <rect key="frame" x="35" y="11" width="305" height="44"/>
-                                                    <color key="backgroundColor" red="0.18039215689999999" green="0.79215686269999996" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.27450980392156865" green="0.6588235294117647" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="xt9-eR-3vt"/>
                                                     </constraints>
@@ -400,22 +399,31 @@
                                     <outlet property="delegate" destination="aa0-us-Eup" id="cov-yj-Fa4"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-3m-ufQ">
-                                <rect key="frame" x="145" y="28" width="85.5" height="25.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Envelopes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-3m-ufQ">
+                                <rect key="frame" x="84" y="28" width="207" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelopeHalf" translatesAutoresizingMaskIntoConstraints="NO" id="8yH-WM-R66">
+                                <rect key="frame" x="141" y="82" width="92" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8yH-WM-R66" secondAttribute="height" multiplier="59:64" id="G8h-Oo-lmd"/>
+                                    <constraint firstAttribute="height" constant="100" id="VRy-4u-CLR"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.26104740883298871" green="0.31684958840285365" blue="0.55748334390862941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="IUT-OS-Kqt" firstAttribute="leading" secondItem="rI5-P2-AOd" secondAttribute="leading" id="BJf-oE-Phh"/>
+                            <constraint firstItem="8yH-WM-R66" firstAttribute="centerX" secondItem="nXF-xd-HLB" secondAttribute="centerX" id="HpT-AB-cMW"/>
                             <constraint firstItem="MLr-3m-ufQ" firstAttribute="centerX" secondItem="rI5-P2-AOd" secondAttribute="centerX" id="Kte-7B-jjr"/>
                             <constraint firstAttribute="trailing" secondItem="IUT-OS-Kqt" secondAttribute="trailing" id="MWk-27-ZKt"/>
                             <constraint firstItem="IUT-OS-Kqt" firstAttribute="bottom" secondItem="4gm-c3-QSn" secondAttribute="top" id="T6h-4r-pOD"/>
-                            <constraint firstItem="IUT-OS-Kqt" firstAttribute="centerY" secondItem="rI5-P2-AOd" secondAttribute="centerY" multiplier="1.25" id="iXZ-rA-Hea"/>
-                            <constraint firstItem="MLr-3m-ufQ" firstAttribute="top" secondItem="R56-6x-1d5" secondAttribute="bottom" constant="8" id="o0u-lw-DqS"/>
+                            <constraint firstItem="8yH-WM-R66" firstAttribute="top" secondItem="MLr-3m-ufQ" secondAttribute="bottom" constant="28" id="eiL-N7-o3N"/>
+                            <constraint firstItem="IUT-OS-Kqt" firstAttribute="top" secondItem="8yH-WM-R66" secondAttribute="bottom" constant="40" id="jdB-cs-hOf"/>
+                            <constraint firstItem="MLr-3m-ufQ" firstAttribute="top" secondItem="R56-6x-1d5" secondAttribute="bottom" constant="8" id="p1w-59-ZEb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nXF-xd-HLB"/>
                         <connections>
@@ -436,7 +444,10 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1223" y="134"/>
+            <point key="canvasLocation" x="1221.5999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="envelopeHalf" width="236" height="256"/>
+    </resources>
 </document>

@@ -34,7 +34,7 @@ enum AuthViewState {
     func views() -> [AuthCellType] {
         switch self {
         case .main:
-            return [.headlineCell,
+            return [
                     .subHeadlineCell,
                     .actionButtonCell,
                     .disclaimerCell,
@@ -67,7 +67,7 @@ enum AuthViewState {
     func subHeadline() -> String {
         switch self {
         case .main:
-            return "Sign up and creating your envelopes today."
+            return "Use the power of envelopes to help you empower your budget."
         case .forgotPassword:
             return "Enter your email and we will send you a link to reset your password."
         default:
@@ -120,6 +120,10 @@ struct LoginState: State {
     mutating func react(to event: Event) {
         error = nil
         switch event {
+        case let event as UserSignedUp:
+            isLoggedIn = true
+        case let event as UserLoggedIn:
+            isLoggedIn = true
         case let event as Updated<AuthViewState>:
             authViewState = event.item
         case let event as EmailUpdated:

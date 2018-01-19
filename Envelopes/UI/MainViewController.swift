@@ -40,9 +40,9 @@ extension MainViewController: Subscriber {
 
         DispatchQueue.main.async {
             if !state.loginState.isLoggedIn {
-                self.showHomeViewController()
-//                self.showLoginScreen()
+                self.showLoginScreen()
             } else {
+                self.showHomeViewController()
             }
         }
     }

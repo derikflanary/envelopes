@@ -81,6 +81,7 @@
 		EC2D14DD200C425800EC0FE9 /* CashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14DC200C425800EC0FE9 /* CashCell.swift */; };
 		EC2D14DF200C879600EC0FE9 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14DE200C879600EC0FE9 /* Quote.swift */; };
 		EC2D14E1201017B400EC0FE9 /* Periodicity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E0201017B400EC0FE9 /* Periodicity.swift */; };
+		EC2D14E32011791200EC0FE9 /* LoginCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E22011791200EC0FE9 /* LoginCommands.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -166,6 +167,7 @@
 		EC2D14DC200C425800EC0FE9 /* CashCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCell.swift; sourceTree = "<group>"; };
 		EC2D14DE200C879600EC0FE9 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		EC2D14E0201017B400EC0FE9 /* Periodicity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periodicity.swift; sourceTree = "<group>"; };
+		EC2D14E22011791200EC0FE9 /* LoginCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCommands.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				EC2D148B2006C08900EC0FE9 /* GenericEvents.swift */,
 				EC2D148D2006C09200EC0FE9 /* LoginEvents.swift */,
+				EC2D14E22011791200EC0FE9 /* LoginCommands.swift */,
 				EC28759F2001C7D50004B9CC /* UserCommands.swift */,
 				EC2D14C22008608900EC0FE9 /* EnvelopeCommands.swift */,
 			);
@@ -597,6 +600,7 @@
 				EC2D14B12007FEFB00EC0FE9 /* EnvelopeState.swift in Sources */,
 				EC2D14762006BD7A00EC0FE9 /* FirstNameTextFieldCell.swift in Sources */,
 				EC2D14902006C0EF00EC0FE9 /* Diff.swift in Sources */,
+				EC2D14E32011791200EC0FE9 /* LoginCommands.swift in Sources */,
 				EC2D14BD200856C500EC0FE9 /* GoalCell.swift in Sources */,
 				EC2D14B520083B0A00EC0FE9 /* NewEnvelopeDataSource.swift in Sources */,
 				EC28759920015BA20004B9CC /* GenericFirebaseEvents.swift in Sources */,

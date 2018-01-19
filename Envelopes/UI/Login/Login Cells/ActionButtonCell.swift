@@ -37,11 +37,11 @@ class ActionButtonCell: UITableViewCell, ReusableView {
         case .main:
             core.fire(event: Updated(item: AuthViewState.register))
         case .signIn:
-            break
+            core.fire(command: Login())
         case .register:
-            break
+            core.fire(command: SignUpNewUser())
         case .forgotPassword:
-            break
+            core.fire(command: ForgotPassword())
         }
     }
     

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Envelopes/FirebaseReactor/FirebaseReactorAccess.swift"
-            timestampString = "538014436.01652"
+            filePath = "Envelopes/State/LoginState.swift"
+            timestampString = "538016892.802995"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "573"
-            endingLineNumber = "573"
-            landmarkName = "execute(state:core:)"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "react(to:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
