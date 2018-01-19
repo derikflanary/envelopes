@@ -84,7 +84,7 @@ struct Envelope: Unmarshaling {
     }
 
     init(newEnvelope: NewEnvelope) {
-        ownerId = "guy"
+        ownerId = ""
         name = newEnvelope.name!
         periodicity = newEnvelope.periodicity
         recurringAmount = newEnvelope.recurringAmount

@@ -114,6 +114,7 @@ struct LoginState: State {
     var isLoggedIn: Bool = false
     var registeringUser: ResgisteringUser = ResgisteringUser()
     var authViewState: AuthViewState = .main
+    var uid: String?
     var error: String?
 
 
@@ -122,8 +123,10 @@ struct LoginState: State {
         switch event {
         case let event as UserSignedUp:
             isLoggedIn = true
+            uid = event.userId
         case let event as UserLoggedIn:
             isLoggedIn = true
+            uid = event.userId
         case let event as Updated<AuthViewState>:
             authViewState = event.item
         case let event as EmailUpdated:

@@ -9,6 +9,7 @@
 import Foundation
 import Reactor
 import Marshal
+import Firebase
 
 struct AddEnvelope: Command {
 
@@ -16,7 +17,8 @@ struct AddEnvelope: Command {
 
     func execute(state: AppState, core: Core<AppState>) {
         let newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
-        let envelope = Envelope(newEnvelope: newEnvelope)
+        var envelope = Envelope(newEnvelope: newEnvelope)
+        envelope.ownerId = state.loginState.uid!
         let envelopeRef = networkAccess.envelopeRef()
         networkAccess.updateObject(at: envelopeRef, parameters: envelope.jsonObject(), core: core)
         core.fire(event: Created(item: envelope))
@@ -42,7 +44,7 @@ struct LoadEnvelopes: Command {
     let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
 
     func execute(state: AppState, core: Core<AppState>) {
-        let query = networkAccess.envelopeRef().queryOrdered(byChild: Keys.ownerId).queryEqual(toValue: "guy")
+        let query = networkAccess.envelopeRef().queryOrdered(byChild: Keys.ownerId).queryEqual(toValue: state.loginState.uid!)
         networkAccess.getObject(at: query, core: core) { json in
             if let json = json {
                 let envelopes: [Envelope] = json.flatMap {
@@ -108,7 +110,10 @@ struct LoadExpenses: Command {
                 envelopeUpdated.expenses = expenses
                 core.fire(event: Updated(item: envelopeUpdated))
                 core.fire(event: Loaded(items: expenses))
+            } else {
+                core.fire(event: Loaded(items: [Expense]()))
             }
+
         }
     }
 
