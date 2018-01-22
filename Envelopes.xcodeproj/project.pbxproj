@@ -83,6 +83,7 @@
 		EC2D14E1201017B400EC0FE9 /* Periodicity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E0201017B400EC0FE9 /* Periodicity.swift */; };
 		EC2D14E32011791200EC0FE9 /* LoginCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E22011791200EC0FE9 /* LoginCommands.swift */; };
 		EC2D14E52012512000EC0FE9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E42012512000EC0FE9 /* User.swift */; };
+		ECB7AF0C20151FE30094CDCD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -170,6 +171,7 @@
 		EC2D14E0201017B400EC0FE9 /* Periodicity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periodicity.swift; sourceTree = "<group>"; };
 		EC2D14E22011791200EC0FE9 /* LoginCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCommands.swift; sourceTree = "<group>"; };
 		EC2D14E42012512000EC0FE9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				EC2D14A820070C7900EC0FE9 /* EnvelopesSectionController.swift */,
 				EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */,
 				EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */,
+				ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */,
 				EC2D14C420092D1700EC0FE9 /* NewEnvelope */,
 				EC2D14CF2009C5B600EC0FE9 /* Details */,
 			);
@@ -586,6 +589,7 @@
 				EC2D14842006BE4A00EC0FE9 /* ReusableView.swift in Sources */,
 				EC2D14DB2009D2F900EC0FE9 /* ExpenseCell.swift in Sources */,
 				EC2D14C120085AB100EC0FE9 /* NewEnvelope.swift in Sources */,
+				ECB7AF0C20151FE30094CDCD /* SettingsViewController.swift in Sources */,
 				EC2D14CA2009632A00EC0FE9 /* DetailsCell.swift in Sources */,
 				EC2D147B2006BD7A00EC0FE9 /* HeadlineCell.swift in Sources */,
 				EC2D14982006C1DD00EC0FE9 /* UITableView+Extensions.swift in Sources */,

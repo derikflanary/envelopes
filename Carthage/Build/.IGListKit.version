@@ -1,7 +1,7 @@
 {
   "iOS" : [
     {
-      "hash" : "997208ad39e8514d438fb8d9604a77590ffa001cc3180880da215b83df0e037d",
+      "hash" : "1c257b03424b038c29bf31aedc274910ae7f088600035b557760f1472e9db496",
       "name" : "IGListKit"
     }
   ],
@@ -11,13 +11,13 @@
   ],
   "tvOS" : [
     {
-      "hash" : "1a3b2d9672d1e49eeb90c5401918114d29271265f0b3854f29357efbf6544682",
+      "hash" : "6e333e0bf9413e6dde0e98d96310c254d2a459f636859d40da258bd1330a1f25",
       "name" : "IGListKit"
     }
   ],
   "Mac" : [
     {
-      "hash" : "1e5d0721c5c3047f11bb864e2c4f035222845b1d09b9897e234f56c92fc502f4",
+      "hash" : "79bd777981ce5b5fe0b1afd23e5ad1c410b1e3a7ee15d76bd426f6a99f633596",
       "name" : "IGListKit"
     }
   ]

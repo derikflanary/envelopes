@@ -8,6 +8,7 @@
 
 import UIKit
 import Reactor
+import Firebase
 
 final class MainViewController: UIViewController {
 
@@ -18,6 +19,8 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         core.add(subscriber: self)
+        core.fire(command: CheckAuth())
+        
         // TODO: Check if user is still logged in
     }
 

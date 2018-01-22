@@ -18,7 +18,8 @@ class EnvelopeDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var envelopeDetailsDataSource: EnvelopeDetailsDataSource!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.font = UIFont.systemFont(ofSize: 21, weight: .light)
@@ -47,6 +48,16 @@ class EnvelopeDetailsViewController: UIViewController {
     @objc func viewTapped() {
         view.endEditing(true)
         titleTextField.resignFirstResponder()
+    }
+
+    @IBAction func editTapped(_ sender: Any) {
+        switch core.state.envelopeState.detailsViewState {
+        case .viewing:
+            core.fire(event: Selected(item: DetailsViewState.editing))
+        case .editing:
+            core.fire(event: Selected(item: DetailsViewState.viewing))
+            core.fire(command: UpdateEnvelope())
+        }
     }
 
 }
@@ -83,6 +94,14 @@ extension EnvelopeDetailsViewController: Subscriber {
         }
         guard let envelope = state.envelopeState.selectedEnvelope else { return }
         titleTextField.text = envelope.name
+        switch state.envelopeState.detailsViewState {
+        case .viewing:
+            envelopeDetailsDataSource.isEditing = false
+            editButton.title = "Edit"
+        case .editing:
+            envelopeDetailsDataSource.isEditing = true
+            editButton.title = "Save"
+        }
         envelopeDetailsDataSource.envelope = envelope
         envelopeDetailsDataSource.isLoading = !state.envelopeState.expensesLoaded
         tableView.reloadData()

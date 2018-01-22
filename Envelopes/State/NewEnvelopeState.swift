@@ -23,7 +23,7 @@ struct NewEnvelopeState: State {
         case let event as Updated<NewEnvelope>:
             newEnvelope = event.item
         case let event as Selected<Periodicity>:
-            newEnvelope.periodicity = event.item!
+            newEnvelope.periodicity = event.item
         default:
             break
         }

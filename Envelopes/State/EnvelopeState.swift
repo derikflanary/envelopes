@@ -9,6 +9,11 @@
 import Foundation
 import Reactor
 
+enum DetailsViewState {
+    case viewing
+    case editing
+}
+
 struct EnvelopeState: State {
 
     // MARK: - Properties
@@ -19,6 +24,7 @@ struct EnvelopeState: State {
     var newExpenseState = NewExpenseState()
     var envelopesLoaded = false
     var expensesLoaded = false
+    var detailsViewState: DetailsViewState = .viewing
     
 
     // MARK: - React function
@@ -56,6 +62,12 @@ struct EnvelopeState: State {
             if let index = envelopes.index(of: event.item) {
                 envelopes.remove(at: index)
             }
+        case let event as Selected<DetailsViewState>:
+            detailsViewState = event.item
+        case let event as UpdatedEnvelopeTotal:
+            guard var envelope = selectedEnvelope else { break }
+            envelope.updateAmounts(with: event.newTotal)
+            selectedEnvelope = envelope
         case _ as Reset<Envelope>:
             selectedEnvelope = nil
             expensesLoaded = false

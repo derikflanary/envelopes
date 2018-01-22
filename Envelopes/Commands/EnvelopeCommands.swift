@@ -11,6 +11,10 @@ import Reactor
 import Marshal
 import Firebase
 
+struct UpdatedEnvelopeTotal: Event {
+    let newTotal: Double
+}
+
 struct AddEnvelope: Command {
 
     let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess

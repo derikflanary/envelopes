@@ -14,7 +14,7 @@ struct Created<T>: Event {
 }
 
 struct Selected<T>: Event {
-    var item: T?
+    var item: T
 }
 
 struct Updated<T>: Event {

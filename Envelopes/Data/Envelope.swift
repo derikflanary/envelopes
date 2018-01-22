@@ -91,6 +91,11 @@ struct Envelope: Unmarshaling {
         goal = newEnvelope.goal
         startingAmount = newEnvelope.startingAmount
     }
+
+    mutating func updateAmounts(with newTotal: Double) {
+        let difference = newTotal - totalAmount
+        startingAmount += difference
+    }
     
 }
 

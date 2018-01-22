@@ -55,6 +55,7 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
 
     var envelope: Envelope?
     var isLoading: Bool = true
+    var isEditing: Bool = false
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,7 +83,7 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
         switch row {
         case .total:
             let cell = tableView.dequeueReusableCell(for: indexPath) as TotalCell
-            cell.configure(with: envelope)
+            cell.configure(with: envelope, isEditing: isEditing)
             return cell
             
         case .recurring, .frequency, .accumulated, .goal, .expenses, .date:

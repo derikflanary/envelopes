@@ -19,6 +19,13 @@ struct AppState: State {
     var envelopeState = EnvelopeState()
 
     mutating func react(to event: Event) {
+        switch event {
+        case _ as UserLoggedOut:
+            loginState = LoginState()
+            envelopeState = EnvelopeState()
+        default:
+            break
+        }
         loginState.react(to: event)
         envelopeState.react(to: event)
     }

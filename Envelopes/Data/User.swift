@@ -37,9 +37,9 @@ struct AuthUser: JSONMarshaling, Unmarshaling {
 
     func jsonObject() -> JSONObject {
         return [Keys.id: id,
-                Keys.email: email,
-                Keys.firstName: firstName,
-                Keys.lastName: lastName]
+                Keys.email: email ?? "",
+                Keys.firstName: firstName ?? "",
+                Keys.lastName: lastName ?? ""]
     }
 
 }

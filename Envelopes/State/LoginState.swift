@@ -9,6 +9,48 @@
 import Foundation
 import Reactor
 
+struct LoginState: State {
+
+    // MARK: - Properties
+    
+    var isLoggedIn: Bool = false
+    var registeringUser: ResgisteringUser = ResgisteringUser()
+    var authViewState: AuthViewState = .main
+    var user: AuthUser?
+    var error: String?
+
+
+    mutating func react(to event: Event) {
+        error = nil
+        switch event {
+        case let event as UserSignedUp:
+            isLoggedIn = true
+            user = AuthUser(id: event.userId, email: event.email, firstName: nil, lastName: nil)
+        case let event as UserLoggedIn:
+            isLoggedIn = true
+            user = AuthUser(id: event.userId, email: event.email, firstName: nil, lastName: nil)
+        case let event as LoggedIn:
+            user = event.user
+        case let event as UserIdentified:
+            isLoggedIn = true
+            user = AuthUser(id: event.userId, email: nil, firstName: nil, lastName: nil)
+        case let event as Updated<AuthViewState>:
+            authViewState = event.item
+        case let event as EmailUpdated:
+            registeringUser.email = event.email
+        case let event as FirstNameUpdated:
+            registeringUser.firstName = event.firstName
+        case let event as LastNameUpdated:
+            registeringUser.lastName = event.lastName
+        case let event as PasswordUpdated:
+            registeringUser.password = event.password
+        default:
+            break
+        }
+    }
+
+}
+
 // MARK: - Enums
 
 enum AuthCellType: String {
@@ -35,11 +77,11 @@ enum AuthViewState {
         switch self {
         case .main:
             return [
-                    .subHeadlineCell,
-                    .actionButtonCell,
-                    .disclaimerCell,
-                    .seperatorCell,
-                    .questionCell]
+                .subHeadlineCell,
+                .actionButtonCell,
+                .disclaimerCell,
+                .seperatorCell,
+                .questionCell]
         case .register:
             return [.emailTextFieldCell,
                     .firstNameTextFieldCell,
@@ -105,43 +147,4 @@ enum AuthViewState {
             return "Sign up now"
         }
     }
-}
-
-struct LoginState: State {
-
-    // MARK: - Properties
-    
-    var isLoggedIn: Bool = false
-    var registeringUser: ResgisteringUser = ResgisteringUser()
-    var authViewState: AuthViewState = .main
-    var user: AuthUser?
-    var error: String?
-
-
-    mutating func react(to event: Event) {
-        error = nil
-        switch event {
-        case let event as UserSignedUp:
-            isLoggedIn = true
-            user = AuthUser(id: event.userId, email: event.email, firstName: nil, lastName: nil)
-        case let event as UserLoggedIn:
-            isLoggedIn = true
-            user = AuthUser(id: event.userId, email: event.email, firstName: nil, lastName: nil)
-        case let event as LoggedIn:
-            user = event.user
-        case let event as Updated<AuthViewState>:
-            authViewState = event.item
-        case let event as EmailUpdated:
-            registeringUser.email = event.email
-        case let event as FirstNameUpdated:
-            registeringUser.firstName = event.firstName
-        case let event as LastNameUpdated:
-            registeringUser.lastName = event.lastName
-        case let event as PasswordUpdated:
-            registeringUser.password = event.password
-        default:
-            break
-        }
-    }
-
 }

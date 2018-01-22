@@ -8,6 +8,17 @@
 
 import Foundation
 import Reactor
+import Firebase
+
+struct CheckAuth: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+
+    func execute(state: AppState, core: Core<AppState>) {
+        networkAccess.reloadCurrentUser(core: core)
+    }
+
+}
 
 struct SignUpNewUser: Command {
 
@@ -45,6 +56,16 @@ struct ForgotPassword: Command {
     func execute(state: AppState, core: Core<AppState>) {
         guard let email = state.loginState.registeringUser.email else { return }
         networkAccess.resetPassword(for: email, app: nil, core: core)
+    }
+
+}
+
+struct LogOut: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+
+    func execute(state: AppState, core: Core<AppState>) {
+        networkAccess.logOutUser(core: core)
     }
 
 }
