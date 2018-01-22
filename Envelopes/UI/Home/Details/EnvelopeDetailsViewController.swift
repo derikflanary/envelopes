@@ -67,7 +67,7 @@ class EnvelopeDetailsViewController: UIViewController {
 extension EnvelopeDetailsViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard var envelope = core.state.envelopeState.selectedEnvelope, let text = titleTextField.text else { return }
+        guard var envelope = core.state.envelopeState.updatedEnvelope, let text = titleTextField.text else { return }
         envelope.name = text
         core.fire(event: Updated(item: envelope))
     }
@@ -101,16 +101,19 @@ extension EnvelopeDetailsViewController: Subscriber {
         switch state.envelopeState.detailsViewState {
         case .viewing:
             envelopeDetailsDataSource.isEditing = false
+            envelopeDetailsDataSource.envelope = envelope
             navigationItem.rightBarButtonItem?.title = "Edit"
             titleTextField.isUserInteractionEnabled = false
             titleTextField.borderStyle = .none
         case .editing:
+            if let updatedEnvelope = state.envelopeState.updatedEnvelope {
+                envelopeDetailsDataSource.envelope = updatedEnvelope
+            }
             envelopeDetailsDataSource.isEditing = true
             navigationItem.rightBarButtonItem?.title = "Save"
             titleTextField.isUserInteractionEnabled = true
             titleTextField.borderStyle = .roundedRect
         }
-        envelopeDetailsDataSource.envelope = envelope
         envelopeDetailsDataSource.isLoading = !state.envelopeState.expensesLoaded
         tableView.reloadData()
     }

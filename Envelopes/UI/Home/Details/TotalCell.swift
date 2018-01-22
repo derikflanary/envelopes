@@ -22,13 +22,6 @@ class TotalCell: UITableViewCell, ReusableView {
         } else {
             totalTextField.textColor = UIColor.grayTwo
         }
-
-        totalTextField.isUserInteractionEnabled = isEditing
-        if isEditing {
-            totalTextField.borderStyle = .roundedRect
-        } else {
-            totalTextField.borderStyle = .none
-        }
     }
 
     @IBAction func textFieldDidBeginEditing(_ sender: Any) {

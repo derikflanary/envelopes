@@ -83,6 +83,7 @@
 		EC2D14E1201017B400EC0FE9 /* Periodicity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E0201017B400EC0FE9 /* Periodicity.swift */; };
 		EC2D14E32011791200EC0FE9 /* LoginCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E22011791200EC0FE9 /* LoginCommands.swift */; };
 		EC2D14E52012512000EC0FE9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E42012512000EC0FE9 /* User.swift */; };
+		EC8A8930201647EE00D4B8E0 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */; };
 		ECB7AF0C20151FE30094CDCD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */; };
 		ECB7AF0E201582320094CDCD /* Deposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0D201582320094CDCD /* Deposit.swift */; };
 		ECB7AF102015AC0D0094CDCD /* DepositsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */; };
@@ -178,6 +179,7 @@
 		EC2D14E0201017B400EC0FE9 /* Periodicity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periodicity.swift; sourceTree = "<group>"; };
 		EC2D14E22011791200EC0FE9 /* LoginCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCommands.swift; sourceTree = "<group>"; };
 		EC2D14E42012512000EC0FE9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECB7AF0D201582320094CDCD /* Deposit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deposit.swift; sourceTree = "<group>"; };
 		ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositsViewController.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			children = (
 				EC2D145E2006A76D00EC0FE9 /* LoginViewController.swift */,
 				EC2D14642006BCF700EC0FE9 /* LoginTableViewDataSource.swift */,
+				EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */,
 				EC2D14812006BD8000EC0FE9 /* Login Cells */,
 			);
 			path = Login;
@@ -666,6 +669,7 @@
 				EC2D14B92008411400EC0FE9 /* AmountCell.swift in Sources */,
 				EC2D14752006BD7A00EC0FE9 /* ActionButtonCell.swift in Sources */,
 				EC2D14BB20084F9600EC0FE9 /* FrequencyCell.swift in Sources */,
+				EC8A8930201647EE00D4B8E0 /* LoadingViewController.swift in Sources */,
 				EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */,
 				EC2D149C2006C3D300EC0FE9 /* Localized.swift in Sources */,
 				EC28759D20015BBA0004B9CC /* Keys.swift in Sources */,

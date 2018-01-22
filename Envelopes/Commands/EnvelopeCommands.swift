@@ -36,7 +36,7 @@ struct UpdateEnvelope: Command {
     let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
 
     func execute(state: AppState, core: Core<AppState>) {
-        guard let envelope = core.state.envelopeState.selectedEnvelope else { return }
+        guard let envelope = core.state.envelopeState.updatedEnvelope else { return }
         let ref = networkAccess.envelopeRef()
         networkAccess.updateObject(at: ref, parameters: envelope.jsonObject(), core: core)
         core.fire(event: Updated(item: envelope))
@@ -173,3 +173,25 @@ struct LoadDeposits: Command {
 
 }
 
+struct UpdateGoal: Command {
+
+    var amount: Double
+    var isOn: Bool
+
+    init(amount: Double, isOn: Bool) {
+        self.amount = amount
+        self.isOn = isOn
+    }
+
+    func execute(state: AppState, core: Core<AppState>) {
+        guard var envelope = state.envelopeState.updatedEnvelope else { return }
+        if isOn {
+            envelope.goal = amount
+        } else {
+            envelope.goal = 0
+        }
+        core.fire(event: Updated(item: envelope))
+    }
+
+
+}

@@ -14,6 +14,7 @@ class GoalCell: UITableViewCell, ReusableView {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var switcher: UISwitch!
+    @IBOutlet weak var descriptionLabel: UILabel!
 
     
     override func awakeFromNib() {
@@ -34,6 +35,23 @@ class GoalCell: UITableViewCell, ReusableView {
         }
     }
 
+    func configure(with envelope: Envelope?, isEditing: Bool) {
+        guard let envelope = envelope else { return }
+        let amountText = envelope.goal.currency()
+        textField.text = amountText
+
+        if isEditing {
+            switcher.isHidden = false
+            switcher.isOn = envelope.goal > 0
+            textField.borderStyle = .roundedRect
+            descriptionLabel.text = Localized.goalDescription
+        } else {
+            switcher.isHidden = true
+            textField.borderStyle = .none
+            descriptionLabel.text = nil
+        }
+    }
+
     func disableTextField() {
         textField.isEnabled = false
         textField.alpha = 0.1
@@ -49,6 +67,14 @@ class GoalCell: UITableViewCell, ReusableView {
             enableTextField()
         } else {
             disableTextField()
+            updateGoal()
+        }
+    }
+
+    func updateGoal() {
+        guard let text = textField.text else { return }
+        if let amount = Double(text.dropFirst()) {
+            core.fire(command: UpdateGoal(amount: amount, isOn: switcher.isOn))
         }
     }
     
@@ -57,13 +83,17 @@ class GoalCell: UITableViewCell, ReusableView {
     }
     
     @IBAction func textFieldDidEndEditing(_ sender: Any) {
-        guard var text = textField.text else { return }
-        let amount = Int(text)
+        guard let text = textField.text else { return }
         textField.text = text.currency()
-        var newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
-        if let amount = Double(text) {
-            newEnvelope.goal = amount
-            core.fire(event: Updated(item: newEnvelope))
+        switch core.state.envelopeState.detailsViewState {
+        case .viewing:
+            var newEnvelope = core.state.envelopeState.newEnvelopeState.newEnvelope
+            if let amount = Double(text) {
+                newEnvelope.goal = amount
+                core.fire(event: Updated(item: newEnvelope))
+            }
+        case .editing:
+            updateGoal()
         }
     }
     

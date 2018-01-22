@@ -19,7 +19,12 @@ struct EnvelopeState: State {
     // MARK: - Properties
 
     var envelopes = [Envelope]()
-    var selectedEnvelope: Envelope?
+    var selectedEnvelope: Envelope? {
+        didSet {
+            updatedEnvelope = selectedEnvelope
+        }
+    }
+    var updatedEnvelope: Envelope?
     var newEnvelopeState = NewEnvelopeState()
     var newExpenseState = NewExpenseState()
     var newDepositState = NewDepositState()
@@ -43,11 +48,16 @@ struct EnvelopeState: State {
         case let event as Created<Envelope>:
             envelopes.append(event.item)
         case let event as Updated<Envelope>:
-            if let index = envelopes.index(of: event.item) {
-                envelopes[index] = event.item
-            }
-            if selectedEnvelope != nil {
-                selectedEnvelope = event.item
+            switch detailsViewState {
+            case .viewing:
+                if let index = envelopes.index(of: event.item) {
+                    envelopes[index] = event.item
+                }
+                if selectedEnvelope != nil {
+                    selectedEnvelope = event.item
+                }
+            case .editing:
+                updatedEnvelope = event.item
             }
         case let event as Loaded<Expense>:
             expensesLoaded = true
@@ -77,9 +87,9 @@ struct EnvelopeState: State {
         case let event as Selected<DetailsViewState>:
             detailsViewState = event.item
         case let event as UpdatedEnvelopeTotal:
-            guard var envelope = selectedEnvelope else { break }
+            guard var envelope = updatedEnvelope else { break }
             envelope.updateAmounts(with: event.newTotal)
-            selectedEnvelope = envelope
+            updatedEnvelope = envelope
         case _ as Reset<Envelope>:
             selectedEnvelope = nil
             expensesLoaded = false

@@ -16,8 +16,10 @@ final class MainViewController: UIViewController {
     fileprivate(set) var currentViewController: UIViewController?
     fileprivate var loginViewController = LoginViewController.initializeFromStoryboard()
     fileprivate var homeViewController = HomeViewController.initialViewController()
+    fileprivate var loadingViewController = LoadingViewController.initializeFromStoryboard()
 
     override func viewDidLoad() {
+        showLoadingViewController()
         core.add(subscriber: self)
         core.fire(command: CheckAuth())
         
@@ -41,7 +43,9 @@ extension MainViewController: Subscriber {
 
     func update(with state: AppState) {
         DispatchQueue.main.async {
-            if !state.loginState.isLoggedIn {
+            if Auth.auth().currentUser != nil && !state.loginState.isLoggedIn {
+                self.showLoadingViewController()
+            } else if !state.loginState.isLoggedIn {
                 self.showLoginScreen()
             } else {
                 self.showHomeViewController()
@@ -59,6 +63,10 @@ extension MainViewController {
 
     func showHomeViewController() {
         _ = showViewController(homeViewController)
+    }
+
+    func showLoadingViewController() {
+        _ = showViewController(loadingViewController)
     }
 
 

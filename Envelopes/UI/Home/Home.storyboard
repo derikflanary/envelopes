@@ -140,7 +140,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7W-PF-yt5" customClass="RoundedButton" customModule="Envelopes" customModuleProvider="target">
-                            <rect key="frame" x="63.666666666666657" y="366.33333333333331" width="244.99999999999997" height="52"/>
+                            <rect key="frame" x="63" y="366.33333333333331" width="245" height="52"/>
                             <color key="backgroundColor" red="0.0" green="0.47058823529411764" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="52" id="SOh-eD-jLB"/>
@@ -550,7 +550,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="XVF-jv-ujV">
-                                    <rect key="frame" x="0.0" y="363" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="464" width="375" height="1"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
@@ -675,6 +675,67 @@
                                         <connections>
                                             <outlet property="cashImageView" destination="GJ1-4q-bAP" id="bb5-S0-1he"/>
                                             <outlet property="quoteLabel" destination="qbQ-e1-5Ik" id="g0o-gK-kyI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoalCell" rowHeight="101" id="dOW-FE-uCV" customClass="GoalCell" customModule="Envelopes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="363" width="375" height="101"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dOW-FE-uCV" id="uOc-ud-5KF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100.66666666666667"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Savings Goal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvJ-3j-JW0">
+                                                    <rect key="frame" x="12" y="8" width="89" height="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-13-jh2">
+                                                    <rect key="frame" x="12" y="28.666666666666671" width="290" height="40"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="Rck-Gn-yyp"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.3294117647" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="textFieldDidBeginEditing:" destination="dOW-FE-uCV" eventType="editingDidBegin" id="V6G-Qy-MgR"/>
+                                                        <action selector="textFieldDidEndEditing:" destination="dOW-FE-uCV" eventType="editingDidEnd" id="Zrc-ek-qHn"/>
+                                                    </connections>
+                                                </textField>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xQF-k9-q0I">
+                                                    <rect key="frame" x="314" y="33.666666666666664" width="51" height="30.999999999999993"/>
+                                                    <connections>
+                                                        <action selector="switcherDidChange:" destination="dOW-FE-uCV" eventType="valueChanged" id="y33-bd-v82"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-sD-Ywr">
+                                                    <rect key="frame" x="12" y="76" width="348" height="15"/>
+                                                    <string key="text">Include a savings goal to help you track and work towards accumulating a specified amount in this envelope. We will track and let you know how close you are to reaching your goal.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="xQF-k9-q0I" secondAttribute="trailing" constant="12" id="3Of-qG-fbn"/>
+                                                <constraint firstItem="7Ta-sD-Ywr" firstAttribute="leading" secondItem="bxn-13-jh2" secondAttribute="leading" id="4EQ-Vl-yfW"/>
+                                                <constraint firstItem="gvJ-3j-JW0" firstAttribute="leading" secondItem="uOc-ud-5KF" secondAttribute="leading" constant="12" id="4jf-ey-ieu"/>
+                                                <constraint firstItem="xQF-k9-q0I" firstAttribute="leading" secondItem="bxn-13-jh2" secondAttribute="trailing" constant="12" id="Qs9-rH-2NE"/>
+                                                <constraint firstItem="gvJ-3j-JW0" firstAttribute="top" secondItem="uOc-ud-5KF" secondAttribute="top" constant="8" id="SJ8-p7-hOH"/>
+                                                <constraint firstItem="7Ta-sD-Ywr" firstAttribute="top" secondItem="bxn-13-jh2" secondAttribute="bottom" constant="7.5" id="SZ2-sC-9Ya"/>
+                                                <constraint firstItem="xQF-k9-q0I" firstAttribute="centerY" secondItem="bxn-13-jh2" secondAttribute="centerY" id="VCW-ow-RDj"/>
+                                                <constraint firstAttribute="bottom" secondItem="7Ta-sD-Ywr" secondAttribute="bottom" constant="9.5" id="fPi-Ta-7Qx"/>
+                                                <constraint firstItem="bxn-13-jh2" firstAttribute="top" secondItem="gvJ-3j-JW0" secondAttribute="bottom" constant="3" id="i5V-Ul-hMz"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Ta-sD-Ywr" secondAttribute="trailing" constant="15" id="inM-cT-L1J"/>
+                                                <constraint firstItem="bxn-13-jh2" firstAttribute="leading" secondItem="uOc-ud-5KF" secondAttribute="leading" constant="12" id="ue1-aY-lVn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="7Ta-sD-Ywr" id="DQh-Gi-B8q"/>
+                                            <outlet property="switcher" destination="xQF-k9-q0I" id="e6T-Wu-6NY"/>
+                                            <outlet property="textField" destination="bxn-13-jh2" id="hlh-LO-gru"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

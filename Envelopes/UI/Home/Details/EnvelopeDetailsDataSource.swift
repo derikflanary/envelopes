@@ -69,6 +69,9 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
         if isLoading {
             return 0
         }
+        if isEditing {
+            return Row.allValues.count
+        }
         if let envelope = envelope {
             if envelope.hasGoal {
                 return Row.allValues.count
@@ -82,7 +85,7 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var row: Row
-        if envelope!.hasGoal {
+        if envelope!.hasGoal || isEditing {
             row = Row.allValues[indexPath.row]
         } else {
             row = Row.allValuesNoGoal[indexPath.row]
@@ -93,10 +96,21 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
             cell.configure(with: envelope, isEditing: isEditing)
             return cell
             
-        case .recurring, .frequency, .accumulated, .goal, .expenses, .date, .deposits, .startingAmount:
+        case .recurring, .frequency, .accumulated, .expenses, .date, .deposits, .startingAmount:
             let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
             cell.configure(with: envelope, detailType: row)
             return cell
+
+        case .goal:
+            if isEditing {
+                let cell = tableView.dequeueReusableCell(for: indexPath) as GoalCell
+                cell.configure(with: envelope, isEditing: isEditing)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
+                cell.configure(with: envelope, detailType: row)
+                return cell
+            }
 
         case .image:
             let cell = tableView.dequeueReusableCell(for: indexPath) as CashCell
