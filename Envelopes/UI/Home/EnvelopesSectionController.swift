@@ -77,6 +77,7 @@ extension EnvelopesSectionController {
         let envelope = envelopeSection.envelopes[index]
         core.fire(event: Selected(item: envelope))
         core.fire(command: LoadExpenses(for: envelope))
+        core.fire(command: LoadDeposits(for: envelope))
     }
 
 }

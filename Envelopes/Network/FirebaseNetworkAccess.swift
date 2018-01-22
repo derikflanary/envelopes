@@ -34,7 +34,7 @@ struct FirebaseNetworkAccess: FirebaseEnvelopesAccess {
 
     init() {
         FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
+        Database.database().isPersistenceEnabled = false
     }
 
 }
@@ -58,9 +58,12 @@ extension FirebaseEnvelopesAccess {
         return ref.child(Keys.Endpoint.envelopes)
     }
 
-    func expensesRef(envelopeId: String) -> DatabaseReference {
+    func expensesRef() -> DatabaseReference {
         return ref.child(Keys.expenses)
-        return ref.child(Keys.Endpoint.envelopes).child(envelopeId).child(Keys.expenses)
+    }
+
+    func depositsRef() -> DatabaseReference {
+        return ref.child(Keys.deposits)
     }
 
 }

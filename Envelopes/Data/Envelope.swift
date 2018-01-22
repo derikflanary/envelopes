@@ -22,9 +22,14 @@ struct Envelope: Unmarshaling {
     var startingAmount: Double
     var goal: Double = 0
     var expenses = [Expense]()
+    var deposits = [Deposit]()
 
     var totalExpenses: Double {
         return expenses.reduce(0, { $0 + $1.amount } )
+    }
+
+    var totalDeposits: Double {
+        return deposits.reduce(0, { $0 + $1.amount } )
     }
 
     var accumulatedAmount: Double {
@@ -54,7 +59,7 @@ struct Envelope: Unmarshaling {
     }
 
     var totalAmount: Double {
-        return startingAmount - totalExpenses + accumulatedAmount
+        return startingAmount - totalExpenses + accumulatedAmount + totalDeposits
     }
 
     var hasGoal: Bool {

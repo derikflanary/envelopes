@@ -14,6 +14,7 @@ struct Keys {
     static let users = "authUsers"
     static let createdAt = "createdAt"
     static let goal = "goal"
+    static let deposits = "deposits"
     static let email = "email"
     static let expenses = "expenses"
     static let envelopeId = "envelopeId"

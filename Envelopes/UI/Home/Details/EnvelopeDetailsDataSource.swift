@@ -18,15 +18,18 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
         case frequency
         case goal
         case expenses
+        case startingAmount
+        case deposits
         case date
         case image
 
         static var allValues: [Row] {
-            return [.recurring, .frequency, .accumulated, .expenses, .total, .goal, .date, .image]
+            return [.startingAmount, .accumulated, .expenses, .deposits, .total, .goal, .date, .recurring, .frequency, image]
         }
 
         static var allValuesNoGoal: [Row] {
-            return [.recurring, .frequency, .accumulated, .expenses, .total, .date, .image]
+            return [.startingAmount, .accumulated, .expenses, .deposits, .total, .date, .recurring, .frequency, image]
+
         }
 
 
@@ -46,6 +49,10 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
                 return "Expenses"
             case .date:
                 return "Started On"
+            case .deposits:
+                return "Deposits"
+            case .startingAmount:
+                return "Starting Amount"
             case .image:
                 return ""
             }
@@ -86,7 +93,7 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
             cell.configure(with: envelope, isEditing: isEditing)
             return cell
             
-        case .recurring, .frequency, .accumulated, .goal, .expenses, .date:
+        case .recurring, .frequency, .accumulated, .goal, .expenses, .date, .deposits, .startingAmount:
             let cell = tableView.dequeueReusableCell(for: indexPath) as DetailsCell
             cell.configure(with: envelope, detailType: row)
             return cell

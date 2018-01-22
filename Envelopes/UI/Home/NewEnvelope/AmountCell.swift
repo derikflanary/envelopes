@@ -39,6 +39,19 @@ class AmountCell: UITableViewCell, ReusableView {
         creationType = .expense
     }
 
+    func configure(with newDeposit: NewDeposit?) {
+        guard let deposit = newDeposit else { return }
+
+        if let amount = deposit.amount {
+            if amount <= 0 {
+                textField.placeholder = amount.currency()
+            } else {
+                textField.text = amount.currency()
+            }
+        }
+        creationType = .deposit
+    }
+
     @IBAction func textFieldEditingDidBegin(_ sender: Any) {
         textField.text = nil
     }
@@ -59,6 +72,11 @@ class AmountCell: UITableViewCell, ReusableView {
             var newExpense = core.state.envelopeState.newExpenseState.newExpense
             newExpense.amount = amount
             core.fire(event: Updated(item: newExpense))
+        case .deposit:
+            let amount = Double(text)
+            var newDeposit = core.state.envelopeState.newDepositState.newDeposit
+            newDeposit.amount = amount
+            core.fire(event: Updated(item: newDeposit))
         }
     }
     

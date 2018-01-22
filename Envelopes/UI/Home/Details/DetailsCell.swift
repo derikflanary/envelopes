@@ -61,6 +61,14 @@ class DetailsCell: UITableViewCell, ReusableView {
         case .date:
             detailLabel.text = envelope.createdAt.dayMonthYearString
             subLabel.isHidden = true
+        case .startingAmount:
+            detailLabel.text = envelope.startingAmount.currency()
+            subLabel.isHidden = true
+        case .deposits:
+            detailLabel.text = envelope.totalDeposits.currency()
+            subLabel.isHidden = false
+            subLabel.text = String(envelope.deposits.count)
+            accessoryType = .disclosureIndicator
         default:
             break
         }

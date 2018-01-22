@@ -84,6 +84,13 @@
 		EC2D14E32011791200EC0FE9 /* LoginCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E22011791200EC0FE9 /* LoginCommands.swift */; };
 		EC2D14E52012512000EC0FE9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E42012512000EC0FE9 /* User.swift */; };
 		ECB7AF0C20151FE30094CDCD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */; };
+		ECB7AF0E201582320094CDCD /* Deposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0D201582320094CDCD /* Deposit.swift */; };
+		ECB7AF102015AC0D0094CDCD /* DepositsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */; };
+		ECB7AF122015AC1E0094CDCD /* DepositsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF112015AC1E0094CDCD /* DepositsDataSource.swift */; };
+		ECB7AF142015AD230094CDCD /* DepositCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF132015AD230094CDCD /* DepositCell.swift */; };
+		ECB7AF162015B0600094CDCD /* NewDepositDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF152015B0600094CDCD /* NewDepositDataSource.swift */; };
+		ECB7AF182015B0F00094CDCD /* NewDepositState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF172015B0F00094CDCD /* NewDepositState.swift */; };
+		ECB7AF1A2015B1E20094CDCD /* NewDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF192015B1E20094CDCD /* NewDepositViewController.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -172,6 +179,13 @@
 		EC2D14E22011791200EC0FE9 /* LoginCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCommands.swift; sourceTree = "<group>"; };
 		EC2D14E42012512000EC0FE9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ECB7AF0D201582320094CDCD /* Deposit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deposit.swift; sourceTree = "<group>"; };
+		ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositsViewController.swift; sourceTree = "<group>"; };
+		ECB7AF112015AC1E0094CDCD /* DepositsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositsDataSource.swift; sourceTree = "<group>"; };
+		ECB7AF132015AD230094CDCD /* DepositCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositCell.swift; sourceTree = "<group>"; };
+		ECB7AF152015B0600094CDCD /* NewDepositDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositDataSource.swift; sourceTree = "<group>"; };
+		ECB7AF172015B0F00094CDCD /* NewDepositState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositState.swift; sourceTree = "<group>"; };
+		ECB7AF192015B1E20094CDCD /* NewDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositViewController.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -250,6 +264,7 @@
 				EC2D14B02007FEFB00EC0FE9 /* EnvelopeState.swift */,
 				EC2D14BE20085A5400EC0FE9 /* NewEnvelopeState.swift */,
 				EC2D14D42009C7B800EC0FE9 /* NewExpenseState.swift */,
+				ECB7AF172015B0F00094CDCD /* NewDepositState.swift */,
 				EC2D14602006A86800EC0FE9 /* LoginState.swift */,
 			);
 			path = State;
@@ -407,6 +422,11 @@
 				EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */,
 				EC2D14D02009C5D300EC0FE9 /* NewExpenseViewController.swift */,
 				EC2D14D22009C71900EC0FE9 /* NewExpenseDataSource.swift */,
+				ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */,
+				ECB7AF112015AC1E0094CDCD /* DepositsDataSource.swift */,
+				ECB7AF132015AD230094CDCD /* DepositCell.swift */,
+				ECB7AF192015B1E20094CDCD /* NewDepositViewController.swift */,
+				ECB7AF152015B0600094CDCD /* NewDepositDataSource.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -419,6 +439,7 @@
 				EC2D14C020085AB100EC0FE9 /* NewEnvelope.swift */,
 				ECF405A22006869B008AA999 /* Weekday.swift */,
 				ECF405A4200686B6008AA999 /* Expense.swift */,
+				ECB7AF0D201582320094CDCD /* Deposit.swift */,
 				EC2D14932006C18F00EC0FE9 /* RegisteringUser.swift */,
 				EC2D14E42012512000EC0FE9 /* User.swift */,
 				EC2D14DE200C879600EC0FE9 /* Quote.swift */,
@@ -581,6 +602,7 @@
 				EC2D14D72009CBCE00EC0FE9 /* ExpensesViewController.swift in Sources */,
 				EC2D148A2006BEE100EC0FE9 /* RoundedButton.swift in Sources */,
 				EC2875A02001C7D50004B9CC /* UserCommands.swift in Sources */,
+				ECB7AF102015AC0D0094CDCD /* DepositsViewController.swift in Sources */,
 				EC287583200155360004B9CC /* AppState.swift in Sources */,
 				EC2D145F2006A76D00EC0FE9 /* LoginViewController.swift in Sources */,
 				EC2D148E2006C09200EC0FE9 /* LoginEvents.swift in Sources */,
@@ -599,6 +621,9 @@
 				EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */,
 				EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */,
 				EC2D14D52009C7B800EC0FE9 /* NewExpenseState.swift in Sources */,
+				ECB7AF142015AD230094CDCD /* DepositCell.swift in Sources */,
+				ECB7AF182015B0F00094CDCD /* NewDepositState.swift in Sources */,
+				ECB7AF1A2015B1E20094CDCD /* NewDepositViewController.swift in Sources */,
 				EC2D14CC2009682C00EC0FE9 /* StartingAmountCell.swift in Sources */,
 				EC2D14E1201017B400EC0FE9 /* Periodicity.swift in Sources */,
 				EC2D14BF20085A5400EC0FE9 /* NewEnvelopeState.swift in Sources */,
@@ -606,6 +631,7 @@
 				EC2D14B3200809D200EC0FE9 /* DateHelper.swift in Sources */,
 				EC2D14B12007FEFB00EC0FE9 /* EnvelopeState.swift in Sources */,
 				EC2D14762006BD7A00EC0FE9 /* FirstNameTextFieldCell.swift in Sources */,
+				ECB7AF122015AC1E0094CDCD /* DepositsDataSource.swift in Sources */,
 				EC2D14902006C0EF00EC0FE9 /* Diff.swift in Sources */,
 				EC2D14E32011791200EC0FE9 /* LoginCommands.swift in Sources */,
 				EC2D14BD200856C500EC0FE9 /* GoalCell.swift in Sources */,
@@ -617,7 +643,9 @@
 				EC2D14802006BD7A00EC0FE9 /* DisclaimerCell.swift in Sources */,
 				EC2D14D92009CC9600EC0FE9 /* ExpensesDataSource.swift in Sources */,
 				EC2D14D12009C5D300EC0FE9 /* NewExpenseViewController.swift in Sources */,
+				ECB7AF162015B0600094CDCD /* NewDepositDataSource.swift in Sources */,
 				EC28759620015BA20004B9CC /* ReactorSubscribing.swift in Sources */,
+				ECB7AF0E201582320094CDCD /* Deposit.swift in Sources */,
 				EC2D147E2006BD7A00EC0FE9 /* EmailTextFieldCell.swift in Sources */,
 				EC2D14E52012512000EC0FE9 /* User.swift in Sources */,
 				EC287586200155D80004B9CC /* FirebaseNetworkAccess.swift in Sources */,

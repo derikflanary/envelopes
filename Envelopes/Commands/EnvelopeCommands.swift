@@ -88,6 +88,22 @@ struct AddExpense: Command {
 
 }
 
+struct AddDeposit: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+
+    func execute(state: AppState, core: Core<AppState>) {
+        guard let envelope = core.state.envelopeState.selectedEnvelope else { return }
+        let newDeposit = core.state.envelopeState.newDepositState.newDeposit
+        let deposit = Deposit(newDeposit, envelopeId: envelope.id)
+        let key = networkAccess.ref.child(Keys.deposits).childByAutoId().key
+        let childUpdates: JSONObject = ["/\(Keys.deposits)/\(key)": deposit.jsonObject()]
+        networkAccess.ref.updateChildValues(childUpdates)
+        core.fire(event: Created(item: deposit))
+        core.fire(command: UpdateEnvelope())
+    }
+
+}
 
 struct LoadExpenses: Command {
 
@@ -100,7 +116,7 @@ struct LoadExpenses: Command {
 
     func execute(state: AppState, core: Core<AppState>) {
 
-        let query = networkAccess.expensesRef(envelopeId: envelope.id).queryOrdered(byChild: Keys.envelopeId).queryEqual(toValue: envelope.id)
+        let query = networkAccess.expensesRef().queryOrdered(byChild: Keys.envelopeId).queryEqual(toValue: envelope.id)
         networkAccess.getObject(at: query, core: core) { json in
             var expenses = [Expense]()
             if let json = json {
@@ -114,12 +130,44 @@ struct LoadExpenses: Command {
                         return nil
                     }
                 }
-                var envelopeUpdated = self.envelope
-                envelopeUpdated.expenses = expenses
-                core.fire(event: Updated(item: envelopeUpdated))
-
+                core.fire(event: Loaded(items: expenses))
+            } else {
+                core.fire(event: Loaded(items: [Expense]()))
             }
-            core.fire(event: Loaded(items: [Expense]()))
+        }
+    }
+
+}
+
+struct LoadDeposits: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+    let envelope: Envelope
+
+    init(for envelope: Envelope) {
+        self.envelope = envelope
+    }
+
+    func execute(state: AppState, core: Core<AppState>) {
+
+        let query = networkAccess.depositsRef().queryOrdered(byChild: Keys.envelopeId).queryEqual(toValue: envelope.id)
+        networkAccess.getObject(at: query, core: core) { json in
+            var deposits = [Deposit]()
+            if let json = json {
+                deposits = json.flatMap {
+                    guard var object = $0.value as? JSONObject else { return nil }
+                    object[Keys.id] = $0.key
+                    do {
+                        return try Deposit(object: object)
+                    } catch {
+                        print(error)
+                        return nil
+                    }
+                }
+                core.fire(event: Loaded(items: deposits))
+            } else {
+                core.fire(event: Loaded(items: [Deposit]()))
+            }
         }
     }
 

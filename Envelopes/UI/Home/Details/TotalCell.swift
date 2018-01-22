@@ -32,6 +32,8 @@ class TotalCell: UITableViewCell, ReusableView {
     }
 
     @IBAction func textFieldDidBeginEditing(_ sender: Any) {
+        guard let text = totalTextField.text else { return }
+        totalTextField.text = String(text.dropFirst())
     }
 
     @IBAction func textFieldDidEndEditing(_ sender: Any) {
@@ -39,6 +41,7 @@ class TotalCell: UITableViewCell, ReusableView {
             totalTextField.text = core.state.envelopeState.selectedEnvelope?.totalAmount.currency()
             return
         }
+
         if let amount = Double(text) {
             totalTextField.text = text.currency()
             core.fire(event: UpdatedEnvelopeTotal(newTotal: amount))

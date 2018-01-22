@@ -32,6 +32,7 @@ class EnvelopeDetailsViewController: UIViewController {
         view.addGestureRecognizer(tapGestureRecognizer)
         envelopeDetailsDataSource.envelope = core.state.envelopeState.selectedEnvelope
         tableView.reloadData()
+        navigationItem.rightBarButtonItem = editButtonItem
 
     }
 
@@ -50,7 +51,8 @@ class EnvelopeDetailsViewController: UIViewController {
         titleTextField.resignFirstResponder()
     }
 
-    @IBAction func editTapped(_ sender: Any) {
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
         switch core.state.envelopeState.detailsViewState {
         case .viewing:
             core.fire(event: Selected(item: DetailsViewState.editing))
@@ -79,6 +81,8 @@ extension EnvelopeDetailsViewController: UITableViewDelegate {
         switch EnvelopeDetailsDataSource.Row.allValues[indexPath.row] {
         case .expenses:
             performSegue(withIdentifier: "showExpenses", sender: self)
+        case .deposits:
+            performSegue(withIdentifier: "showDeposits", sender: self)
         default:
             break
         }
@@ -97,10 +101,14 @@ extension EnvelopeDetailsViewController: Subscriber {
         switch state.envelopeState.detailsViewState {
         case .viewing:
             envelopeDetailsDataSource.isEditing = false
-            editButton.title = "Edit"
+            navigationItem.rightBarButtonItem?.title = "Edit"
+            titleTextField.isUserInteractionEnabled = false
+            titleTextField.borderStyle = .none
         case .editing:
             envelopeDetailsDataSource.isEditing = true
-            editButton.title = "Save"
+            navigationItem.rightBarButtonItem?.title = "Save"
+            titleTextField.isUserInteractionEnabled = true
+            titleTextField.borderStyle = .roundedRect
         }
         envelopeDetailsDataSource.envelope = envelope
         envelopeDetailsDataSource.isLoading = !state.envelopeState.expensesLoaded

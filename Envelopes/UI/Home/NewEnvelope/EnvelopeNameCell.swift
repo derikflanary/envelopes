@@ -11,6 +11,7 @@ import UIKit
 enum CreationType {
     case envelope
     case expense
+    case deposit
 }
 
 class EnvelopeNameCell: UITableViewCell, ReusableView {
@@ -51,6 +52,8 @@ class EnvelopeNameCell: UITableViewCell, ReusableView {
             var newExpense = core.state.envelopeState.newExpenseState.newExpense
             newExpense.name = textField.text
             core.fire(event: Updated(item: newExpense))
+        case .deposit:
+            break
         }
     }
     @IBAction func textFieldEditingDidBegin(_ sender: Any) {

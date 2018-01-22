@@ -9,7 +9,7 @@
 import UIKit
 import Reactor
 
-class NewExpenseViewController: UIViewController {
+class NewDepositViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -22,8 +22,9 @@ class NewExpenseViewController: UIViewController {
     @IBOutlet weak var popView: UIView!
     @IBOutlet weak var saveButton: RoundedButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var newExpenseDataSource: NewExpenseDataSource!
+    @IBOutlet var newDepositDataSource: NewDepositDataSource!
     
+
 
     // MARK: - View life cycle
 
@@ -52,7 +53,7 @@ class NewExpenseViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         core.remove(subscriber: self)
-        core.fire(event: Reset<NewExpense>())
+        core.fire(event: Reset<NewDeposit>())
     }
 
     override func viewDidLayoutSubviews() {
@@ -69,9 +70,9 @@ class NewExpenseViewController: UIViewController {
     }
 
     @IBAction func saveButtonTapped() {
-        let newExpense = core.state.envelopeState.newExpenseState.newExpense
-        if newExpense.isReady {
-            core.fire(command: AddExpense())
+        let newDepost = core.state.envelopeState.newDepositState.newDeposit
+        if newDepost.isReady {
+            core.fire(command: AddDeposit())
             dismiss()
         } else {
             disableSaveButton()
@@ -84,7 +85,7 @@ class NewExpenseViewController: UIViewController {
 
 }
 
-private extension NewExpenseViewController {
+private extension NewDepositViewController {
 
     func dismiss() {
         UIView.animate(withDuration: 0.25, animations: {
@@ -122,13 +123,13 @@ private extension NewExpenseViewController {
 }
 
 
-extension NewExpenseViewController: Subscriber {
+extension NewDepositViewController: Subscriber {
 
     func update(with state: AppState) {
-        newExpenseDataSource.newExpense = state.envelopeState.newExpenseState.newExpense
+        newDepositDataSource.newDeposit = state.envelopeState.newDepositState.newDeposit
         tableView.reloadData()
 
-        if state.envelopeState.newExpenseState.newExpense.isReady {
+        if state.envelopeState.newDepositState.newDeposit.isReady {
             enableSaveButton()
         } else {
             disableSaveButton()
@@ -136,3 +137,4 @@ extension NewExpenseViewController: Subscriber {
     }
 
 }
+
