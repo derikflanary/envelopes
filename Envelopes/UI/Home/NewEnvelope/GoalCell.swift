@@ -43,6 +43,11 @@ class GoalCell: UITableViewCell, ReusableView {
         if isEditing {
             switcher.isHidden = false
             switcher.isOn = envelope.goal > 0
+            if switcher.isOn {
+                enableTextField()
+            } else {
+                disableTextField()
+            }
             textField.borderStyle = .roundedRect
             descriptionLabel.text = Localized.goalDescription
         } else {
