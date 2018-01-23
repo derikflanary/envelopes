@@ -44,6 +44,14 @@ extension Deposit: JSONMarshaling {
 
 }
 
+extension Deposit: Equatable {
+
+    static func ==(lhs: Deposit, rhs: Deposit) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+}
+
 struct NewDeposit {
 
     var amount: Double?

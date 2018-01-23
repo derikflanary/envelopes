@@ -39,6 +39,11 @@ class ExpensesViewController: UIViewController {
 
 }
 
+extension ExpensesViewController: UITableViewDelegate {
+
+    
+}
+
 extension ExpensesViewController: Subscriber {
 
     func update(with state: AppState) {

@@ -52,6 +52,14 @@ extension Expense: JSONMarshaling {
 
 }
 
+extension Expense: Equatable {
+
+    static func ==(lhs: Expense, rhs: Expense) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+}
+
 struct NewExpense {
 
     var amount: Double?

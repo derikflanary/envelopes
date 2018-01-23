@@ -36,6 +36,19 @@ struct UpdateEnvelope: Command {
     let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
 
     func execute(state: AppState, core: Core<AppState>) {
+        guard let envelope = core.state.envelopeState.selectedEnvelope else { return }
+        let ref = networkAccess.envelopeRef()
+        networkAccess.updateObject(at: ref, parameters: envelope.jsonObject(), core: core)
+        core.fire(event: Updated(item: envelope))
+    }
+
+}
+
+struct EditEnvelope: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+
+    func execute(state: AppState, core: Core<AppState>) {
         guard let envelope = core.state.envelopeState.updatedEnvelope else { return }
         let ref = networkAccess.envelopeRef()
         networkAccess.updateObject(at: ref, parameters: envelope.jsonObject(), core: core)
@@ -83,6 +96,34 @@ struct AddExpense: Command {
         let childUpdates: JSONObject = ["/\(Keys.expenses)/\(key)": expense.jsonObject()]
         networkAccess.ref.updateChildValues(childUpdates)
         core.fire(event: Created(item: expense))
+        core.fire(command: UpdateEnvelope())
+    }
+
+}
+
+struct DeleteExpense: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+    let expense: Expense
+
+    func execute(state: AppState, core: Core<AppState>) {
+        let ref = networkAccess.expensesRef().child(expense.id)
+        networkAccess.removeObject(at: ref, core: core)
+        core.fire(event: Deleted(item: expense))
+        core.fire(command: UpdateEnvelope())
+    }
+
+}
+
+struct DeleteDeposit: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+    let deposit: Deposit
+
+    func execute(state: AppState, core: Core<AppState>) {
+        let ref = networkAccess.depositsRef().child(deposit.id)
+        networkAccess.removeObject(at: ref, core: core)
+        core.fire(event: Deleted(item: deposit))
         core.fire(command: UpdateEnvelope())
     }
 

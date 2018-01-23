@@ -21,7 +21,9 @@ struct EnvelopeState: State {
     var envelopes = [Envelope]()
     var selectedEnvelope: Envelope? {
         didSet {
-            updatedEnvelope = selectedEnvelope
+            if case .editing = detailsViewState {
+                updatedEnvelope = selectedEnvelope
+            }
         }
     }
     var updatedEnvelope: Envelope?
@@ -90,6 +92,15 @@ struct EnvelopeState: State {
             guard var envelope = updatedEnvelope else { break }
             envelope.updateAmounts(with: event.newTotal)
             updatedEnvelope = envelope
+        case let event as Deleted<Expense>:
+            if let index = selectedEnvelope?.expenses.index(of: event.item) {
+                selectedEnvelope?.expenses.remove(at: index)
+            }
+        case let event as Deleted<Deposit>:
+            if let index = selectedEnvelope?.deposits.index(of: event.item) {
+                selectedEnvelope?.deposits.remove(at: index)
+            }
+
         case _ as Reset<Envelope>:
             selectedEnvelope = nil
             expensesLoaded = false

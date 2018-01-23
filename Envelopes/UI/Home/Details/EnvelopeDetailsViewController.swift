@@ -58,7 +58,7 @@ class EnvelopeDetailsViewController: UIViewController {
             core.fire(event: Selected(item: DetailsViewState.editing))
         case .editing:
             core.fire(event: Selected(item: DetailsViewState.viewing))
-            core.fire(command: UpdateEnvelope())
+            core.fire(command: EditEnvelope())
         }
     }
 

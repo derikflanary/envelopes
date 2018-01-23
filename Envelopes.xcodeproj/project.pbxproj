@@ -420,18 +420,34 @@
 				EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */,
 				EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */,
 				EC2D14DC200C425800EC0FE9 /* CashCell.swift */,
+				EC8A89312016B26800D4B8E0 /* Expenses */,
+				EC8A89322016B27300D4B8E0 /* Deposits */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		EC8A89312016B26800D4B8E0 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
 				EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */,
 				EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */,
 				EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */,
 				EC2D14D02009C5D300EC0FE9 /* NewExpenseViewController.swift */,
 				EC2D14D22009C71900EC0FE9 /* NewExpenseDataSource.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		EC8A89322016B27300D4B8E0 /* Deposits */ = {
+			isa = PBXGroup;
+			children = (
 				ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */,
 				ECB7AF112015AC1E0094CDCD /* DepositsDataSource.swift */,
 				ECB7AF132015AD230094CDCD /* DepositCell.swift */,
 				ECB7AF192015B1E20094CDCD /* NewDepositViewController.swift */,
 				ECB7AF152015B0600094CDCD /* NewDepositDataSource.swift */,
 			);
-			path = Details;
+			path = Deposits;
 			sourceTree = "<group>";
 		};
 		ECF4059F2006829E008AA999 /* Data */ = {

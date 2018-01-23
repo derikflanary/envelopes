@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import Reactor
 
 class ExpensesDataSource: NSObject, UITableViewDataSource {
 
     var expenses = [Expense]()
+    var core = App.sharedCore
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return expenses.count
@@ -21,6 +23,15 @@ class ExpensesDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for: indexPath) as ExpenseCell
         cell.configure(with: expenses[indexPath.row])
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let expense = expenses[indexPath.row]
+        core.fire(command: DeleteExpense(expense: expense))
     }
     
 }

@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import Reactor
 
 class DepositsDataSource: NSObject, UITableViewDataSource {
 
     var deposits = [Deposit]()
+    var core = App.sharedCore
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return deposits.count
@@ -21,6 +23,15 @@ class DepositsDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for: indexPath) as DepositCell
         cell.configure(with: deposits[indexPath.row])
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let deposit = deposits[indexPath.row]
+        core.fire(command: DeleteDeposit(deposit: deposit))
     }
 
 }
