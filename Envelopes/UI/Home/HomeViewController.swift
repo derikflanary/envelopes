@@ -29,6 +29,7 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
     }()
+    
 
     @IBOutlet weak var newButton: RoundedButton!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -50,6 +51,10 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
         core.fire(command: LoadEnvelopes())
         guard let user = core.state.loginState.user else { return }
         core.fire(command: LoadUser(userId: user.id))
+
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: collectionView)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -68,6 +73,31 @@ final class HomeViewController: UIViewController, StoryboardInitializable {
     }
 
 }
+
+extension HomeViewController: UIViewControllerPreviewingDelegate {
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        envelopeTapped()
+    }
+
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let path = collectionView.indexPathForItem(at: location) else { return nil }
+        if let object = adapter.object(atSection: path.section) as? EnvelopeSection, let cell = collectionView.cellForItem(at: path) {
+            let envelope = object.envelopes[path.row]
+            core.fire(event: Selected(item: envelope))
+            core.fire(command: LoadExpenses(for: envelope))
+            core.fire(command: LoadDeposits(for: envelope))
+            previewingContext.sourceRect = cell.frame
+            let viewController = EnvelopePeekViewController()
+            viewController.preferredContentSize = CGSize(width: 0, height: 360)
+            return viewController
+        }
+        return nil
+    }
+
+}
+
 
 // MARK: - IGListkit functions
 

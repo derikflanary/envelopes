@@ -84,6 +84,8 @@
 		EC2D14E32011791200EC0FE9 /* LoginCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E22011791200EC0FE9 /* LoginCommands.swift */; };
 		EC2D14E52012512000EC0FE9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E42012512000EC0FE9 /* User.swift */; };
 		EC8A8930201647EE00D4B8E0 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */; };
+		EC8A89352017B94400D4B8E0 /* EnvelopePeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A89332017B94400D4B8E0 /* EnvelopePeekViewController.swift */; };
+		EC8A89362017B94400D4B8E0 /* EnvelopePeekViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8A89342017B94400D4B8E0 /* EnvelopePeekViewController.xib */; };
 		ECB7AF0C20151FE30094CDCD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */; };
 		ECB7AF0E201582320094CDCD /* Deposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0D201582320094CDCD /* Deposit.swift */; };
 		ECB7AF102015AC0D0094CDCD /* DepositsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */; };
@@ -180,6 +182,8 @@
 		EC2D14E22011791200EC0FE9 /* LoginCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCommands.swift; sourceTree = "<group>"; };
 		EC2D14E42012512000EC0FE9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		EC8A89332017B94400D4B8E0 /* EnvelopePeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopePeekViewController.swift; sourceTree = "<group>"; };
+		EC8A89342017B94400D4B8E0 /* EnvelopePeekViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnvelopePeekViewController.xib; sourceTree = "<group>"; };
 		ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECB7AF0D201582320094CDCD /* Deposit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deposit.swift; sourceTree = "<group>"; };
 		ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositsViewController.swift; sourceTree = "<group>"; };
@@ -391,6 +395,8 @@
 				EC2D14AA2007CC9400EC0FE9 /* EnvelopeCell.swift */,
 				EC2D14AB2007CC9400EC0FE9 /* EnvelopeCell.xib */,
 				ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */,
+				EC8A89332017B94400D4B8E0 /* EnvelopePeekViewController.swift */,
+				EC8A89342017B94400D4B8E0 /* EnvelopePeekViewController.xib */,
 				EC2D14C420092D1700EC0FE9 /* NewEnvelope */,
 				EC2D14CF2009C5B600EC0FE9 /* Details */,
 			);
@@ -532,6 +538,7 @@
 				EC28757320014D3C0004B9CC /* LaunchScreen.storyboard in Resources */,
 				EC2D14A32006D1AA00EC0FE9 /* Home.storyboard in Resources */,
 				EC28757020014D3C0004B9CC /* Assets.xcassets in Resources */,
+				EC8A89362017B94400D4B8E0 /* EnvelopePeekViewController.xib in Resources */,
 				EC28756E20014D3C0004B9CC /* Main.storyboard in Resources */,
 				EC28758B200159430004B9CC /* GoogleService-Info.plist in Resources */,
 				EC2D14AD2007CC9400EC0FE9 /* EnvelopeCell.xib in Resources */,
@@ -684,6 +691,7 @@
 				EC2D14A12006D16700EC0FE9 /* HomeViewController.swift in Sources */,
 				EC2D14B92008411400EC0FE9 /* AmountCell.swift in Sources */,
 				EC2D14752006BD7A00EC0FE9 /* ActionButtonCell.swift in Sources */,
+				EC8A89352017B94400D4B8E0 /* EnvelopePeekViewController.swift in Sources */,
 				EC2D14BB20084F9600EC0FE9 /* FrequencyCell.swift in Sources */,
 				EC8A8930201647EE00D4B8E0 /* LoadingViewController.swift in Sources */,
 				EC28759A20015BA20004B9CC /* FirebaseReactorAuthentication.swift in Sources */,

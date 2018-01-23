@@ -31,6 +31,19 @@ struct AddEnvelope: Command {
 
 }
 
+struct DeleteEnvelope: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+
+    func execute(state: AppState, core: Core<AppState>) {
+        guard let envelope = state.envelopeState.selectedEnvelope else { return }
+        let envelopeRef = networkAccess.envelopeRef().child(envelope.id)
+        networkAccess.removeObject(at: envelopeRef, core: core)
+        core.fire(event: Deleted(item: envelope))
+    }
+
+}
+
 struct UpdateEnvelope: Command {
 
     let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess

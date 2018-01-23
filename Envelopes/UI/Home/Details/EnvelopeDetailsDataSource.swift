@@ -137,7 +137,7 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
     }
 
     func row(for indexPath: IndexPath) -> Row {
-        return EnvelopeDetailsDataSource.Section.allValues[indexPath.row].rows(isEditing: isEditing, hasGoal: envelope!.hasGoal)[indexPath.row]
+        return EnvelopeDetailsDataSource.Section.allValues[indexPath.section].rows(isEditing: isEditing, hasGoal: envelope!.hasGoal)[indexPath.row]
     }
 
 }
