@@ -83,11 +83,28 @@ extension EnvelopeDetailsViewController: UITableViewDelegate {
             performSegue(withIdentifier: "showExpenses", sender: self)
         case .deposits:
             performSegue(withIdentifier: "showDeposits", sender: self)
+        case .delete:
+            showDeleteActionSheet()
         default:
             break
         }
     }
 
+}
+
+private extension EnvelopeDetailsViewController {
+
+    func showDeleteActionSheet() {
+        let actionSheet = UIAlertController(title: "Delete Envelope", message: "Are you sure you want to delete this envelope?", preferredStyle: .actionSheet)
+        let delete = UIAlertAction(title: "Delete", style: .destructive) { action in
+            self.core.fire(command: DeleteEnvelope())
+            self.navigationController?.popViewController(animated: true)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        actionSheet.addAction(delete)
+        actionSheet.addAction(cancel)
+        self.present(actionSheet, animated: true, completion: nil)
+    }
 }
 
 extension EnvelopeDetailsViewController: Subscriber {

@@ -32,7 +32,9 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
             case .contents:
                 return [.startingAmount, .accumulated, .expenses, .deposits, .total]
             case .details:
-                if isEditing || hasGoal {
+                if isEditing {
+                    return [.goal, .date, .recurring, .frequency, .image, .delete]
+                } else if hasGoal {
                     return [.goal, .date, .recurring, .frequency, .image]
                 } else {
                     return [.date, .recurring, .frequency, .image]
@@ -53,6 +55,7 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
         case deposits
         case date
         case image
+        case delete
 
         var displayName: String {
             switch self {
@@ -76,6 +79,8 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
                 return "Starting Amount"
             case .image:
                 return ""
+            case .delete:
+                return "Delete"
             }
         }
 
@@ -128,6 +133,8 @@ class EnvelopeDetailsDataSource: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(for: indexPath) as CashCell
             cell.configure(with: envelope)
             return cell
+        case .delete:
+            return tableView.dequeueReusableCell(for: indexPath) as DeleteCell
         }
 
     }

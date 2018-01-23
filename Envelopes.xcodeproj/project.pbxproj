@@ -86,6 +86,7 @@
 		EC8A8930201647EE00D4B8E0 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */; };
 		EC8A89352017B94400D4B8E0 /* EnvelopePeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A89332017B94400D4B8E0 /* EnvelopePeekViewController.swift */; };
 		EC8A89362017B94400D4B8E0 /* EnvelopePeekViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8A89342017B94400D4B8E0 /* EnvelopePeekViewController.xib */; };
+		EC8A89382017D34D00D4B8E0 /* DeleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A89372017D34D00D4B8E0 /* DeleteCell.swift */; };
 		ECB7AF0C20151FE30094CDCD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */; };
 		ECB7AF0E201582320094CDCD /* Deposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0D201582320094CDCD /* Deposit.swift */; };
 		ECB7AF102015AC0D0094CDCD /* DepositsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */; };
@@ -184,6 +185,7 @@
 		EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EC8A89332017B94400D4B8E0 /* EnvelopePeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopePeekViewController.swift; sourceTree = "<group>"; };
 		EC8A89342017B94400D4B8E0 /* EnvelopePeekViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnvelopePeekViewController.xib; sourceTree = "<group>"; };
+		EC8A89372017D34D00D4B8E0 /* DeleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCell.swift; sourceTree = "<group>"; };
 		ECB7AF0B20151FE30094CDCD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECB7AF0D201582320094CDCD /* Deposit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deposit.swift; sourceTree = "<group>"; };
 		ECB7AF0F2015AC0D0094CDCD /* DepositsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositsViewController.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				EC2D14C92009632A00EC0FE9 /* DetailsCell.swift */,
 				EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */,
 				EC2D14DC200C425800EC0FE9 /* CashCell.swift */,
+				EC8A89372017D34D00D4B8E0 /* DeleteCell.swift */,
 				EC8A89312016B26800D4B8E0 /* Expenses */,
 				EC8A89322016B27300D4B8E0 /* Deposits */,
 			);
@@ -654,6 +657,7 @@
 				EC2D14E1201017B400EC0FE9 /* Periodicity.swift in Sources */,
 				EC2D14BF20085A5400EC0FE9 /* NewEnvelopeState.swift in Sources */,
 				EC2D14C82009616200EC0FE9 /* EnvelopeDetailsDataSource.swift in Sources */,
+				EC8A89382017D34D00D4B8E0 /* DeleteCell.swift in Sources */,
 				EC2D14B3200809D200EC0FE9 /* DateHelper.swift in Sources */,
 				EC2D14B12007FEFB00EC0FE9 /* EnvelopeState.swift in Sources */,
 				EC2D14762006BD7A00EC0FE9 /* FirstNameTextFieldCell.swift in Sources */,
