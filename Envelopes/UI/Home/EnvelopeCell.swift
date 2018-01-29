@@ -18,7 +18,7 @@ class EnvelopeCell: UICollectionViewCell, ReusableView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.layer.cornerRadius = frame.height / 15
+        imageView.layer.cornerRadius = frame.height / 20
         imageView.clipsToBounds = true
         transparentView.layer.cornerRadius = 6
         transparentView.clipsToBounds = true

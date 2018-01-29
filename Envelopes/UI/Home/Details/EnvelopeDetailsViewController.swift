@@ -90,6 +90,13 @@ extension EnvelopeDetailsViewController: UITableViewDelegate {
         }
     }
 
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
+            header.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            header.textLabel?.textColor = .darkText
+        }
+    }
+
 }
 
 private extension EnvelopeDetailsViewController {

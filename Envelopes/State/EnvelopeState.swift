@@ -108,6 +108,7 @@ struct EnvelopeState: State {
         case _ as Reset<Envelope>:
             selectedEnvelope = nil
             expensesLoaded = false
+            detailsViewState = .viewing
         case _ as Reset<NewEnvelope>:
             newEnvelopeState = NewEnvelopeState()
         case _ as Reset<NewExpense>:

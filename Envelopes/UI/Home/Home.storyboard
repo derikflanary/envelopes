@@ -140,7 +140,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7W-PF-yt5" customClass="RoundedButton" customModule="Envelopes" customModuleProvider="target">
-                            <rect key="frame" x="63" y="366.33333333333331" width="245" height="52"/>
+                            <rect key="frame" x="63.333333333333343" y="366.33333333333331" width="245.00000000000003" height="52"/>
                             <color key="backgroundColor" red="0.0" green="0.47058823529411764" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="52" id="SOh-eD-jLB"/>
