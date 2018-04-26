@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Foundation
 
-class PasswordTextFieldCell: UITableViewCell, ReusableView {
+class PasswordTextFieldCell: UITableViewCell, ReusableView, Shakeable {
 
     var core = App.sharedCore
     @IBOutlet weak var passwordTextField: UITextField!
-    
+
+
+    func configure(passwordError: Bool) {
+        guard passwordError else { return }
+        shake()
+    }
     
     @IBAction func textFieldEditingEnded() {
         guard let text = passwordTextField.text else { return }

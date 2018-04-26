@@ -80,7 +80,7 @@ struct LoadEnvelopes: Command {
         networkAccess.getObject(at: query, core: core) { json in
             var envelopes = [Envelope]()
             if let json = json {
-                envelopes = json.flatMap {
+                envelopes = json.compactMap {
                     guard var object = $0.value as? JSONObject else { return nil }
                     object[Keys.id] = $0.key
                     do {
@@ -174,7 +174,7 @@ struct LoadExpenses: Command {
         networkAccess.getObject(at: query, core: core) { json in
             var expenses = [Expense]()
             if let json = json {
-                expenses = json.flatMap {
+                expenses = json.compactMap {
                     guard var object = $0.value as? JSONObject else { return nil }
                     object[Keys.id] = $0.key
                     do {
@@ -208,7 +208,7 @@ struct LoadDeposits: Command {
         networkAccess.getObject(at: query, core: core) { json in
             var deposits = [Deposit]()
             if let json = json {
-                deposits = json.flatMap {
+                deposits = json.compactMap {
                     guard var object = $0.value as? JSONObject else { return nil }
                     object[Keys.id] = $0.key
                     do {

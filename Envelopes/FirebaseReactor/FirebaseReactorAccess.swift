@@ -570,8 +570,9 @@ private struct LogInUser<T: State>: Command {
         guard let app = app else { return }
         let auth = Auth.auth(app: app)
         auth.signIn(withEmail: email, password: password) { user, error in
-            if let error = error {
-                core.fire(event: UserAuthFailed(error: error))
+            if let error = error as NSError? {
+                let code = AuthErrorCode(rawValue: error.code)
+                core.fire(event: UserAuthFailed(error: error, code: code))
             } else if let user = user {
                 core.fire(event: UserLoggedIn(userId: user.uid, emailVerified: user.isEmailVerified, email: user.email))
             } else {

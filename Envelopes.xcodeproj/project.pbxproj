@@ -83,6 +83,7 @@
 		EC2D14E1201017B400EC0FE9 /* Periodicity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E0201017B400EC0FE9 /* Periodicity.swift */; };
 		EC2D14E32011791200EC0FE9 /* LoginCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E22011791200EC0FE9 /* LoginCommands.swift */; };
 		EC2D14E52012512000EC0FE9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14E42012512000EC0FE9 /* User.swift */; };
+		EC37C6A520925748007951B5 /* Shakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC37C6A420925748007951B5 /* Shakeable.swift */; };
 		EC8A8930201647EE00D4B8E0 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */; };
 		EC8A89352017B94400D4B8E0 /* EnvelopePeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A89332017B94400D4B8E0 /* EnvelopePeekViewController.swift */; };
 		EC8A89362017B94400D4B8E0 /* EnvelopePeekViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8A89342017B94400D4B8E0 /* EnvelopePeekViewController.xib */; };
@@ -182,6 +183,7 @@
 		EC2D14E0201017B400EC0FE9 /* Periodicity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periodicity.swift; sourceTree = "<group>"; };
 		EC2D14E22011791200EC0FE9 /* LoginCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCommands.swift; sourceTree = "<group>"; };
 		EC2D14E42012512000EC0FE9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EC37C6A420925748007951B5 /* Shakeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shakeable.swift; sourceTree = "<group>"; };
 		EC8A892F201647EE00D4B8E0 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EC8A89332017B94400D4B8E0 /* EnvelopePeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopePeekViewController.swift; sourceTree = "<group>"; };
 		EC8A89342017B94400D4B8E0 /* EnvelopePeekViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnvelopePeekViewController.xib; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				EC2D14832006BE4A00EC0FE9 /* ReusableView.swift */,
+				EC37C6A420925748007951B5 /* Shakeable.swift */,
 				EC2D14852006BE9200EC0FE9 /* StoryboardInitializable.swift */,
 				EC2D14B2200809D200EC0FE9 /* DateHelper.swift */,
 				EC2D148F2006C0EF00EC0FE9 /* Diff.swift */,
@@ -506,7 +509,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Dezvolta;
 				TargetAttributes = {
 					EC28756420014D3C0004B9CC = {
@@ -620,6 +623,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC37C6A520925748007951B5 /* Shakeable.swift in Sources */,
 				EC2D14B720083B5400EC0FE9 /* EnvelopeNameCell.swift in Sources */,
 				EC2D148C2006C08900EC0FE9 /* GenericEvents.swift in Sources */,
 				EC2D14A52006D55300EC0FE9 /* NewEnvelopeViewController.swift in Sources */,
@@ -740,6 +744,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -747,6 +752,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -797,6 +803,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -804,6 +811,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

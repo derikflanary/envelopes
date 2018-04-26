@@ -56,8 +56,8 @@ private extension LoginViewController {
 
     func transition(to newViewState: AuthViewState, from currentViewState: AuthViewState) {
         let diff = currentViewState.views().diff(newViewState.views())
-        let addedIndexes: [IndexPath] = diff.addedIndexes.flatMap { IndexPath(row: $0, section: 0) }
-        let removedIndexes: [IndexPath] = diff.removedIndexes.flatMap { IndexPath(row: $0, section: 0) }
+        let addedIndexes: [IndexPath] = diff.addedIndexes.compactMap { IndexPath(row: $0, section: 0) }
+        let removedIndexes: [IndexPath] = diff.removedIndexes.compactMap { IndexPath(row: $0, section: 0) }
         loginTableViewDatasource.authViewState = newViewState
         loginTableView.beginUpdates()
         loginTableView.insertRows(at: addedIndexes, with: .fade)
@@ -86,6 +86,11 @@ extension LoginViewController: Subscriber {
             transition(to: state.loginState.authViewState, from: previousViewState)
         } else {
             loginTableViewDatasource.authViewState = .main
+            loginTableView.reloadData()
+        }
+
+        loginTableViewDatasource.passwordError = state.loginState.invalidPassword
+        if state.loginState.invalidPassword {
             loginTableView.reloadData()
         }
 

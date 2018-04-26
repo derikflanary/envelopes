@@ -31,11 +31,11 @@ typedef void (^IGListObjectTransitionBlock)(NSArray *toObjects);
 
 /// A block that contains all of the updates.
 NS_SWIFT_NAME(ListItemUpdateBlock)
-typedef void (^IGListItemUpdateBlock)();
+typedef void (^IGListItemUpdateBlock)(void);
 
 /// A block to be called when an adapter reloads the collection view.
 NS_SWIFT_NAME(ListReloadUpdateBlock)
-typedef void (^IGListReloadUpdateBlock)();
+typedef void (^IGListReloadUpdateBlock)(void);
 
 /**
  Implement this protocol in order to handle both section and row based update events. Implementation should forward or
@@ -124,6 +124,17 @@ NS_SWIFT_NAME(ListUpdatingDelegate)
                      fromIndexPath:(NSIndexPath *)fromIndexPath
                        toIndexPath:(NSIndexPath *)toIndexPath;
 
+/**
+ Tells the delegate to move a section from and to given indexes.
+ 
+ @param collectionView The collection view on which to perform the transition.
+ @param fromIndex The source index of the section to move.
+ @param toIndex The destination index of the section to move.
+ */
+- (void)moveSectionInCollectionView:(UICollectionView *)collectionView
+                          fromIndex:(NSInteger)fromIndex
+                            toIndex:(NSInteger)toIndex;
+    
 /**
  Completely reload data in the collection.
 

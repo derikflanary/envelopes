@@ -20,8 +20,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// Generate a string representation of a reusable view class when registering with a UICollectionView.
-NS_INLINE NSString *IGListReusableViewIdentifier(Class viewClass, NSString * _Nullable nibName, NSString * _Nullable kind) {
-    return [NSString stringWithFormat:@"%@%@%@", kind ?: @"", nibName ?: @"", NSStringFromClass(viewClass)];
+NS_INLINE NSString *IGListReusableViewIdentifier(Class viewClass, NSString * _Nullable nibName, NSString * _Nullable kind, NSString * _Nullable givenReuseIdentifier) {
+    return [NSString stringWithFormat:@"%@%@%@%@", kind ?: @"", nibName ?: @"", givenReuseIdentifier ?: @"", NSStringFromClass(viewClass)];
 }
 
 @interface IGListAdapter ()
@@ -45,6 +45,9 @@ IGListBatchContext
 
 @property (nonatomic, strong, nullable) UIView *emptyBackgroundView;
 
+// we need to special case interactive section moves that are moved to the last position
+@property (nonatomic) BOOL isLastInteractiveMoveToLastSectionIndex;
+
 /**
  When making object updates inside a batch update block, delete operations must use the section /before/ any moves take
  place. This includes when other objects are deleted or inserted ahead of the section controller making the mutations.
@@ -61,7 +64,6 @@ IGListBatchContext
 @property (nonatomic, strong) NSMutableSet<NSString *> *registeredNibNames;
 @property (nonatomic, strong) NSMutableSet<NSString *> *registeredSupplementaryViewIdentifiers;
 @property (nonatomic, strong) NSMutableSet<NSString *> *registeredSupplementaryViewNibNames;
-
 
 - (void)mapView:(__kindof UIView *)view toSectionController:(IGListSectionController *)sectionController;
 - (nullable IGListSectionController *)sectionControllerForView:(__kindof UIView *)view;

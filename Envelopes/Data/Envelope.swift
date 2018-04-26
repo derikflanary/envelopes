@@ -51,7 +51,7 @@ struct Envelope: Unmarshaling {
             case .weekly(let weekday):
                 let createdAtWeekday = createdAt.dayNumberOfWeek()
                 let daysToDeposit = 7 - (createdAtWeekday - weekday.rawValue)
-                let weeksPassed = 1 + ((Int(timePassed) - daysToDeposit) / 7)
+                let weeksPassed = 1 + ((Int(timePassed) - daysToDeposit + 1) / 7)
                 return Double(weeksPassed) * recurringAmount
             }
         }
