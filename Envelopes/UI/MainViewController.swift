@@ -9,6 +9,7 @@
 import UIKit
 import Reactor
 import Firebase
+import NotificationBannerSwift
 
 final class MainViewController: UIViewController {
 
@@ -51,6 +52,9 @@ extension MainViewController: Subscriber {
                 self.showHomeViewController()
             }
         }
+        if let errorMessage = state.errorState.errorMessage {
+            showWarningBanner(with: errorMessage)
+        }
     }
 }
 
@@ -67,6 +71,11 @@ extension MainViewController {
 
     func showLoadingViewController() {
         _ = showViewController(loadingViewController)
+    }
+
+    func showWarningBanner(with message: String) {
+        let banner = NotificationBanner(title: message, subtitle: nil, leftView: nil, rightView: nil, style: .warning, colors: nil)
+        banner.show(queuePosition: .front, bannerPosition: .bottom, on: nil)
     }
 
 

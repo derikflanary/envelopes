@@ -17,6 +17,7 @@ struct AppState: State {
 
     var loginState = LoginState()
     var envelopeState = EnvelopeState()
+    var errorState = ErrorState()
 
     mutating func react(to event: Event) {
         switch event {
@@ -28,6 +29,7 @@ struct AppState: State {
         }
         loginState.react(to: event)
         envelopeState.react(to: event)
+        errorState.react(to: event)
     }
 
 }

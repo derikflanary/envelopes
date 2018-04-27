@@ -17,12 +17,10 @@ struct LoginState: State {
     var registeringUser: ResgisteringUser = ResgisteringUser()
     var authViewState: AuthViewState = .main
     var user: AuthUser?
-    var errorMessage: String?
     var invalidPassword = false
 
 
     mutating func react(to event: Event) {
-        errorMessage = nil
         invalidPassword = false
         switch event {
         case let event as UserSignedUp:
@@ -47,7 +45,6 @@ struct LoginState: State {
         case let event as PasswordUpdated:
             registeringUser.password = event.password
         case let event as UserAuthFailed:
-            errorMessage = event.error.localizedDescription
             guard let code = event.code else { break }
             switch code {
             case .wrongPassword:
