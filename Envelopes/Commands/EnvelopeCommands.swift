@@ -184,6 +184,7 @@ struct LoadExpenses: Command {
                         return nil
                     }
                 }
+                expenses.sort { $0.createdAt > $1.createdAt }
                 core.fire(event: Loaded(items: expenses))
             } else {
                 core.fire(event: Loaded(items: [Expense]()))
