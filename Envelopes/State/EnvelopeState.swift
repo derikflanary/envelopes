@@ -70,7 +70,7 @@ struct EnvelopeState: State {
             selectedEnvelope?.expenses = event.items
         case let event as Created<Expense>:
             if var selectedEnvelope = selectedEnvelope {
-                selectedEnvelope.expenses.append(event.item)
+                selectedEnvelope.expenses.insert(event.item, at: 0)
                 self.selectedEnvelope = selectedEnvelope
                 if let index = envelopes.index(of: selectedEnvelope) {
                     envelopes[index] = selectedEnvelope
