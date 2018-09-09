@@ -74,7 +74,7 @@
 		EC2D14CE20097AEB00EC0FE9 /* TotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */; };
 		EC2D14D12009C5D300EC0FE9 /* NewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D02009C5D300EC0FE9 /* NewExpenseViewController.swift */; };
 		EC2D14D32009C71900EC0FE9 /* NewExpenseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D22009C71900EC0FE9 /* NewExpenseDataSource.swift */; };
-		EC2D14D52009C7B800EC0FE9 /* NewExpenseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D42009C7B800EC0FE9 /* NewExpenseState.swift */; };
+		EC2D14D52009C7B800EC0FE9 /* ExpensesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D42009C7B800EC0FE9 /* ExpensesState.swift */; };
 		EC2D14D72009CBCE00EC0FE9 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */; };
 		EC2D14D92009CC9600EC0FE9 /* ExpensesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */; };
 		EC2D14DB2009D2F900EC0FE9 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */; };
@@ -97,6 +97,7 @@
 		ECB7AF162015B0600094CDCD /* NewDepositDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF152015B0600094CDCD /* NewDepositDataSource.swift */; };
 		ECB7AF182015B0F00094CDCD /* NewDepositState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF172015B0F00094CDCD /* NewDepositState.swift */; };
 		ECB7AF1A2015B1E20094CDCD /* NewDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7AF192015B1E20094CDCD /* NewDepositViewController.swift */; };
+		ECD0054821404C030032ECA3 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0054721404C030032ECA3 /* SegueHandlerType.swift */; };
 		ECF405A1200682B4008AA999 /* Envelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A0200682B4008AA999 /* Envelope.swift */; };
 		ECF405A32006869B008AA999 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A22006869B008AA999 /* Weekday.swift */; };
 		ECF405A5200686B6008AA999 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF405A4200686B6008AA999 /* Expense.swift */; };
@@ -175,7 +176,7 @@
 		EC2D14CD20097AEB00EC0FE9 /* TotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCell.swift; sourceTree = "<group>"; };
 		EC2D14D02009C5D300EC0FE9 /* NewExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseViewController.swift; sourceTree = "<group>"; };
 		EC2D14D22009C71900EC0FE9 /* NewExpenseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseDataSource.swift; sourceTree = "<group>"; };
-		EC2D14D42009C7B800EC0FE9 /* NewExpenseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseState.swift; sourceTree = "<group>"; };
+		EC2D14D42009C7B800EC0FE9 /* ExpensesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesState.swift; sourceTree = "<group>"; };
 		EC2D14D62009CBCE00EC0FE9 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		EC2D14D82009CC9600EC0FE9 /* ExpensesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesDataSource.swift; sourceTree = "<group>"; };
 		EC2D14DA2009D2F900EC0FE9 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 		ECB7AF152015B0600094CDCD /* NewDepositDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositDataSource.swift; sourceTree = "<group>"; };
 		ECB7AF172015B0F00094CDCD /* NewDepositState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositState.swift; sourceTree = "<group>"; };
 		ECB7AF192015B1E20094CDCD /* NewDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositViewController.swift; sourceTree = "<group>"; };
+		ECD0054721404C030032ECA3 /* SegueHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		ECF405A0200682B4008AA999 /* Envelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelope.swift; sourceTree = "<group>"; };
 		ECF405A22006869B008AA999 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		ECF405A4200686B6008AA999 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -276,7 +278,7 @@
 				EC37C6A6209280F9007951B5 /* ErrorState.swift */,
 				EC2D14B02007FEFB00EC0FE9 /* EnvelopeState.swift */,
 				EC2D14BE20085A5400EC0FE9 /* NewEnvelopeState.swift */,
-				EC2D14D42009C7B800EC0FE9 /* NewExpenseState.swift */,
+				EC2D14D42009C7B800EC0FE9 /* ExpensesState.swift */,
 				ECB7AF172015B0F00094CDCD /* NewDepositState.swift */,
 				EC2D14602006A86800EC0FE9 /* LoginState.swift */,
 			);
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				EC2D14832006BE4A00EC0FE9 /* ReusableView.swift */,
+				ECD0054721404C030032ECA3 /* SegueHandlerType.swift */,
 				EC37C6A420925748007951B5 /* Shakeable.swift */,
 				EC2D14852006BE9200EC0FE9 /* StoryboardInitializable.swift */,
 				EC2D14B2200809D200EC0FE9 /* DateHelper.swift */,
@@ -493,8 +496,8 @@
 				EC28756220014D3C0004B9CC /* Frameworks */,
 				EC28756320014D3C0004B9CC /* Resources */,
 				7F9A13E4332E0D21F79D987F /* [CP] Embed Pods Frameworks */,
-				C26D879745C436C7A0452528 /* [CP] Copy Pods Resources */,
 				EC287580200153410004B9CC /* ShellScript */,
+				ECCC2A1A21449DB800C86387 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -563,9 +566,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Envelopes/Pods-Envelopes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -578,28 +596,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Envelopes-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C26D879745C436C7A0452528 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Envelopes/Pods-Envelopes-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC287580200153410004B9CC /* ShellScript */ = {
@@ -618,6 +624,19 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 			showEnvVarsInLog = 0;
+		};
+		ECCC2A1A21449DB800C86387 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -657,9 +676,10 @@
 				EC2D14792006BD7A00EC0FE9 /* QuestionCell.swift in Sources */,
 				EC2D14782006BD7A00EC0FE9 /* LastNameTextFieldCell.swift in Sources */,
 				EC2D14AC2007CC9400EC0FE9 /* EnvelopeCell.swift in Sources */,
-				EC2D14D52009C7B800EC0FE9 /* NewExpenseState.swift in Sources */,
+				EC2D14D52009C7B800EC0FE9 /* ExpensesState.swift in Sources */,
 				ECB7AF142015AD230094CDCD /* DepositCell.swift in Sources */,
 				ECB7AF182015B0F00094CDCD /* NewDepositState.swift in Sources */,
+				ECD0054821404C030032ECA3 /* SegueHandlerType.swift in Sources */,
 				ECB7AF1A2015B1E20094CDCD /* NewDepositViewController.swift in Sources */,
 				EC2D14CC2009682C00EC0FE9 /* StartingAmountCell.swift in Sources */,
 				EC2D14E1201017B400EC0FE9 /* Periodicity.swift in Sources */,
@@ -851,6 +871,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 92H4P6C5WB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

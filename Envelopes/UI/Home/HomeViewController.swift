@@ -80,7 +80,6 @@ extension HomeViewController: UIViewControllerPreviewingDelegate {
         envelopeTapped()
     }
 
-
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         guard let path = collectionView.indexPathForItem(at: location) else { return nil }
         if let object = adapter.object(atSection: path.section) as? EnvelopeSection, let cell = collectionView.cellForItem(at: path) {

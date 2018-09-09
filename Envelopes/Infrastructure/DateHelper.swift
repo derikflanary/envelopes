@@ -92,8 +92,8 @@ extension Date {
         return Calendar.current.dateComponents([.weekday], from: self).weekday! - 1
     }
 
-    var millisecondsSince1970:Int {
-        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+    var millisecondsSince1970: Int {
+        return Int(self.timeIntervalSince1970 * 1000.0)
     }
 
     func startOfMonth() -> Date {

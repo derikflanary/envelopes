@@ -11,5 +11,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'NotificationBannerSwift'
+pod 'Fabric', '~> 1.7.11'
+pod 'Crashlytics', '~> 3.10.7'
 
 end

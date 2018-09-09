@@ -38,7 +38,9 @@ struct Expense: Unmarshaling {
         name = newExpense.name!
         self.envelopeId = envelopeId
     }
+
 }
+
 
 extension Expense: JSONMarshaling {
 

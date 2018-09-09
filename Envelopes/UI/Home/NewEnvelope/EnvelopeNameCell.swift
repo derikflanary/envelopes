@@ -40,6 +40,12 @@ class EnvelopeNameCell: UITableViewCell, ReusableView {
         creationType = .expense
     }
 
+    func configure(with expense: Expense?) {
+        guard let expense = expense else { return }
+        textField.text = expense.name
+        creationType = .expense
+    }
+
     @IBAction func textFieldEditingDidEnd(_ sender: Any) {
         countLabel.isHidden = true
         guard textField.text != nil else { return }
@@ -49,9 +55,16 @@ class EnvelopeNameCell: UITableViewCell, ReusableView {
             newEnvelope.name = textField.text
             core.fire(event: Updated(item: newEnvelope))
         case .expense:
-            var newExpense = core.state.envelopeState.newExpenseState.newExpense
-            newExpense.name = textField.text
-            core.fire(event: Updated(item: newExpense))
+            switch core.state.envelopeState.expensesState.expenseState {
+            case .new:
+                var newExpense = core.state.envelopeState.expensesState.newExpense
+                newExpense.name = textField.text
+                core.fire(event: Updated(item: newExpense))
+            case .editing:
+                guard var expense = core.state.envelopeState.expensesState.editingExpense, let text = textField.text else { return }
+                expense.name = text
+                core.fire(event: EditedExpense(expense: expense))
+            }
         case .deposit:
             break
         }

@@ -103,7 +103,7 @@ struct AddExpense: Command {
 
     func execute(state: AppState, core: Core<AppState>) {
         guard let envelope = core.state.envelopeState.selectedEnvelope else { return }
-        let newExpense = core.state.envelopeState.newExpenseState.newExpense
+        let newExpense = core.state.envelopeState.expensesState.newExpense
         let expense = Expense(newExpense, envelopeId: envelope.id)
         let key = networkAccess.ref.child(Keys.expenses).childByAutoId().key
         let childUpdates: JSONObject = ["/\(Keys.expenses)/\(key)": expense.jsonObject()]
@@ -126,6 +126,23 @@ struct DeleteExpense: Command {
         core.fire(command: UpdateEnvelope())
     }
 
+}
+
+struct EditExpense: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+    let expense: Expense
+
+    func execute(state: AppState, core: Core<AppState>) {
+        let ref = networkAccess.expensesRef().child(expense.id)
+        networkAccess.updateObject(at: ref, parameters: expense.jsonObject(), core: core)
+        core.fire(event: Updated(item: expense))
+    }
+
+}
+
+struct EditedExpense: Event {
+    let expense: Expense
 }
 
 struct DeleteDeposit: Command {

@@ -21,13 +21,10 @@ class DepositsViewController: UIViewController {
 
     override func viewDidLoad() {
         newDepositButton.roundedEdgeType = .full
-        guard let envelope = core.state.envelopeState.selectedEnvelope else { return }
-        depositsDataSource.deposits = envelope.deposits
-        tableView.reloadData()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         newDepositButton.isShadowed = true
         core.add(subscriber: self)
     }
@@ -49,7 +46,7 @@ extension DepositsViewController: Subscriber {
         } else {
             tableView.backgroundView = nil
         }
-        tableView.reloadData()
+        tableView.reloadSections([0], with: .automatic)
     }
 
 }

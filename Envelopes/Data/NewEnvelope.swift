@@ -17,8 +17,7 @@ struct NewEnvelope {
     var goal: Double = 0
 
     var isReady: Bool {
-        return name != nil &&
-        recurringAmount != 0
+        return name != nil
     }
     
 }
