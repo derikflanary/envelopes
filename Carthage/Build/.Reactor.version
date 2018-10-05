@@ -2,8 +2,8 @@
   "commitish" : "0.9",
   "iOS" : [
     {
-      "hash" : "15def31001f7b686171b0c81416dabccd3191fa5a574631458f08109094e18a0",
-      "name" : "Reactor"
+      "name" : "Reactor",
+      "hash" : "eb04684aca43970ffc7699d850ee90f609b2bc4b90b9fa3ce01590fec3b551c9"
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "commitish" : "1.2.6",
+  "commitish" : "1.2.7",
   "iOS" : [
     {
-      "hash" : "52918fb2e2c4d4e57f4e2775dadc6a4ce639c06bf20a60a55eed971becd6ec06",
-      "name" : "Marshal"
+      "name" : "Marshal",
+      "hash" : "cc9ac50ca26e3de310f715e985f0f590d66ce623c5c0807aadd3b323099175d3"
     }
   ]
 }
