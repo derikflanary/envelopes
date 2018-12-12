@@ -13,6 +13,7 @@ class LoginDataSource: NSObject, UITableViewDataSource {
 
     var authCellTypes = [AuthCellType]()
     var authViewState: AuthViewState?
+    var passwordError: Bool = false
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,6 +46,7 @@ class LoginDataSource: NSObject, UITableViewDataSource {
             return cell
         case .passwordTextFieldCell:
             let cell = tableView.dequeueReusableCell(for: indexPath) as PasswordTextFieldCell
+            cell.configure(passwordError: passwordError)
             return cell
         case .forgotPasswordButtonCell:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ForgotPasswordButtonCell

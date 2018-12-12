@@ -21,7 +21,9 @@ class NewExpenseDataSource: NSObject, UITableViewDataSource {
 
     }
 
+    var expenseState: ExpenseState = .new
     var newExpense: NewExpense?
+    var expense: Expense?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Row.allValues.count
@@ -31,11 +33,21 @@ class NewExpenseDataSource: NSObject, UITableViewDataSource {
         switch Row.allValues[indexPath.row] {
         case .name:
             let cell = tableView.dequeueReusableCell(for: indexPath) as EnvelopeNameCell
-            cell.configure(with: newExpense)
+            switch expenseState {
+            case .new:
+                cell.configure(with: newExpense)
+            case .editing:
+                cell.configure(with: expense)
+            }
             return cell
         case .amount:
             let cell = tableView.dequeueReusableCell(for: indexPath) as AmountCell
-            cell.configure(with: newExpense)
+            switch expenseState {
+            case .new:
+                cell.configure(with: newExpense)
+            case .editing:
+                cell.configure(with: expense)
+            }
             return cell
         }
     }

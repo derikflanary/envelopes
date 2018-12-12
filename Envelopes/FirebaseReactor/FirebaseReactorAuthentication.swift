@@ -91,9 +91,11 @@ public struct UserAuthenticationEvent: FirebaseAuthenticationEvent {
 /// - **error**: The error that produced the failure
 public struct UserAuthFailed: FirebaseSeriousErrorEvent {
     public var error: Error
+    public var code: AuthErrorCode?
     
-    public init(error: Error) {
+    public init(error: Error, code: AuthErrorCode? = nil) {
         self.error = error
+        self.code = code
     }
 }
 

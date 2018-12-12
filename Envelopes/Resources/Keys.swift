@@ -10,6 +10,7 @@ import Foundation
 
 struct Keys {
 
+    static let accumulates = "accumulates"
     static let amount = "amount"
     static let users = "authUsers"
     static let createdAt = "createdAt"

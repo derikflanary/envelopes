@@ -57,7 +57,7 @@ enum Periodicity: JSONMarshaling, Unmarshaling {
             return
         }
         if let monthlyStartInt: Double = try? object.value(for: Periodicity.monthly(Date()).key) {
-            let date = Date(timeIntervalSince1970: monthlyStartInt)
+            let date = Date(timeIntervalSince1970: Double(monthlyStartInt) / 1000)
             self = .monthly(date)
             return
         }
@@ -65,7 +65,6 @@ enum Periodicity: JSONMarshaling, Unmarshaling {
     }
 
     func jsonObject() -> JSONObject {
-
         switch self {
         case .daily:
             return [key: true]

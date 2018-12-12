@@ -30,14 +30,11 @@ class EnvelopeDetailsViewController: UIViewController {
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
-        envelopeDetailsDataSource.envelope = core.state.envelopeState.selectedEnvelope
-        tableView.reloadData()
         navigationItem.rightBarButtonItem = editButtonItem
-
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         core.add(subscriber: self)
     }
 
@@ -139,7 +136,8 @@ extension EnvelopeDetailsViewController: Subscriber {
             titleTextField.borderStyle = .roundedRect
         }
         envelopeDetailsDataSource.isLoading = !state.envelopeState.expensesLoaded
-        tableView.reloadData()
+        tableView.reloadSections([0, 1], with: .automatic)
+        
     }
 
 }

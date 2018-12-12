@@ -8,6 +8,7 @@
 
 import UIKit
 import Reactor
+import Crashlytics
 
 class SettingsViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class SettingsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         core.add(subscriber: self)
+        Crashlytics.sharedInstance().crash()
     }
 
     override func viewDidDisappear(_ animated: Bool) {

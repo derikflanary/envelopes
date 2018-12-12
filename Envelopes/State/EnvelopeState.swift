@@ -28,13 +28,13 @@ struct EnvelopeState: State {
     }
     var updatedEnvelope: Envelope?
     var newEnvelopeState = NewEnvelopeState()
-    var newExpenseState = NewExpenseState()
+    var expensesState = ExpensesState()
     var newDepositState = NewDepositState()
     var envelopesLoaded = false
     var expensesLoaded = false
     var detailsViewState: DetailsViewState = .viewing
-    
 
+    
     // MARK: - React function
 
     mutating func react(to event: Event) {
@@ -68,9 +68,13 @@ struct EnvelopeState: State {
         case let event as Loaded<Expense>:
             expensesLoaded = true
             selectedEnvelope?.expenses = event.items
+        case let event as Updated<Expense>:
+            if let index = selectedEnvelope?.expenses.index(of: event.item) {
+                selectedEnvelope?.expenses[index] = event.item
+            }
         case let event as Created<Expense>:
             if var selectedEnvelope = selectedEnvelope {
-                selectedEnvelope.expenses.append(event.item)
+                selectedEnvelope.expenses.insert(event.item, at: 0)
                 self.selectedEnvelope = selectedEnvelope
                 if let index = envelopes.index(of: selectedEnvelope) {
                     envelopes[index] = selectedEnvelope
@@ -112,7 +116,7 @@ struct EnvelopeState: State {
         case _ as Reset<NewEnvelope>:
             newEnvelopeState = NewEnvelopeState()
         case _ as Reset<NewExpense>:
-            newExpenseState = NewExpenseState()
+            expensesState = ExpensesState()
         case _ as Reset<NewDeposit>:
             newDepositState = NewDepositState()
 
@@ -121,7 +125,7 @@ struct EnvelopeState: State {
         }
 
         newEnvelopeState.react(to: event)
-        newExpenseState.react(to: event)
+        expensesState.react(to: event)
         newDepositState.react(to: event)
     }
 

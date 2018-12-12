@@ -80,7 +80,7 @@ struct LoadEnvelopes: Command {
         networkAccess.getObject(at: query, core: core) { json in
             var envelopes = [Envelope]()
             if let json = json {
-                envelopes = json.flatMap {
+                envelopes = json.compactMap {
                     guard var object = $0.value as? JSONObject else { return nil }
                     object[Keys.id] = $0.key
                     do {
@@ -103,7 +103,7 @@ struct AddExpense: Command {
 
     func execute(state: AppState, core: Core<AppState>) {
         guard let envelope = core.state.envelopeState.selectedEnvelope else { return }
-        let newExpense = core.state.envelopeState.newExpenseState.newExpense
+        let newExpense = core.state.envelopeState.expensesState.newExpense
         let expense = Expense(newExpense, envelopeId: envelope.id)
         let key = networkAccess.ref.child(Keys.expenses).childByAutoId().key
         let childUpdates: JSONObject = ["/\(Keys.expenses)/\(key)": expense.jsonObject()]
@@ -126,6 +126,23 @@ struct DeleteExpense: Command {
         core.fire(command: UpdateEnvelope())
     }
 
+}
+
+struct EditExpense: Command {
+
+    let networkAccess: FirebaseEnvelopesAccess = FirebaseNetworkAccess.sharedAccess
+    let expense: Expense
+
+    func execute(state: AppState, core: Core<AppState>) {
+        let ref = networkAccess.expensesRef().child(expense.id)
+        networkAccess.updateObject(at: ref, parameters: expense.jsonObject(), core: core)
+        core.fire(event: Updated(item: expense))
+    }
+
+}
+
+struct EditedExpense: Event {
+    let expense: Expense
 }
 
 struct DeleteDeposit: Command {
@@ -174,7 +191,7 @@ struct LoadExpenses: Command {
         networkAccess.getObject(at: query, core: core) { json in
             var expenses = [Expense]()
             if let json = json {
-                expenses = json.flatMap {
+                expenses = json.compactMap {
                     guard var object = $0.value as? JSONObject else { return nil }
                     object[Keys.id] = $0.key
                     do {
@@ -184,6 +201,7 @@ struct LoadExpenses: Command {
                         return nil
                     }
                 }
+                expenses.sort { $0.createdAt > $1.createdAt }
                 core.fire(event: Loaded(items: expenses))
             } else {
                 core.fire(event: Loaded(items: [Expense]()))
@@ -208,7 +226,7 @@ struct LoadDeposits: Command {
         networkAccess.getObject(at: query, core: core) { json in
             var deposits = [Deposit]()
             if let json = json {
-                deposits = json.flatMap {
+                deposits = json.compactMap {
                     guard var object = $0.value as? JSONObject else { return nil }
                     object[Keys.id] = $0.key
                     do {

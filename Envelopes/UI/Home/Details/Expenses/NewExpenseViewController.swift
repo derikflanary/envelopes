@@ -17,6 +17,7 @@ class NewExpenseViewController: UIViewController {
     private var cancelButtonAnimator = UIViewPropertyAnimator()
     var tapGestureRecognizer = UITapGestureRecognizer()
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var transparentView: UIView!
     @IBOutlet weak var cancelButton: RoundedButton!
     @IBOutlet weak var popView: UIView!
@@ -36,9 +37,13 @@ class NewExpenseViewController: UIViewController {
         view.addGestureRecognizer(tapGestureRecognizer)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        core.add(subscriber: self)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        core.add(subscriber: self)
         UIView.animate(withDuration: 0.5, animations: {
             self.transparentView.alpha = 0.6
         })
@@ -53,6 +58,7 @@ class NewExpenseViewController: UIViewController {
         super.viewDidDisappear(animated)
         core.remove(subscriber: self)
         core.fire(event: Reset<NewExpense>())
+        core.fire(event: Selected(item: ExpenseState.new))
     }
 
     override func viewDidLayoutSubviews() {
@@ -69,12 +75,19 @@ class NewExpenseViewController: UIViewController {
     }
 
     @IBAction func saveButtonTapped() {
-        let newExpense = core.state.envelopeState.newExpenseState.newExpense
-        if newExpense.isReady {
-            core.fire(command: AddExpense())
+        switch core.state.envelopeState.expensesState.expenseState {
+        case .new:
+            let newExpense = core.state.envelopeState.expensesState.newExpense
+            if newExpense.isReady {
+                core.fire(command: AddExpense())
+                dismiss()
+            } else {
+                disableSaveButton()
+            }
+        case .editing:
+            guard let expense = core.state.envelopeState.expensesState.editingExpense else { return }
+            core.fire(command: EditExpense(expense: expense))
             dismiss()
-        } else {
-            disableSaveButton()
         }
     }
 
@@ -125,13 +138,22 @@ private extension NewExpenseViewController {
 extension NewExpenseViewController: Subscriber {
 
     func update(with state: AppState) {
-        newExpenseDataSource.newExpense = state.envelopeState.newExpenseState.newExpense
+        newExpenseDataSource.newExpense = state.envelopeState.expensesState.newExpense
+        newExpenseDataSource.expenseState = state.envelopeState.expensesState.expenseState
+        newExpenseDataSource.expense = state.envelopeState.expensesState.editingExpense
         tableView.reloadData()
 
-        if state.envelopeState.newExpenseState.newExpense.isReady {
+        let expenseState = state.envelopeState.expensesState.expenseState
+        titleLabel.text = expenseState.title()
+        switch expenseState {
+        case .new:
+            if state.envelopeState.expensesState.newExpense.isReady {
+                enableSaveButton()
+            } else {
+                disableSaveButton()
+            }
+        case .editing:
             enableSaveButton()
-        } else {
-            disableSaveButton()
         }
     }
 
